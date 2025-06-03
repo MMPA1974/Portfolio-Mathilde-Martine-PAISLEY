@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mathilde Martine PAISLEY | Conseil pour les affaires et autres conseils de gestion</title>
+    <meta name="description" content="Découvrez le portfolio de Mathilde Martine PAISLEY, consultante experte en Conseil pour les affaires et autres conseils de gestion, Paie, GTA, RH et SIRH. Accompagnement opérationnel et transformationnel, conformité sociale.">
+    <meta name="keywords" content="Mathilde Martine PAISLEY, portfolio, consultante RH, conseil paie, GTA, SIRH, ressources humaines, conformité sociale, gestion des temps, expertise RH, accompagnement SIRH, conseil pour les affaires, conseil de gestion, 7022Z">
+    <meta name="author" content="Mathilde Martine PAISLEY">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='80%25' font-size='80' text-anchor='middle'%3E🌹%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-fond-clair text-texte-principal antialiased">
+
+    <header class="hero-bg">
+        <div class="logo-placeholder" role="img" aria-label="Espace réservé pour le logo de Mathilde Martine PAISLEY">
+            <span>Logo ici</span>
+        </div>
+        <div class="container mx-auto px-6 py-6 flex flex-col items-center justify-center">
+            <h1 class="text-3xl md:text-4xl font-bold">Mathilde Martine PAISLEY <span class="text-accent-secondaire">🌹</span></h1>
+            <p class="text-md md:text-lg text-center mt-2 text-fond-clair">Conseil Paie, GTA, RH & SIRH - Conformité Sociale | Accompagnement Opérationnel & Transformationnel</p>
+            <a href="#contact" class="cta-button text-base px-5 py-2 mt-4">Discutons de Votre Projet !</a>
+        </div>
+        <button id="mobile-menu-button" class="mobile-menu-button md:hidden absolute top-4 right-4" aria-label="Ouvrir le menu de navigation mobile">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </header>
+
+    <nav class="nav-bar-bg">
+        <div class="container mx-auto px-6 py-3">
+            <ul class="nav-links-container" role="menubar">
+                <li role="none"><a href="#accueil" class="nav-link active" data-section="accueil" role="menuitem">🏠 Accueil</a></li>
+                <li role="none"><a href="#qui-suis-je" class="nav-link" data-section="qui-suis-je" role="menuitem">👤 Qui suis-je ?</a></li>
+                <li role="none"><a href="#parcours" class="nav-link" data-section="parcours" role="menuitem">🗓️ Mon Parcours</a></li>
+                <li role="none"><a href="#expertise" class="nav-link" data-section="expertise" role="menuitem">💡 Expertise</a></li>
+                <li role="none"><a href="#prestations" class="nav-link" data-section="prestations" role="menuitem">💼 Prestations</a></li>
+                <li role="none"><a href="#investissement" class="nav-link" data-section="investissement" role="menuitem">💰 Investissement</a></li>
+                <li role="none"><a href="#outils-methodes" class="nav-link" data-section="outils-methodes" role="menuitem">💻 Outils & Méthodes</a></li>
+                <li role="none"><a href="#essentiels" class="nav-link" data-section="essentiels" role="menuitem">🔗 Essentiels</a></li>
+                <li role="none"><a href="#projets-phares" class="nav-link" data-section="projets-phares" role="menuitem">🌟 Projets Phares</a></li>
+                <li role="none"><a href="#communaute" class="nav-link" data-section="communaute" role="menuitem">🤝 Ma Communauté</a></li>
+                <li role="none"><a href="#planning" class="nav-link" data-section="planning-disponibilites" role="menuitem">🗓️ Planning</a></li>
+                <li role="none"><a href="#actualites-temoignages" class="nav-link" data-section="actualites-temoignages" role="menuitem">📰 Actualités & Témoignages</a></li>
+                <li role="none"><a href="#contact" class="nav-link" data-section="contact" role="menuitem">✉️ Contact</a></li>
+            </ul>
+        </div>
+        <div id="mobile-menu" class="mobile-nav-links hidden" role="menu">
+            <a href="#accueil" class="mobile-nav-link" data-section="accueil" role="menuitem">🏠 Accueil</a>
+            <a href="#qui-suis-je" class="mobile-nav-link" data-section="qui-suis-je" role="menuitem">👤 Qui suis-je ?</a>
+            <a href="#parcours" class="mobile-nav-link" data-section="parcours" role="menuitem">🗓️ Mon Parcours</a>
+            <a href="#expertise" class="mobile-nav-link" data-section="expertise" role="menuitem">💡 Expertise</a>
+            <a href="#prestations" class="mobile-nav-link" data-section="prestations" role="menuitem">💼 Prestations</a>
+            <a href="#investissement" class="mobile-nav-link" data-section="investissement" role="menuitem">💰 Investissement</a>
+            <a href="#outils-methodes" class="mobile-nav-link" data-section="outils-methodes" role="menuitem">💻 Outils & Méthodes</a>
+            <a href="#essentiels" class="mobile-nav-link" data-section="essentiels" role="menuitem">🔗 Essentiels</a>
+            <a href="#projets-phares" class="mobile-nav-link" data-section="projets-phares" role="menuitem">🌟 Projets Phares</a>
+            <a href="#communaute" class="mobile-nav-link" data-section="communaute" role="menuitem">🤝 Ma Communauté</a>
+            <a href="#planning" class="mobile-nav-link" data-section="planning-disponibilites" role="menuitem">🗓️ Planning</a>
+            <a href="#actualites-temoignages" class="mobile-nav-link" data-section="actualites-temoignages" role="menuitem">📰 Actualités & Témoignages</a>
+            <a href="#contact" class="mobile-nav-link" data-section="contact" role="menuitem">✉️ Contact</a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 flex-grow">
+        <section id="accueil" class="section-container active" aria-labelledby="accueil-title">
+            <h2 id="accueil-title" class="section-title">Accueil</h2>
+            <p class="text-lg leading-relaxed text-center mb-8">
+                Bienvenue sur mon portfolio ! Découvrez mon univers professionnel et mon engagement pour l'excellence en Ressources Humaines. Je suis là pour vous accompagner avec une approche humaine et une expertise pointue.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center mt-8">
+                <a href="#qui-suis-je" class="card-bg-subtle" aria-label="Naviguer vers la section Qui suis-je ?">
+                    <i class="fas fa-user"></i>
+                    <span class="font-bold">Qui suis-je ?</span>
+                    <p class="text-sm">Découvrez mon parcours et ma personnalité.</p>
+                </a>
+                <a href="#expertise" class="card-bg-subtle" aria-label="Naviguer vers la section Mon Expertise">
+                    <i class="fas fa-lightbulb"></i>
+                    <span class="font-bold">Mon Expertise</span>
+                    <p class="text-sm">Mes compétences clés en RH et SIRH.</p>
+                </a>
+                <a href="#prestations" class="card-bg-subtle" aria-label="Naviguer vers la section Mes Prestations">
+                    <i class="fas fa-briefcase"></i>
+                    <span class="font-bold">Mes Prestations</span>
+                    <p class="text-sm">Les services que je propose aux entreprises.</p>
+                </a>
+                <a href="#investissement" class="card-bg-subtle" aria-label="Naviguer vers la section Investissement">
+                    <i class="fas fa-money-bill-alt"></i>
+                    <span class="font-bold">Investissement</span>
+                    <p class="text-sm">Découvrez mes modèles de tarification.</p>
+                </a>
+                <a href="#parcours" class="card-bg-subtle" aria-label="Naviguer vers la section Mon Parcours">
+                    <i class="fas fa-history"></i>
+                    <span class="font-bold">Mon Parcours</span>
+                    <p class="text-sm">Mon cheminement professionnel détaillé.</p>
+                </a>
+                <a href="#outils-methodes" class="card-bg-subtle" aria-label="Naviguer vers la section Mes Outils & Méthodes">
+                    <i class="fas fa-tools"></i>
+                    <span class="font-bold">Mes Outils & Méthodes</span>
+                    <p class="text-sm">Logiciels, plateformes et méthodologies.</p>
+                </a>
+                <a href="#essentiels" class="card-bg-subtle" aria-label="Naviguer vers la section Essentiels">
+                    <i class="fas fa-link"></i>
+                    <span class="font-bold">Essentiels</span>
+                    <p class="text-sm">Liens utiles et ressources clés.</p>
+                </a>
+                <a href="#projets-phares" class="card-bg-subtle" aria-label="Naviguer vers la section Projets Phares">
+                    <i class="fas fa-star"></i>
+                    <span class="font-bold">Projets Phares</span>
+                    <p class="text-sm">Mes réalisations les plus significatives.</p>
+                </a>
+                <a href="#communaute" class="card-bg-subtle" aria-label="Naviguer vers la section Ma Communauté">
+                    <i class="fas fa-users"></i>
+                    <span class="font-bold">Ma Communauté</span>
+                    <p class="text-sm">Mon groupe d'échange et d'entraide.</p>
+                </a>
+                <a href="#planning" class="card-bg-subtle" aria-label="Naviguer vers la section Planning et Disponibilités">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="font-bold">Planning & Dispo.</span>
+                    <p class="text-sm">Mes créneaux de disponibilité.</p>
+                </a>
+                <a href="#actualites-temoignages" class="card-bg-subtle" aria-label="Naviguer vers la section Actualités et Témoignages">
+                    <i class="fas fa-newspaper"></i>
+                    <span class="font-bold">Actualités & Témoignages</span>
+                    <p class="text-sm">Blog et retours clients.</p>
+                </a>
+                <a href="#contact" class="card-bg-subtle" aria-label="Naviguer vers la section Contact">
+                    <i class="fas fa-envelope"></i>
+                    <span class="font-bold">Contact</span>
+                    <p class="text-sm">Discutons de vos projets et besoins.</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="qui-suis-je" class="section-container" aria-labelledby="qui-suis-je-title">
+            <h2 id="qui-suis-je-title" class="section-title">Qui suis-je ? La force de la diversité</h2>
+
+            <div class="profile-section mb-8">
+                <div class="profile-image-container">
+                    <img src="https://i.imgur.com/your-image-id.jpeg" alt="Photo de Mathilde Martine PAISLEY, une femme souriante aux cheveux crépus" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg" loading="lazy">
+                </div>
+                <div class="flex-grow text-texte-principal">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Je suis <strong>Mathilde Martine PAISLEY</strong>, née le 26 février 1974 à Paris 13e.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Mes racines plongent au cœur de la Guadeloupe, terre de mes parents. Ma mère est issue d'une lignée où se mêlent origines <strong>afro-caribéennes</strong> et <strong>européennes (métropolitaines)</strong>, tandis que mon père, également guadeloupéen, porte en lui un héritage <strong>indien</strong>. Ce métissage profond est une richesse qui coule dans mes veines et façonne ma vision du monde. Troisième d'une fratrie de sept enfants et première fille, cette <strong>éducation familiale ancrée dans la résilience et la richesse culturelle de mes origines</strong> m'a forgé un sens aigu des réalités, une détermination à toute épreuve et un grand cœur.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        La vie m'a aussi appris la <strong>résilience</strong> et l'adaptation. En tant que personne <strong>handicapée</strong>, cette expérience a renforcé en moi une force intérieure inébrannable et une capacité unique à surmonter les obstacles. Pour moi, le handicap n'est pas une limite, mais une opportunité de développer des solutions innovantes et de faire preuve d'une créativité sans égale.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        Avec mes <strong>cheveux crépus</strong> que j'arbore avec fierté et ma <strong>corpulence généreuse</strong>, je suis le reflet d'une beauté plurielle et authentique. J'embrasse toutes les facettes de mon identité, et c'est cette acceptation de soi qui me pousse à agir avec conviction et à inspirer ceux qui m'entourent.
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        <strong>Au-delà des titres et des compétences, je suis une femme de passion et de partage.</strong> J'aime la vie, le rire, la musique qui fait vibrer, danser et m'éclater. Je suis connue pour mon franc-parler, ma transparence et mon naturel. J'aime ce qui est vrai et simple, et je suis profondément attachée aux relations humaines chaleureuses.
+                    </p>
+                </div>
+            </div>
+            <div class="section-nav-buttons">
+                <a href="#parcours" class="nav-button">Découvrir Mon Parcours <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#accueil" class="nav-button"><i class="fas fa-home mr-2"></i> Retour à l'Accueil</a>
+            </div>
+        </section>
+
+        <section id="parcours" class="section-container" aria-labelledby="parcours-title">
+            <h2 id="parcours-title" class="section-title">L'Expertise au Service de l'Humain</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8">
+                Après 20 ans d'expérience professionnelle dans les Ressources Humaines, j'ai choisi de me lancer dans l'entrepreneuriat. Mon parcours est celui d'une <strong>autodidacte passionnée</strong> : de l'administration du personnel à la paie, en passant par le droit social, le droit du travail et les systèmes d'information RH (SIRH). Ce que j'ai appris sur le terrain, je l'ai perfectionné avec une détermination sans faille, évoluant jusqu'aux postes de consultante. J'ai consolidé cette expertise en <strong>2000</strong> avec une formation <strong>Manager Expertise RH</strong>, et je me suis tournée vers l'avenir avec une formation <strong>Expert Stratégie Digitale</strong>, également achevée cette même année. Ces certifications me permettent d'offrir un service complet, innovant et de pointe.
+            </p>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8">
+                Ma passion pour la paie, les processus et le droit du travail est inébranlable – si je n'étais pas devenue entrepreneure, j'aurais voulu être avocate ! J'aime la précision, l'optimisation et, par-dessus tout, <strong>satisfaire mes clients</strong>. C'est un devoir, une joie, et la raison d'être de mon engagement.
+            </p>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8">
+                Je suis ici pour mettre toutes mes compétences et ma passion au service de votre entreprise. Son objectif ? Vous accompagner au mieux et faire en sorte que chaque mission soit un succès.
+            </p>
+            <div class="section-nav-buttons">
+                <a href="#expertise" class="nav-button">Découvrir Mon Expertise <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#qui-suis-je" class="nav-button"><i class="fas fa-user mr-2"></i> Retour à Qui suis-je ?</a>
+            </div>
+        </section>
+
+        <section id="expertise" class="section-container" aria-labelledby="expertise-title">
+            <h2 id="expertise-title" class="section-title">Mon Expertise</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8">
+                Cette section met en lumière mes domaines de compétence principaux. Vous trouverez ci-dessous une visualisation graphique de mes expertises majeures, suivie d'une liste détaillée des outils et méthodologies que je maîtrise. L'objectif est de vous offrir une vue d'ensemble claire de mon profil technique et fonctionnel.
+            </p>
+            <div class="chart-container mb-12" style="height: 400px;">
+                <canvas id="skillsChart"></canvas>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Pilotage RH & Coordination Fonctionnelle</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Gestion Stratégique des Ressources Humaines :</strong> Capacité à aligner les stratégies RH avec les objectifs globaux de l'entreprise.</li>
+                        <li><strong class="text-principal-fonce">Management d'Équipe :</strong> Expertise dans l'encadrement, la motivation et le développement des équipes.</li>
+                        <li><strong class="text-principal-fonce">Conduite du Changement :</strong> Aptitude à accompagner les organisations à travers les transformations majeures.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">SIRH & AMOA (Assistance à Maîtrise d'Ouvrage)</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Analyse Fonctionnelle :</strong> Compétence approfondie dans l'analyse des besoins métiers pour les traduire en spécifications.</li>
+                        <li><strong class="text-principal-fonce">Conception & Déploiement de Solutions SIRH :</strong> Maîtrise du cycle de vie complet des projets SIRH.</li>
+                        <li><strong class="text-principal-fonce">Optimisation des Processus RH via SIRH :</strong> Capacité à identifier les opportunités d'amélioration et les optimiser.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Coordination & Pilotage de la Paie</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Gestion Complète de la Paie :</strong> Maîtrise de l'ensemble du processus de paie (collecte EVP, bulletins, cotisations, DSN).</li>
+                        <li><strong class="text-principal-fonce">Conformité Légale & Réglementaire :</strong> Veille constante et application rigoureuse de la législation sociale.</li>
+                        <li><strong class="text-principal-fonce">Contrôle de Paie :</strong> Mise en place et exécution de procédures de contrôle robustes.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Spécialiste Gestion des Arrêts Maladie & Accidents</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Maîtrise des IJSS :</strong> Calcul, suivi et gestion des Indemnités Journalières de Sécurité Sociale.</li>
+                        <li><strong class="text-principal-fonce">Gestion des Dossiers AT/MP :</strong> Prise en charge des dossiers d'accidents du travail et maladies professionnelles.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Gestion de la Prévoyance et Maintien de Salaire</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Compréhension des Contrats de Prévoyance :</strong> Capacité à analyser et appliquer les clauses des contrats collectifs.</li>
+                        <li><strong class="text-principal-fonce">Suivi des Mises en Place :</strong> Gestion des affiliations et radiations, coordination des flux d'information avec les assureurs.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Veille Sociale & Juridique</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Analyse Réglementaire :</strong> Surveillance proactive des évolutions législatives et réglementaires.</li>
+                        <li><strong class="text-principal-fonce">Conseil Opérationnel :</strong> Capacité à fournir des conseils éclairés aux équipes RH et aux managers.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-nav-buttons">
+                <a href="#prestations" class="nav-button">Voir Mes Prestations <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#parcours" class="nav-button"><i class="fas fa-history mr-2"></i> Retour à Mon Parcours</a>
+            </div>
+        </section>
+
+        <section id="prestations" class="section-container" aria-labelledby="prestations-title">
+            <h2 id="prestations-title" class="section-title">Mes Prestations</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8 text-center">
+                En tant que consultante indépendante, je propose une gamme complète de services pour accompagner les entreprises dans l'optimisation de leurs processus Paie, RH et SIRH. Mon objectif est de vous apporter une expertise opérationnelle et stratégique, adaptée à vos besoins spécifiques.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card-bg-subtle">
+                    <i class="fas fa-handshake"></i>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Conseil & AMOA SIRH</h3>
+                    <p class="text-texte-principal text-base">Accompagnement sur l'analyse des besoins, la rédaction de spécifications fonctionnelles, le choix et le déploiement de solutions SIRH (Paie, GTA, Core RH).</p>
+                </div>
+                <div class="card-bg-subtle">
+                    <i class="fas fa-calculator"></i>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Optimisation Processus Paie</h3>
+                    <p class="text-texte-principal text-base">Audit et refonte des processus de paie, fiabilisation des traitements, mise en conformité réglementaire (DSN, déclarations sociales).</p>
+                </div>
+                <div class="card-bg-subtle">
+                    <i class="fas fa-users-cog"></i>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Gestion des Temps & Activités (GTA)</h3>
+                    <p class="text-texte-principal text-base">Mise en place et paramétrage d'outils GTA, optimisation des règles de temps de travail, gestion des absences.</p>
+                </div>
+                <div class="card-bg-subtle">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Formation & Accompagnement</h3>
+                    <p class="text-texte-principal text-base">Formation des équipes RH et utilisateurs aux outils SIRH, accompagnement au changement, création de supports pédagogiques.</p>
+                </div>
+                <div class="card-bg-subtle">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Veille Sociale & Juridique</h3>
+                    <p class="text-texte-principal text-base">Analyse des évolutions légales et conventionnelles, mise à jour des pratiques RH pour garantir la conformité.</p>
+                </div>
+                <div class="card-bg-subtle">
+                    <i class="fas fa-headset"></i>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Support Fonctionnel SIRH</h3>
+                    <p class="text-texte-principal text-base">Assistance et support aux équipes pour la résolution de problématiques fonctionnelles sur les systèmes SIRH.</p>
+                </div>
+            </div>
+            <div class="section-nav-buttons">
+                <a href="#investissement" class="nav-button">Consulter Mon Investissement <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#expertise" class="nav-button"><i class="fas fa-lightbulb mr-2"></i> Retour à Mon Expertise</a>
+            </div>
+        </section>
+
+        <section id="investissement" class="section-container" aria-labelledby="investissement-title">
+            <h2 id="investissement-title" class="section-title">Mes Engagements : Freelance & Collaborations Salariées</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8 text-center">
+                Je m'adapte à vos besoins spécifiques, que ce soit en tant que consultante Freelance ou en rejoignant vos équipes via d'autres formes de contrats.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-6 text-center">Collaborations en Contrat (Intégration au sein de vos équipes)</h3>
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="card-bg-subtle price-card" aria-label="Contrat CDI Temps Partiel">
+                    <h3 class="text-2xl font-bold">CDI Temps Partiel</h3>
+                    <p class="price-text text-xl font-extrabold">Missions Récurrentes</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Intégration durable pour des missions spécifiques.</li>
+                        <li>Expertise dédiée à long terme sur des sujets récurrents.</li>
+                        <li>Flexibilité sur le volume d'intervention (temps partiel).</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Échanger sur cette opportunité</a>
+                </div>
+                <div class="card-bg-subtle price-card" aria-label="Contrat CDD">
+                    <h3 class="text-2xl font-bold">CDD</h3>
+                    <p class="price-text text-xl font-extrabold">Projet / Remplacement</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Réponse à un besoin ponctuel et défini.</li>
+                        <li>Durée déterminée pour un projet ou un remplacement.</li>
+                        <li>Apport d'expertise opérationnelle rapide.</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Échanger sur cette opportunité</a>
+                </div>
+                <div class="card-bg-subtle price-card" aria-label="Contrat Intérim">
+                    <h3 class="text-2xl font-bold">Intérim</h3>
+                    <p class="price-text text-xl font-extrabold">Mission Court Terme</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Grande réactivité pour des besoins urgents.</li>
+                        <li>Flexibilité maximale pour des missions courtes.</li>
+                        <li>Adaptation rapide à vos besoins et environnement.</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Échanger sur cette opportunité</a>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-6 text-center">Offres en Freelance (Prestations et Devis sur Mesure)</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-bg-subtle price-card" aria-label="Offre Freelance Mission Courte Terme">
+                    <h3 class="text-2xl font-bold">Mission Courte Terme</h3>
+                    <p class="price-text text-xl font-extrabold">Forfait Express</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Intervention rapide et ciblée</li>
+                        <li>Audit / État des lieux</li>
+                        <li>Conseil ponctuel</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
+                </div>
+                <div class="card-bg-subtle price-card featured" aria-label="Offre Freelance Projet Moyen Terme - Recommandée">
+                    <h3 class="text-2xl font-bold">Projet Moyen Terme</h3>
+                    <p class="price-text text-xl font-extrabold">Forfait Projet</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Gestion de projet complète et structurée</li>
+                        <li>Déploiement SIRH</li>
+                        <li>Refonte de processus</li>
+                        <li>Mise en conformité majeure</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-featured px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
+                </div>
+                <div class="card-bg-subtle price-card" aria-label="Offre Freelance Accompagnement Long Terme">
+                    <h3 class="text-2xl font-bold">Accompagnement Long Terme</h3>
+                    <p class="price-text text-xl font-extrabold">Abonnement</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Disponibilité régulière et prioritaire</li>
+                        <li>Support fonctionnel continu</li>
+                        <li>Veille sociale personnalisée</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
+                </div>
+            </div>
+
+
+            <div class="section-nav-buttons">
+                <a href="#outils-methodes" class="nav-button">Voir Mes Outils & Méthodes <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#prestations" class="nav-button"><i class="fas fa-briefcase mr-2"></i> Retour à Mes Prestations</a>
+            </div>
+        </section>
+
+        <section id="outils-methodes" class="section-container" aria-labelledby="outils-methodes-title">
+            <h2 id="outils-methodes-title" class="section-title">Mes Outils & Méthodes</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8 text-center">
+                Découvrez les logiciels, plateformes et méthodologies que je maîtrise pour optimiser les processus RH et SIRH. Ma polyvalence garantit une adaptation rapide à votre environnement.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Logiciels SIRH</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Squash :</strong> Outil de gestion de tests et de recette.</li>
+                        <li><strong class="text-principal-fonce">HR Access :</strong> Solution de gestion RH et paie.</li>
+                        <li><strong class="text-principal-fonce">Cegid :</strong> Suite de logiciels de gestion d'entreprise, incluant des modules RH.</li>
+                        <li><strong class="text-principal-fonce">SAP HR :</strong> Module de Ressources Humaines du progiciel SAP.</li>
+                        <li><strong class="text-principal-fonce">Workday :</strong> Système de gestion du capital humain basé sur le cloud.</li>
+                        <li><strong class="text-principal-fonce">SuccessFactors : :</strong> Solution de gestion des talents de SAP.</li>
+                        <li><strong class="text-principal-fonce">Chronotime :</strong> Logiciel de gestion des temps et des plannings.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Outils Bureautiques</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Suite Office 365 :</strong> Maîtrise avancée de Word, Excel (tableaux croisés dynamiques, fonctions avancées), PowerPoint, Outlook, Teams.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Gestion de Projet</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Trello :</strong> Outil de gestion de projet visuel basé sur la méthode Kanban.</li>
+                        <li><strong class="text-principal-fonce">Monday.com :</strong> Plateforme de gestion de travail pour organiser et suivre les projets.</li>
+                        <li><strong class="text-principal-fonce">Jira :</strong> Outil de suivi des bugs et de gestion de projet Agile.</li>
+                        <li><strong class="text-principal-fonce">Diagramme de Gantt :</strong> Méthode classique de planification visuelle.</li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Méthodologies Agile</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><strong class="text-principal-fonce">Scrum :</strong> Cadre de développement Agile pour la gestion de projets complexes.</li>
+                        <li><strong class="text-principal-fonce">Kanban :</strong> Méthode visuelle pour la gestion des flux de travail et l'amélioration continue.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-nav-buttons">
+                <a href="#essentiels" class="nav-button">Voir Essentiels <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#investissement" class="nav-button"><i class="fas fa-money-bill-alt mr-2"></i> Retour à Investissement</a>
+            </div>
+        </section>
+
+        <section id="essentiels" class="section-container" aria-labelledby="essentiels-title">
+            <h2 id="essentiels-title" class="section-title">Essentiels</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8 text-center">
+                Retrouvez ici une sélection de liens vers les administrations françaises et organismes clés, indispensables pour la veille et la pratique en paie, droit social et juridique. Ces ressources sont des piliers pour une information fiable et à jour.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Administrations & Organismes Publics</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><a href="https://www.urssaf.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">URSSAF :</strong> L'organisme de recouvrement des cotisations sociales.</a></li>
+                        <li><a href="https://www.net-entreprises.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Net-Entreprises :</strong> Le portail officiel des déclarations sociales (dont la DSN).</a></li>
+                        <li><a href="https://www.service-public.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Service-Public.fr :</strong> Le site officiel de l'administration française.</a></li>
+                        <li><a href="https://www.legifrance.gouv.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Légifrance :</strong> Le service public de la diffusion du droit.</a></li>
+                        <li><a href="https://travail-emploi.gouv.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Ministère du Travail, de l'Emploi et de l'Insertion :</strong> Informations sur la législation du travail.</a></li>
+                        <li><a href="https://www.service-public.fr/particuliers/vosdroits/F3053" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Ameli (Assurance Maladie) :</strong> Informations sur les arrêts de travail, IJSS, etc.</a></li>
+                        <li><a href="https://www.agirc-arrco.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Agirc-Arrco :</strong> Régime de retraite complémentaire.</a></li>
+                        <li><a href="https://www.ctip.asso.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Centre Technique des Institutions de Prévoyance (CTIP) :</strong> Informations sur la prévoyance.</a></li>
+                        <li><a href="https://www.gip-mds.fr/gip-mds/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">GIP-MDS :</strong> Groupement d'Intérêt Public - Modernisation des Déclarations Sociales.</a></li>
+                        <li><a href="https://www.insee.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">INSEE :</strong> Institut National de la Statistique et des Études Économiques.</a></li>
+                        <li><a href="https://www.pole-emploi.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">France Travail (ex-Pôle Emploi) :</strong> Accompagnement des demandeurs d'emploi et des entreprises.</a></li>
+                    </ul>
+                </div>
+                <div class="card-bg-subtle">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Ressources & Veille</h3>
+                    <ul class="list-none space-y-2 text-texte-principal bullet-accent">
+                        <li><a href="https://www.editions-legislatives.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Editions Législatives :</strong> Veille juridique et sociale (accès professionnel).</a></li>
+                        <li><a href="https://www.wolterskluwer.com/fr-fr/solutions/rh" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Wolters Kluwer RH :</strong> Actualités et outils pour les professionnels RH.</a></li>
+                        <li><a href="https://www.rfpaye.grouperf.com/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">RF Paye (Groupe Revue Fiduciaire) :</strong> Actualités et dossiers sur la paie.</a></li>
+                        <li><a href="https://www.wk-rh.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">WK RH :</strong> Solutions et informations pour les professionnels des RH.</a></li>
+                        <li><a href="https://www.actu-juridique.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Actu-Juridique :</strong> Actualités du droit pour les professionnels.</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-nav-buttons">
+                <a href="#projets-phares" class="nav-button">Voir Projets Phares <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#outils-methodes" class="nav-button"><i class="fas fa-tools mr-2"></i> Retour à Mes Outils & Méthodes</a>
+            </div>
+        </section>
+
+        <section id="projets-phares" class="section-container" aria-labelledby="projets-phares-title">
+            <h2 id="projets-phares-title" class="section-title">Projets Phares</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8 text-center">
+                Découvrez une sélection de projets significatifs auxquels j'ai contribué. Ces exemples illustrent ma capacité à gérer des initiatives complexes, à apporter des solutions concrètes et à générer un impact positif pour les organisations. Chaque carte est cliquable pour afficher plus de détails sur le contexte, mon rôle et les résultats obtenus.
+            </p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="card-bg-subtle project-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Déploiement Solution Octave (Ministère Justice)</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> CGI pour Ministère de la Justice</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2023-2024</p>
+                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> AMOA SIRH pour la gestion de la paie des personnes détenues.</p>
+                </div>
+                <div class="card-bg-subtle project-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Structuration Référentiel Paie (CSP)</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> Epi-Use France pour Groupe Tereos</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2018-2022</p>
+                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> Mise en place d'un Centre de Services Partagés Paie multi-sites.</p>
+                </div>
+                <div class="card-bg-subtle project-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Modélisation Processus RH & Contrôle Paie</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> CGI pour Air Liquide</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2023-2024</p>
+                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> Optimisation des processus RH et fiabilisation des contrôles de paie.</p>
+                </div>
+                <div class="card-bg-subtle project-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Coordination Paie & Administration RH</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> Talent Solutions</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2022</p>
+                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> Gestion opérationnelle de la paie et de l'administration du personnel pour plusieurs entités.</p>
+                </div>
+            </div>
+            <div class="section-nav-buttons">
+                <a href="#communaute" class="nav-button">Voir Ma Communauté <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#essentiels" class="nav-button"><i class="fas fa-link mr-2"></i> Retour à Essentiels</a>
+            </div>
+        </section>
+
+        <section id="communaute" class="section-container" aria-labelledby="communaute-title">
+            <h2 id="communaute-title" class="section-title">Ma Communauté d'Échange & de Soutien</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-6">
+                Au-delà de mon parcours professionnel, j'ai à cœur de partager ma passion et mon expertise. C'est pourquoi j'anime un groupe d'échange et d'entraide dédié aux personnes qui préparent leur certificat en gestion de paie. Ce projet est né de ma conviction profonde que le transfert de connaissances est une richesse inestimable, et que l'on apprend toujours les uns des autres.
+            </p>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Notre Concept : Un Espace de Croissance Collective</h3>
+            <p class="text-lg leading-relaxed text-texte-principal mb-6">
+                Ce groupe est un lieu d'échange dynamique où chacun peut poser ses questions, partager ses expériences et consolider ses acquis. Mon rôle est de guider, d'apporter des éclaircissements et de stimuler les discussions pour favoriser une montée en compétences collective et bienveillante. Nous abordons des cas pratiques, des points de législation complexes et des astuces pour maîtriser les subtilités de la paie.
+            </p>
+
+            <div class="text-center my-8">
+                <p class="text-xl font-bold text-principal-fonce mb-4">Rejoignez le <span class="text-accent-unique">Payroll Boss Elite Club</span> et faites partie d'une communauté engagée !</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="nav-button inline-flex items-center">
+                    Accéder au groupe WhatsApp <i class="fab fa-whatsapp ml-2 text-2xl"></i>
+                </a>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Rejoignez la Communauté ou Contribuez !</h3>
+            <p class="text-lg leading-relaxed text-texte-principal mb-6">
+                Nous sommes toujours ouverts à accueillir de nouvelles personnes désireuses d'apprendre, mais aussi des <strong>"sachants"</strong> qui souhaitent partager leur expertise et aider les futurs professionnels à s'épanouir. Si vous êtes animé(e) par le partage et le transfert de connaissances, si vous souhaitez soutenir, accompagner ou même proposer des stages, votre place est parmi nous !
+            </p>
+
+            <div class="section-nav-buttons">
+                <a href="#planning" class="nav-button">Voir Planning <i class="fas fa-calendar-alt ml-2"></i></a>
+                <a href="#projets-phares" class="nav-button"><i class="fas fa-star mr-2"></i> Retour à Projets Phares</a>
+            </div>
+        </section>
+
+        <section id="actualites-temoignages" class="section-container" aria-labelledby="actualites-temoignages-title">
+            <h2 id="actualites-temoignages-title" class="section-title">Actualités & Témoignages</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8 text-center">
+                Découvrez les dernières informations clés et les retours d'expérience de mes clients.
+            </p>
+
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-6 text-center">Veille Sociale : Sujets Clés du Moment</h3>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card-bg-subtle blog-post-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Évolution du SMIC et Impact sur la Paie</h3>
+                    <p class="text-sm text-texte-principal mb-2">Date de publication : [Date de la dernière mise à jour du SMIC]</p>
+                    <p class="text-base text-texte-principal">Comprenez les dernières augmentations du Salaire Minimum Interprofessionnel de Croissance (SMIC) et leurs répercussions directes sur l'établissement des bulletins de paie, les cotisations sociales et la gestion des contrats de travail. Une veille essentielle pour assurer la conformité de vos pratiques salariales.</p>
+                    <a href="https://www.service-public.fr/particuliers/vosdroits/F2300" target="_blank" rel="noopener noreferrer" class="text-principal-fonce hover:text-accent-secondaire mt-3 inline-block">En savoir plus sur le SMIC <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="card-bg-subtle blog-post-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">La DSN : Maîtrise et Conformité des Déclarations Sociales Nominatives</h3>
+                    <p class="text-sm text-texte-principal mb-2">Date de publication : [Date de la dernière évolution DSN]</p>
+                    <p class="text-base text-texte-principal">La Déclaration Sociale Nominative (DSN) est au cœur de la simplification des démarches sociales. Découvrez les points de vigilance, les dernières évolutions réglementaires et les bonnes pratiques pour garantir l'exactitude et la conformité de vos déclarations, évitant ainsi les redressements et optimisant vos relations avec les organismes sociaux.</p>
+                    <a href="https://www.net-entreprises.fr/declaration/dsn/" target="_blank" rel="noopener noreferrer" class="text-principal-fonce hover:text-accent-secondaire mt-3 inline-block">Approfondir la DSN <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="card-bg-subtle blog-post-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Congés Payés en France : Règles, Calculs et Gestion Optimale</h3>
+                    <p class="text-sm text-texte-principal mb-2">Date de publication : [Date de la dernière jurisprudence/loi sur les CP]</p>
+                    <p class="text-base text-texte-principal">La gestion des congés payés est un sujet complexe et source fréquente de litiges. Explorez les règles d'acquisition, de calcul, de prise et de report des congés payés en France. Restez informé(e) des dernières jurisprudences et des bonnes pratiques pour une gestion sereine et conforme au droit du travail.</p>
+                    <a href="https://www.service-public.fr/particuliers/vosdroits/F2258" target="_blank" rel="noopener noreferrer" class="text-principal-fonce hover:text-accent-secondaire mt-3 inline-block">Tout sur les Congés Payés <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                <div class="card-bg-subtle blog-post-card">
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-3">Gestion de la Maladie en Entreprise : IJSS, Subrogation et Prévoyance</h3>
+                    <p class="text-sm text-texte-principal mb-2">Date de publication : [Date de la dernière évolution sur la maladie]</p>
+                    <p class="text-base text-texte-principal">La gestion des arrêts maladie, qu'ils soient ordinaires, professionnels ou liés à un accident du travail, est une de mes spécialités. Ce sujet couvre les Indemnités Journalières de Sécurité Sociale (IJSS), les mécanismes de subrogation, et l'articulation avec les régimes de prévoyance. Assurez une gestion rigoureuse pour la protection de vos salariés et l'optimisation de vos droits.</p>
+                    <a href="https://www.service-public.fr/particuliers/vosdroits/F3053" target="_blank" rel="noopener noreferrer" class="text-principal-fonce hover:text-accent-secondaire mt-3 inline-block">Comprendre la Maladie au travail <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-6 text-center">Témoignages Clients</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card-bg-subtle testimonial-card">
+                    <p class="text-lg text-texte-principal mb-4">"Mathilde a transformé notre gestion de paie. Son expertise et sa rigueur ont été précieuses pour la mise en conformité et l'optimisation de nos processus. Une vraie professionnelle !"</p>
+                    <p class="font-semibold text-principal-fonce">- Jean Dupont, DRH chez [Nom de l'entreprise]</p>
+                </div>
+                <div class="card-bg-subtle testimonial-card">
+                    <p class="text-lg text-texte-principal mb-4">"Grâce à l'accompagnement de Mathilde sur notre projet SIRH, nous avons pu déployer la solution dans les délais et budgets impartis. Sa vision fonctionnelle est un atout majeur."</p>
+                    <p class="font-semibold text-principal-fonce">- Sophie Martin, Chef de Projet SIRH chez [Nom de l'entreprise]</p>
+                </div>
+                <div class="card-bg-subtle testimonial-card">
+                    <p class="text-lg text-texte-principal mb-4">"Le groupe d'échange animé par Mathilde est une ressource incroyable. Ses conseils pratiques et son soutien ont été déterminants pour ma réussite au certificat de paie."</p>
+                    <p class="font-semibold text-principal-fonce">- Fatima Z, Étudiante en gestion de paie</p>
+                </div>
+                <div class="card-bg-subtle testimonial-card">
+                    <p class="text-lg text-texte-principal mb-4">"Une collaboratrice hors pair, capable de s'adapter à des environnements complexes et d'apporter des solutions innovantes. Je la recommande vivement pour tout projet RH ou SIRH."</p>
+                    <p class="font-semibold text-principal-fonce">- Marc L., Consultant Senior</p>
+                </div>
+            </div>
+
+            <div class="section-nav-buttons">
+                <a href="#contact" class="nav-button">Contactez-moi <i class="fas fa-envelope ml-2"></i></a>
+                <a href="#planning" class="nav-button"><i class="fas fa-calendar-alt mr-2"></i> Retour au Planning</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section-container" aria-labelledby="contact-title">
+            <h2 id="contact-title" class="section-title">Contactez-moi</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-6 text-center">
+                N'hésitez pas à me contacter pour toute opportunité ou question. Je serais ravie d'échanger avec vous.
+            </p>
+            <div class="max-w-xl mx-auto">
+                <form action="YOUR_FORM_SUBMISSION_URL" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="mb-4">
+                        <label for="name" class="block text-principal-fonce text-lg font-semibold mb-2">Votre Nom :</label>
+                        <input type="text" id="name" name="name" class="form-field" placeholder="Nom Prénom" required aria-required="true">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-principal-fonce text-lg font-semibold mb-2">Votre Email :</label>
+                        <input type="email" id="email" name="email" class="form-field" placeholder="votre.email@exemple.com" required aria-required="true">
+                    </div>
+                    <div class="mb-4">
+                        <label for="subject" class="block text-principal-fonce text-lg font-semibold mb-2">Sujet :</label>
+                        <input type="text" id="subject" name="subject" class="form-field" placeholder="Demande de renseignement, Proposition de collaboration..." required aria-required="true">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-principal-fonce text-lg font-semibold mb-2">Votre Message :</label>
+                        <textarea id="message" name="message" class="form-field" rows="5" placeholder="Écrivez votre message ici..." required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="submit-button w-full">Envoyer le message <i class="fas fa-paper-plane ml-2"></i></button>
+                </form>
+            </div>
+
+            <div class="space-y-3 text-lg text-center font-['Montserrat'] mt-10">
+                <p><i class="fas fa-envelope mr-2 text-accent-unique"></i> Email : <a href="mailto:mathilde.martine.paisley@gmail.com">mathilde.martine.paisley@gmail.com</a></p>
+                <p><i class="fas fa-phone mr-2 text-accent-unique"></i> Téléphone : 06 85 90 08 87</p>
+            </div>
+            <div class="social-icons text-center mt-8">
+                <a href="https://www.linkedin.com/in/mathildemartinepaisley/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Mathilde Martine PAISLEY"><i class="fab fa-linkedin"></i></a>
+                <!-- Ajoutez d'autres icônes de réseaux sociaux si vous en avez, ex:
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Profil Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Profil Twitter"><i class="fab fa-twitter-square"></i></a>
+                -->
+            </div>
+            <div class="section-nav-buttons mt-8">
+                <a href="#accueil" class="nav-button"><i class="fas fa-home mr-2"></i> Retour à l'Accueil</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Mes Prestations</h4>
+                <ul>
+                    <li><a href="#prestations">Conseil & AMOA SIRH</a></li>
+                    <li><a href="#prestations">Optimisation Processus Paie</a></li>
+                    <li><a href="#prestations">Gestion des Temps & Activités (GTA)</a></li>
+                    <li><a href="#prestations">Formation & Accompagnement</a></li>
+                    <li><a href="#prestations">Veille Sociale & Juridique</a></li>
+                    <li><a href="#prestations">Support Fonctionnel SIRH</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Ressources Utiles</h4>
+                <ul>
+                    <li><a href="https://www.urssaf.fr/" target="_blank" rel="noopener noreferrer">URSSAF</a></li>
+                    <li><a href="https://www.net-entreprises.fr/" target="_blank" rel="noopener noreferrer">Net-Entreprises</a></li>
+                    <li><a href="https://www.service-public.fr/" target="_blank" rel="noopener noreferrer">Service-Public.fr</a></li>
+                    <li><a href="https://www.legifrance.gouv.fr/" target="_blank" rel="noopener noreferrer">Légifrance</a></li>
+                    <li><a href="https://travail-emploi.gouv.fr/" target="_blank" rel="noopener noreferrer">Ministère du Travail</a></li>
+                    <li><a href="https://www.service-public.fr/particuliers/vosdroits/F3053" target="_blank" rel="noopener noreferrer">Ameli (Maladie)</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact & Réseaux</h4>
+                <p>Email : <a href="mailto:mathilde.martine.paisley@gmail.com">mathilde.martine.paisley@gmail.com</a></p>
+                <p>Téléphone : <a href="tel:+33685900887">06 85 90 08 87</a></p>
+                <div class="footer-social-icons">
+                    <a href="https://www.linkedin.com/in/mathildemartinepaisley/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <!-- Ajoutez d'autres icônes si vous en avez -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Mathilde Martine PAISLEY. Tous droits réservés.</p>
+            <p>
+                <a href="#informations-legales">Informations légales</a> |
+                <a href="#protection-donnees">Protection des données personnelles</a> |
+                <a href="#cookies">Cookies</a> |
+                <a href="#conditions-generales">Conditions générales d'utilisation</a> |
+                <a href="#accessibilite">Accessibilité</a>
+            </p>
+        </div>
+    </footer>
+
+    <div id="project-modal-backdrop" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50"></div>
+
+    <div id="project-modal-projet1" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
+            <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Déploiement Solution Octave (Ministère Justice)</h3>
+            <p class="text-texte-principal mb-2"><strong>Client :</strong> CGI pour Ministère de la Justice</p>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2023-2024</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> AMOA SIRH pour la gestion de la paie des personnes détenues.</p>
+            <p class="text-texte-principal"><strong>Description :</strong> Accompagnement du Ministère de la Justice dans le déploiement de la solution SIRH Octave pour la paie des détenus. Mon rôle a consisté à analyser les besoins spécifiques, rédiger les spécifications fonctionnelles, coordonner les équipes techniques et métiers, et assurer la recette de la solution pour garantir sa conformité avec les exigences légales et les processus internes. Ce projet a permis de moderniser et de fiabiliser la gestion de la paie pour un public spécifique.</p>
+        </div>
+    </div>
+
+    <div id="project-modal-projet2" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
+            <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Structuration Référentiel Paie (CSP)</h3>
+            <p class="text-texte-principal mb-2"><strong>Client :</strong> Epi-Use France pour Groupe Tereos</p>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2018-2022</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Mise en place d'un Centre de Services Partagés Paie multi-sites.</p>
+            <p class="text-texte-principal"><strong>Description :</strong> Projet d'envergure visant à centraliser et harmoniser les processus de paie et de gestion RH pour le Groupe Tereos via un Centre de Services Partagés. J'ai été en charge de la structuration du référentiel de paie, de l'uniformisation des pratiques et de l'accompagnement au changement pour les différentes entités du groupe. Ce projet a grandement contribué à l'efficience des opérations RH et à la réduction des erreurs.</p>
+        </div>
+    </div>
+
+    <div id="project-modal-projet3" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
+            <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Modélisation Processus RH & Contrôle Paie</h3>
+            <p class="text-texte-principal mb-2"><strong>Client :</strong> CGI pour Air Liquide</p>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2023-2024</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Optimisation des processus RH et fiabilisation des contrôles de paie.</p>
+            <p class="text-texte-principal"><strong>Description :</strong> Mission axée sur l'analyse et la modélisation des processus RH existants chez Air Liquide, avec un accent particulier sur la fiabilisation et l'optimisation des contrôles de paie. J'ai identifié les points de friction, proposé des améliorations processuelles et mis en place des mécanismes de contrôle renforcés pour garantir l'exactitude et la conformité des données de paie. L'objectif était d'améliorer la qualité et l'efficacité des opérations RH.</p>
+        </div>
+    </div>
+
+    <div id="project-modal-projet4" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
+            <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Coordination Paie & Administration RH</h3>
+            <p class="text-texte-principal mb-2"><strong>Client :</strong> Talent Solutions</p>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2022</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Gestion opérationnelle de la paie et de l'administration du personnel pour plusieurs entités.</p>
+            <p class="text-texte-principal"><strong>Description :</strong> Prise en charge de la coordination de la paie et de l'administration RH pour diverses entités au sein de Talent Solutions. Ce rôle a impliqué la gestion complète du cycle de paie, de l'entrée à la sortie des collaborateurs, y compris la DSN, les cotisations, les arrêts maladie, et le support aux collaborateurs. J'ai veillé à la conformité réglementaire et à la fluidité des processus administratifs.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,836 @@
+/* --- Variables Personnalisées (Couleurs) --- */
+:root {
+    --color-principal-fonce: #001F3F; /* Bleu Marine Profond - Élégant, professionnel */
+    --color-fond-clair: #FDF5E6; /* OldLace - Fond doux, légèrement crème */
+    --color-texte-principal: #36454F; /* Charcoal - Texte sombre, très lisible */
+    --color-accent-secondaire: #F4B3C2; /* Rose doux et subtil pour les accents */
+    --color-gris-subtil: #E0E0E0; /* Light Gray - Pour les bordures et fonds légers */
+
+    /* Nuances de doré métallique pour le dégradé */
+    --gold-light: #FFD700;   /* Or classique, plus clair */
+    --gold-medium: #DAA520;  /* Goldenrod, ton moyen */
+    --gold-dark: #B8860B;    /* Dark Goldenrod, plus profond */
+
+    /* Dégradé doré à réutiliser */
+    --gradient-gold: linear-gradient(to right, var(--gold-light), var(--gold-medium), var(--gold-dark));
+    /* Couleur d'accent unique pour les éléments qui ne peuvent pas être un dégradé (ex: icônes, bordures simples) */
+    --color-accent-unique: var(--gold-medium); /* Utilise le ton moyen pour la cohérence */
+}
+
+/* --- Styles de Base --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--color-fond-clair);
+    color: var(--color-texte-principal);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Ajout pour une navigation fluide */
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- En-tête (Hero Section) --- */
+.hero-bg {
+    background-color: var(--color-principal-fonce);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1rem; /* Padding réduit ici */
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    position: relative;
+}
+.logo-placeholder {
+    position: absolute;
+    top: 15px; /* Position ajustée */
+    left: 15px; /* Position ajustée */
+    height: 70px; /* Hauteur ajustée */
+    width: 160px; /* Largeur ajustée */
+    background-color: transparent;
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem; /* Taille de police ajustée */
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 50;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+.logo-placeholder:hover {
+    border-color: var(--color-accent-unique);
+    color: var(--color-accent-unique);
+}
+.hero-bg h1 {
+    font-size: 2.25rem; /* Taille du titre ajustée pour la finesse */
+    margin-bottom: 0.3rem; /* Marge réduite */
+    line-height: 1.2;
+    color: var(--color-fond-clair);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* Ombre plus subtile */
+}
+.hero-bg p {
+    font-size: 1rem; /* Taille du paragraphe ajustée pour la finesse */
+    line-height: 1.4;
+    color: var(--color-fond-clair);
+    max-width: 700px; /* Largeur max ajustée */
+    margin: 0 auto 1rem auto; /* Marge réduite */
+}
+.cta-button {
+    background: var(--gradient-gold);
+    color: var(--color-principal-fonce);
+    padding: 0.8rem 2rem; /* Padding réduit */
+    border-radius: 2rem; /* Arrondi ajusté */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem; /* Taille de police ajustée */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2); /* Ombre plus subtile */
+    display: inline-block;
+    margin-top: 0.8rem; /* Marge ajustée */
+}
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.01); /* Effet plus subtil */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.4); /* Ombre ajustée */
+}
+
+/* --- Barre de Navigation --- */
+.nav-bar-bg {
+    background-color: var(--color-principal-fonce);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.nav-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem; /* Espace entre les liens ajusté */
+    padding: 0.5rem 0; /* Padding ajusté */
+    list-style: none;
+    margin: 0;
+}
+.nav-link {
+    color: var(--color-fond-clair);
+    padding: 0.5rem 0.9rem; /* Padding ajusté */
+    border-radius: 1.5rem; /* Arrondi ajusté */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure plus subtile */
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.85rem; /* Taille de police ajustée */
+    white-space: nowrap;
+    display: inline-block;
+}
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-accent-unique);
+    transform: translateY(-1px); /* Effet plus subtil */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Ombre ajustée */
+}
+.nav-link.active {
+    background: var(--gradient-gold);
+    color: var(--color-principal-fonce);
+    transform: translateY(-2px); /* Effet plus subtil */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Ombre ajustée */
+    font-weight: 600; /* Moins épais */
+    border-color: var(--gold-dark);
+}
+
+/* Styles pour les sections de contenu (pages individuelles) */
+main {
+    flex-grow: 1;
+    padding-top: 1.5rem; /* Espace après la barre de navigation ajusté */
+    padding-bottom: 2.5rem; /* Espace avant le pied de page ajusté */
+}
+.section-container {
+    background-color: var(--color-fond-clair);
+    border-radius: 1rem; /* Bordures ajustées */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Ombre ajustée */
+    padding: 2.5rem; /* Padding ajusté */
+    margin-bottom: 2rem; /* Marge ajustée */
+    display: none;
+    animation: fadeIn 0.8s ease-out;
+}
+.section-container.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); } /* Effet plus subtil */
+    to { opacity: 1; transform: translateY(0); }
+}
+.section-title {
+    color: var(--color-principal-fonce);
+    font-size: 2.5rem; /* Taille du titre ajustée */
+    text-align: center;
+    margin-bottom: 1.8rem; /* Marge ajustée */
+    position: relative;
+    padding-bottom: 0.6rem; /* Padding ajusté */
+    text-shadow: 0.5px 0.5px 1px rgba(0,0,0,0.05); /* Ombre plus subtile */
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 70px; /* Trait ajusté */
+    height: 3px; /* Trait ajusté */
+    background: var(--gradient-gold);
+    border-radius: 1.5px; /* Arrondi ajusté */
+}
+
+/* Styles pour les liens dans le contenu */
+.section-container a {
+    text-decoration: none;
+    color: var(--color-principal-fonce);
+    transition: color 0.3s ease;
+}
+.section-container a:hover {
+    color: var(--color-accent-secondaire);
+    text-decoration: underline;
+}
+
+/* Pied de page */
+footer {
+    background-color: var(--color-principal-fonce);
+    color: var(--color-fond-clair);
+    text-align: center;
+    padding: 2rem 0; /* Padding ajusté */
+    margin-top: auto;
+    box-shadow: 0 -1px 6px rgba(0,0,0,0.08); /* Ombre ajustée */
+}
+
+/* Mobile menu specific styles */
+.mobile-menu-button {
+    display: block;
+    color: var(--color-fond-clair);
+    background: none;
+    border: none;
+    padding: 0.6rem; /* Padding ajusté */
+    cursor: pointer;
+    font-size: 1.6rem; /* Icône ajustée */
+    z-index: 60;
+}
+
+.mobile-nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-principal-fonce);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 70px; /* Ajusté */
+    z-index: 55;
+    animation: slideInLeft 0.4s ease-out; /* Animation plus rapide */
+}
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+.mobile-nav-links.active {
+    display: flex;
+
+}
+
+.mobile-nav-link {
+    color: var(--color-fond-clair);
+    padding: 0.9rem 1.2rem; /* Padding ajusté */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 1rem; /* Taille de police ajustée */
+    border-bottom: 1px solid rgba(255,255,255,0.08); /* Bordure plus subtile */
+}
+.mobile-nav-link:last-child {
+    border-bottom: none;
+}
+.mobile-nav-link:hover, .mobile-nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Couleur ajustée */
+    color: var(--color-accent-unique);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .mobile-menu-button, .mobile-nav-links {
+        display: none !important;
+    }
+    .nav-links-container {
+        display: flex;
+    }
+    .hero-bg {
+        padding: 2rem 1.5rem; /* Ajusté pour desktop */
+    }
+    .hero-bg h1 {
+        font-size: 2.8rem; /* Ajusté pour desktop */
+    }
+    .hero-bg p {
+        font-size: 1.05rem; /* Ajusté pour desktop */
+    }
+    main {
+        padding-top: 2.5rem; /* Ajustement pour desktop */
+    }
+    .section-container {
+        padding: 2.8rem; /* Ajusté pour desktop */
+    }
+    .logo-placeholder {
+        top: 20px; /* Ajusté pour desktop */
+        left: 20px; /* Ajusté pour desktop */
+        height: 60px; /* Ajusté pour desktop */
+        width: 140px; /* Ajusté pour desktop */
+    }
+}
+@media (max-width: 767px) {
+    .nav-links-container {
+        display: none;
+    }
+    .hero-bg {
+        padding-top: 3.5rem; /* Ajusté pour mobile */
+    }
+    .hero-bg h1 {
+        font-size: 1.8rem; /* Ajusté pour mobile */
+    }
+    .hero-bg p {
+        font-size: 0.9rem; /* Ajusté pour mobile */
+    }
+    .logo-placeholder {
+        height: 40px; /* Plus petit sur mobile */
+        width: 100px; /* Plus petit sur mobile */
+        font-size: 0.5rem; /* Plus petit sur mobile */
+        top: 8px; /* Ajusté pour mobile */
+        left: 8px; /* Ajusté pour mobile */
+    }
+    .section-container {
+        padding: 1.2rem; /* Ajusté pour mobile */
+    }
+    .section-title {
+        font-size: 1.8rem; /* Ajusté pour mobile */
+    }
+}
+
+/* Styles pour les boutons de navigation entre sections */
+.section-nav-buttons {
+    text-align: center;
+    margin-top: 2.5rem; /* Marge ajustée */
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem; /* Espace ajusté */
+    flex-wrap: wrap;
+    align-items: center;
+}
+.nav-button {
+    background: var(--gradient-gold);
+    color: var(--color-principal-fonce);
+    padding: 1rem 2.2rem; /* Padding ajusté */
+    border-radius: 0.6rem; /* Arrondi ajusté */
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem; /* Taille de police ajustée */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Ombre ajustée */
+}
+.nav-button:hover {
+    background-color: var(--color-principal-fonce);
+    color: var(--color-fond-clair);
+    transform: translateY(-2px) scale(1.01); /* Effet plus subtil */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15); /* Ombre ajustée */
+}
+/* Style pour les petits boutons de navigation (ex: calendrier) */
+.nav-button-small {
+    background: var(--color-principal-fonce);
+    color: var(--color-fond-clair);
+    padding: 0.4rem 0.8rem; /* Padding ajusté */
+    border-radius: 0.4rem; /* Arrondi ajusté */
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem; /* Taille de police ajustée */
+}
+.nav-button-small:hover {
+    background: var(--color-accent-unique);
+    color: var(--color-principal-fonce);
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Ombre ajustée */
+}
+
+
+/* Styles pour les cartes */
+.card-bg-subtle {
+    background-color: var(--color-gris-subtil);
+    border-radius: 0.8rem; /* Arrondi ajusté */
+    padding: 1.8rem; /* Padding ajusté */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06); /* Ombre ajustée */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.card-bg-subtle:hover {
+    transform: translateY(-6px); /* Déplacement plus subtil */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12); /* Ombre ajustée */
+}
+.card-bg-subtle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px; /* Largeur ajustée */
+    height: 100%;
+    background: var(--gradient-gold);
+    border-top-left-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+}
+.card-bg-subtle i {
+    font-size: 3rem; /* Icônes ajustées */
+    margin-bottom: 0.8rem; /* Marge ajustée */
+    color: var(--color-accent-unique);
+}
+.card-bg-subtle span.font-bold {
+    font-size: 1.1rem; /* Texte des titres de carte ajusté */
+    color: var(--color-principal-fonce);
+    margin-bottom: 0.4rem; /* Marge ajustée */
+}
+.card-bg-subtle p {
+    font-size: 0.9rem; /* Texte des descriptions de carte ajusté */
+    color: var(--color-texte-principal);
+}
+
+/* Styles pour les puces de liste personnalisées */
+.bullet-accent li {
+    position: relative;
+    padding-left: 1.6em; /* Espace pour la puce ajusté */
+    margin-bottom: 0.4rem; /* Marge ajustée */
+    font-size: 1rem; /* Taille de police ajustée */
+}
+.bullet-accent li::before {
+    content: '\2022';
+    color: var(--color-accent-unique);
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0.05em; /* Position ajustée */
+    font-size: 1.2em; /* Taille ajustée */
+}
+
+/* Styles pour la section "Qui suis-je ?" - Image et texte */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* Espace ajusté */
+}
+@media (min-width: 768px) {
+    .profile-section {
+        flex-direction: row;
+        text-align: left;
+    }
+    .profile-image-container {
+        flex-shrink: 0;
+    }
+}
+.profile-image-container {
+    position: relative;
+    padding: 6px; /* Espace pour le cadre doré ajusté */
+    border-radius: 50%;
+    background: var(--gradient-gold);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Ombre ajustée */
+}
+.profile-image-container img {
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-fond-clair); /* Bordure intérieure ajustée */
+}
+/* Styles pour les cartes de tarifs */
+.price-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.2rem; /* Padding ajusté */
+    height: 100%; /* S'assurer que les cartes ont la même hauteur */
+}
+.price-card h3 {
+    font-size: 2.25rem; /* Taille ajustée */
+    margin-bottom: 1rem; /* Marge ajustée */
+}
+/* Style pour le texte des prix - maintenant lisible et taille ajustée */
+.price-card .price-text {
+    font-size: 2.5rem; /* Taille réduite */
+    margin-bottom: 1.5rem; /* Marge ajustée */
+    font-weight: 800;
+    color: var(--color-principal-fonce); /* Couleur unie et lisible */
+}
+
+.price-card ul {
+    text-align: left;
+    width: 100%;
+    max-width: 280px; /* Limite de largeur ajustée */
+    margin-bottom: 2rem; /* Marge ajustée */
+    flex-grow: 1;
+}
+
+/* Styles pour les boutons d'investissement - texte blanc */
+.investment-button-blue {
+    background-color: var(--color-principal-fonce);
+    color: var(--color-fond-clair); /* Texte blanc */
+    padding: 1.2rem 2.8rem; /* Padding ajusté */
+    font-size: 1.1rem; /* Taille de police ajustée */
+    border-radius: 2.5rem; /* Arrondi ajusté */
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid var(--color-principal-fonce); /* Bordure pour le survol */
+}
+.investment-button-blue:hover {
+    background-color: var(--color-fond-clair);
+    color: var(--color-principal-fonce);
+    border-color: var(--color-principal-fonce);
+}
+
+
+.price-card.featured {
+    background: linear-gradient(to bottom right, var(--gold-light) 0%, var(--gold-medium) 100%);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25); /* Ombre ajustée */
+    transform: scale(1.05); /* Effet plus subtil */
+    color: var(--color-principal-fonce);
+    padding: 3rem 2rem; /* Padding ajusté */
+}
+.price-card.featured h3, .price-card.featured p, .price-card.featured li, .price-card.featured strong {
+    color: var(--color-principal-fonce) !important;
+}
+.price-card.featured::before {
+    background: var(--color-principal-fonce);
+}
+/* Style spécifique pour le bouton de la carte "featured" - texte blanc */
+.investment-button-featured {
+    background-color: var(--color-principal-fonce);
+    color: var(--color-fond-clair); /* Texte blanc */
+    padding: 1.2rem 2.8rem; /* Padding ajusté */
+    font-size: 1.1rem; /* Taille de police ajustée */
+    border-radius: 2.5rem; /* Arrondi ajusté */
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--color-fond-clair); /* Bordure plus subtile */
+    transition: all 0.3s ease;
+}
+.investment-button-featured:hover {
+    background-color: var(--color-fond-clair);
+    color: var(--color-principal-fonce);
+    border-color: var(--color-principal-fonce);
+}
+
+
+/* Style pour les inputs du formulaire de contact */
+.form-field {
+    width: 100%;
+    padding: 0.7rem 0.9rem; /* Padding ajusté */
+    margin-bottom: 1rem; /* Marge ajustée */
+    border: 1px solid var(--color-gris-subtil); /* Bordure ajustée */
+    border-radius: 0.4rem; /* Arrondi ajusté */
+    font-size: 0.95rem; /* Taille de police ajustée */
+    color: var(--color-texte-principal);
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-field:focus {
+    outline: none;
+    border-color: var(--color-accent-unique);
+    box-shadow: 0 0 0 2px rgba(218, 165, 32, 0.15); /* Ombre ajustée */
+}
+.form-field::placeholder {
+    color: var(--color-gris-subtil);
+}
+textarea.form-field {
+    min-height: 100px; /* Hauteur ajustée */
+    resize: vertical;
+}
+.submit-button {
+    background: var(--gradient-gold);
+    color: var(--color-principal-fonce);
+    padding: 0.9rem 2.2rem; /* Padding ajusté */
+    border-radius: 0.6rem; /* Arrondi ajusté */
+    font-weight: bold;
+    font-size: 1rem; /* Taille de police ajustée */
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1); /* Ombre ajustée */
+}
+.submit-button:hover {
+    background-color: var(--color-principal-fonce);
+    color: var(--color-fond-clair);
+    transform: translateY(-1px) scale(1.01); /* Effet plus subtil */
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2); /* Ombre ajustée */
+}
+.social-icons a {
+    display: inline-block;
+    margin: 0 0.6rem; /* Marge ajustée */
+    color: var(--color-principal-fonce);
+    font-size: 2.2rem; /* Taille ajustée */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icons a:hover {
+    transform: translateY(-4px) scale(1.08); /* Effet plus subtil */
+    color: var(--color-accent-unique);
+}
+
+/* Styles spécifiques au calendrier */
+.calendar-container {
+    border: 1px solid var(--color-gris-subtil);
+}
+
+.calendar-days div {
+    padding: 0.4rem; /* Padding ajusté */
+    min-height: 70px; /* Hauteur minimale ajustée */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid var(--color-gris-subtil);
+    border-radius: 0.4rem; /* Arrondi ajusté */
+    font-size: 0.85rem; /* Taille de police ajustée */
+    position: relative;
+    overflow: hidden;
+}
+.calendar-days div.empty {
+    background-color: #f8f8f8;
+    color: #ccc;
+    border: 1px dashed #eee;
+}
+.calendar-days div.current-month {
+    background-color: white;
+}
+.calendar-days div.current-month.has-slots {
+    background-color: var(--color-fond-clair);
+}
+.calendar-days div.full-day-booked {
+    background-color: var(--color-gris-subtil); /* Pour les jours complètement indisponibles (weekend, repos) */
+    color: #888;
+}
+
+/* Styles pour les créneaux de disponibilité */
+.availability-slot {
+    width: 100%;
+    padding: 0.2rem 0; /* Padding ajusté */
+    margin-top: 0.2rem; /* Marge ajustée */
+    font-size: 0.7rem; /* Taille de police ajustée */
+    font-weight: 500;
+    text-align: center;
+    border-radius: 0.2rem; /* Arrondi ajusté */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.availability-slot.morning {
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+}
+.availability-slot.afternoon {
+    background-color: #CCE5FF;
+    color: #004085;
+    border: 1px solid #B8DAFF;
+}
+.availability-slot.booked {
+    background-color: #F8D7DA;
+    color: #721C24;
+    border: 1px solid #F5C6CB;
+    cursor: not-allowed;
+}
+.calendar-days div span.day-number {
+    font-weight: bold;
+    font-size: 1rem; /* Taille de police ajustée */
+    color: var(--color-principal-fonce);
+    margin-bottom: 0.4rem; /* Marge ajustée */
+}
+
+/* Suppression de l'italique partout */
+body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
+    font-style: normal !important;
+}
+.testimonial-card p.text-lg {
+    font-style: normal !important; /* S'assurer que les témoignages ne sont pas en italique */
+}
+
+/* Styles pour les modales de projet */
+.project-modal {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; /* Higher than other content */
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    overflow-y: auto; /* Enable scrolling for long content */
+}
+
+.project-modal.active {
+    display: flex;
+}
+
+.project-modal > div {
+    background-color: var(--color-fond-clair);
+    border-radius: 0.8rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 2rem;
+    max-width: 600px; /* Max width for content */
+    width: 100%;
+    position: relative;
+    max-height: 90vh; /* Limit height and allow scrolling */
+    overflow-y: auto;
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color-texte-principal);
+    transition: color 0.3s ease;
+}
+
+.close-modal-button:hover {
+    color: var(--color-accent-unique);
+}
+
+/* Footer specific styles */
+.main-footer {
+    background-color: var(--color-principal-fonce);
+    color: var(--color-fond-clair);
+    padding: 3rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+}
+
+.footer-column h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-fond-clair);
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--color-accent-unique);
+    border-radius: 1px;
+}
+
+@media (min-width: 768px) {
+    .footer-column h4::after {
+        left: 0;
+        transform: translateX(0);
+    }
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-column ul li a {
+    color: var(--color-fond-clair);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--color-accent-unique);
+    text-decoration: underline;
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .footer-social-icons {
+        justify-content: flex-start;
+    }
+}
+
+.footer-social-icons a {
+    color: var(--color-fond-clair);
+    font-size: 1.8rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: var(--color-accent-unique);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.footer-bottom a {
+    color: var(--color-fond-clair);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--color-accent-unique);
+    text-decoration: underline;
+}
