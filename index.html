@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- Google Calendar Appointment Scheduling begin -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <!-- end Google Calendar Appointment Scheduling -->
 </head>
 <body class="bg-fond-clair text-texte-principal antialiased">
 
@@ -44,7 +48,7 @@
                 <li role="none"><a href="#essentiels" class="nav-link" data-section="essentiels" role="menuitem">🔗 Essentiels</a></li>
                 <li role="none"><a href="#projets-phares" class="nav-link" data-section="projets-phares" role="menuitem">🌟 Projets Phares</a></li>
                 <li role="none"><a href="#communaute" class="nav-link" data-section="communaute" role="menuitem">🤝 Ma Communauté</a></li>
-                <li role="none"><a href="#planning" class="nav-link" data-section="planning-disponibilites" role="menuitem">🗓️ Planning</a></li>
+                <li role="none"><a href="#planning" class="nav-link" data-section="planning" role="menuitem">🗓️ Planning</a></li>
                 <li role="none"><a href="#actualites-temoignages" class="nav-link" data-section="actualites-temoignages" role="menuitem">📰 Actualités & Témoignages</a></li>
                 <li role="none"><a href="#contact" class="nav-link" data-section="contact" role="menuitem">✉️ Contact</a></li>
             </ul>
@@ -60,7 +64,7 @@
             <a href="#essentiels" class="mobile-nav-link" data-section="essentiels" role="menuitem">🔗 Essentiels</a>
             <a href="#projets-phares" class="mobile-nav-link" data-section="projets-phares" role="menuitem">🌟 Projets Phares</a>
             <a href="#communaute" class="mobile-nav-link" data-section="communaute" role="menuitem">🤝 Ma Communauté</a>
-            <a href="#planning" class="mobile-nav-link" data-section="planning-disponibilites" role="menuitem">🗓️ Planning</a>
+            <a href="#planning" class="mobile-nav-link" data-section="planning" role="menuitem">🗓️ Planning</a>
             <a href="#actualites-temoignages" class="mobile-nav-link" data-section="actualites-temoignages" role="menuitem">📰 Actualités & Témoignages</a>
             <a href="#contact" class="mobile-nav-link" data-section="contact" role="menuitem">✉️ Contact</a>
         </div>
@@ -141,7 +145,7 @@
 
             <div class="profile-section mb-8">
                 <div class="profile-image-container">
-                    <img src="https://i.imgur.com/your-image-id.jpeg" alt="Photo de Mathilde Martine PAISLEY, une femme souriante aux cheveux crépus" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg" loading="lazy">
+                    <img src="https://placehold.co/256x256/DAA520/FFFFFF?text=Votre%20Photo" alt="Photo de Mathilde Martine PAISLEY, une femme souriante aux cheveux crépus" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/256x256/DAA520/FFFFFF?text=Votre%20Photo';">
                 </div>
                 <div class="flex-grow text-texte-principal">
                     <p class="text-lg leading-relaxed mb-4">
@@ -340,6 +344,16 @@
                     </ul>
                     <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
                 </div>
+                <div class="card-bg-subtle price-card" aria-label="Offre Freelance Partage Salarial">
+                    <h3 class="text-2xl font-bold">Partage Salarial</h3>
+                    <p class="price-text text-xl font-extrabold">Sur Mesure</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Solution flexible pour vos besoins ponctuels.</li>
+                        <li>Accès à une expertise sans engagement long terme.</li>
+                        <li>Optimisation de vos coûts RH.</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Échanger sur le Partage Salarial</a>
+                </div>
                 <div class="card-bg-subtle price-card featured" aria-label="Offre Freelance Projet Moyen Terme - Recommandée">
                     <h3 class="text-2xl font-bold">Projet Moyen Terme</h3>
                     <p class="price-text text-xl font-extrabold">Forfait Projet</p>
@@ -384,7 +398,7 @@
                         <li><strong class="text-principal-fonce">Cegid :</strong> Suite de logiciels de gestion d'entreprise, incluant des modules RH.</li>
                         <li><strong class="text-principal-fonce">SAP HR :</strong> Module de Ressources Humaines du progiciel SAP.</li>
                         <li><strong class="text-principal-fonce">Workday :</strong> Système de gestion du capital humain basé sur le cloud.</li>
-                        <li><strong class="text-principal-fonce">SuccessFactors : :</strong> Solution de gestion des talents de SAP.</li>
+                        <li><strong class="text-principal-fonce">SuccessFactors :</strong> Solution de gestion des talents de SAP.</li>
                         <li><strong class="text-principal-fonce">Chronotime :</strong> Logiciel de gestion des temps et des plannings.</li>
                     </ul>
                 </div>
@@ -462,25 +476,25 @@
                 Découvrez une sélection de projets significatifs auxquels j'ai contribué. Ces exemples illustrent ma capacité à gérer des initiatives complexes, à apporter des solutions concrètes et à générer un impact positif pour les organisations. Chaque carte est cliquable pour afficher plus de détails sur le contexte, mon rôle et les résultats obtenus.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <div class="card-bg-subtle project-card">
+                <div class="card-bg-subtle project-card" data-project-id="projet1">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Déploiement Solution Octave (Ministère Justice)</h3>
                     <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> CGI pour Ministère de la Justice</p>
                     <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2023-2024</p>
                     <p class="text-texte-principal text-base"><strong>Rôle :</strong> AMOA SIRH pour la gestion de la paie des personnes détenues.</p>
                 </div>
-                <div class="card-bg-subtle project-card">
+                <div class="card-bg-subtle project-card" data-project-id="projet2">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Structuration Référentiel Paie (CSP)</h3>
                     <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> Epi-Use France pour Groupe Tereos</p>
                     <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2018-2022</p>
                     <p class="text-texte-principal text-base"><strong>Rôle :</strong> Mise en place d'un Centre de Services Partagés Paie multi-sites.</p>
                 </div>
-                <div class="card-bg-subtle project-card">
+                <div class="card-bg-subtle project-card" data-project-id="projet3">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Modélisation Processus RH & Contrôle Paie</h3>
                     <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> CGI pour Air Liquide</p>
                     <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2023-2024</p>
                     <p class="text-texte-principal text-base"><strong>Rôle :</strong> Optimisation des processus RH et fiabilisation des contrôles de paie.</p>
                 </div>
-                <div class="card-bg-subtle project-card">
+                <div class="card-bg-subtle project-card" data-project-id="projet4">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Coordination Paie & Administration RH</h3>
                     <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> Talent Solutions</p>
                     <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2022</p>
@@ -518,6 +532,35 @@
             <div class="section-nav-buttons">
                 <a href="#planning" class="nav-button">Voir Planning <i class="fas fa-calendar-alt ml-2"></i></a>
                 <a href="#projets-phares" class="nav-button"><i class="fas fa-star mr-2"></i> Retour à Projets Phares</a>
+            </div>
+        </section>
+
+        <section id="planning" class="section-container" aria-labelledby="planning-title">
+            <h2 id="planning-title" class="section-title">Planning et Prise de Rendez-vous</h2>
+            <p class="text-lg leading-relaxed text-texte-principal mb-8 text-center">
+                Utilisez le calendrier ci-dessous pour consulter mes disponibilités et réserver un rendez-vous.
+            </p>
+            <div class="flex flex-col items-center justify-center">
+                <!-- Google Calendar Appointment Scheduling button -->
+                <script>
+                (function() {
+                  var target = document.currentScript;
+                  window.addEventListener('load', function() {
+                    calendar.schedulingButton.load({
+                      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0aBkNrLzZ4Um1SMwtV8NGzIIka-vMLQiuHJBt66yQ0OMmjg7bn4doS8A0c9tjVSS_MNH9pb82x?gv=true',
+                      color: '#AD1457',
+                      label: 'Réserver un rendez-vous',
+                      target,
+                    });
+                  });
+                })();
+                </script>
+                <!-- Google Calendar Appointment Scheduling iframe -->
+                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0aBkNrLzZ4Um1SMwtV8NGzIIka-vMLQiuHJBt66yQ0OMmjg7bn4doS8A0c9tjVSS_MNH9pb82x?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+            </div>
+            <div class="section-nav-buttons mt-8">
+                <a href="#actualites-temoignages" class="nav-button">Voir Actualités & Témoignages <i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#communaute" class="nav-button"><i class="fas fa-users mr-2"></i> Retour à Ma Communauté</a>
             </div>
         </section>
 
@@ -611,6 +654,10 @@
             <div class="space-y-3 text-lg text-center font-['Montserrat'] mt-10">
                 <p><i class="fas fa-envelope mr-2 text-accent-unique"></i> Email : <a href="mailto:mathilde.martine.paisley@gmail.com">mathilde.martine.paisley@gmail.com</a></p>
                 <p><i class="fas fa-phone mr-2 text-accent-unique"></i> Téléphone : 06 85 90 08 87</p>
+                <!-- L'adresse contact@mmpaisley-paie-sirh.com est déjà présente et sera maintenue -->
+                <p><i class="fas fa-envelope mr-2 text-accent-unique"></i> Email : <a href="mailto:contact@mmpaisley-paie-sirh.com">contact@mmpaisley-paie-sirh.com</a></p>
+                <p><i class="fas fa-envelope mr-2 text-accent-unique"></i> Email : <a href="mailto:support@mmpaisley-paie-sirh.com">support@mmpaisley-paie-sirh.com</a></p>
+                <p><i class="fas fa-envelope mr-2 text-accent-unique"></i> Email : <a href="mailto:admin@mmpaisley-paie-sirh.com">admin@mmpaisley-paie-sirh.com</a></p>
             </div>
             <div class="social-icons text-center mt-8">
                 <a href="https://www.linkedin.com/in/mathildemartinepaisley/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Mathilde Martine PAISLEY"><i class="fab fa-linkedin"></i></a>
@@ -653,6 +700,9 @@
                 <h4>Contact & Réseaux</h4>
                 <p>Email : <a href="mailto:mathilde.martine.paisley@gmail.com">mathilde.martine.paisley@gmail.com</a></p>
                 <p>Téléphone : <a href="tel:+33685900887">06 85 90 08 87</a></p>
+                <p>Email : <a href="mailto:contact@mmpaisley-paie-sirh.com">contact@mmpaisley-paie-sirh.com</a></p>
+                <p>Email : <a href="mailto:support@mmpaisley-paie-sirh.com">support@mmpaisley-paie-sirh.com</a></p>
+                <p>Email : <a href="mailto:admin@mmpaisley-paie-sirh.com">admin@mmpaisley-paie-sirh.com</a></p>
                 <div class="footer-social-icons">
                     <a href="https://www.linkedin.com/in/mathildemartinepaisley/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <!-- Ajoutez d'autres icônes si vous en avez -->
