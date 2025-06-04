@@ -67,11 +67,11 @@
         </div>
     </nav>
 
-    <header class="hero-bg">
+    <header class="hero-bg" id="mainHeader">
         <div class="logo-placeholder" role="img" aria-label="Espace réservé pour le logo de Mathilde Martine PAISLEY">
-            <span>Logo ici</span>
+            <img src="https://placehold.co/160x70/001F3F/FFFFFF?text=Votre%20Logo" alt="Logo de Mathilde Martine PAISLEY" class="h-full w-full object-contain">
         </div>
-        <div class="container mx-auto px-6 py-6 flex flex-col items-center justify-center">
+        <div class="hero-content">
             <h1 class="text-3xl md:text-4xl font-bold">Mathilde Martine PAISLEY <span class="text-accent-secondaire">🌹</span></h1>
             <p class="text-md md:text-lg text-center mt-2 text-fond-clair">Conseil Paie, GTA, RH & SIRH - Conformité Sociale<br>Accompagnement Opérationnel & Transformationnel</p>
             <a href="#contact" class="cta-button text-base px-5 py-2 mt-4">Discutons de Votre Projet !</a>
@@ -166,16 +166,17 @@
         <section id="qui-suis-je" class="section-container" aria-labelledby="qui-suis-je-title">
             <h2 id="qui-suis-je-title" class="section-title">Qui suis-je ? La force de la diversité</h2>
 
-            <div class="profile-section mb-8">
-                <div class="profile-video-container">
-                    <!-- Placeholder pour la vidéo de présentation -->
-                    <video controls loop muted autoplay playsinline class="profile-video"
-                        src="https://www.w3schools.com/html/mov_bbb.mp4"
-                        poster="https://placehold.co/256x256/FFC107/FFFFFF?text=Vidéo%20de%20Présentation"
-                        aria-label="Vidéo de présentation de Mathilde Martine PAISLEY">
-                        Votre navigateur ne supporte pas la balise vidéo.
-                    </video>
-                </div>
+            <div class="profile-video-container mb-8">
+                <!-- Placeholder pour la vidéo de présentation -->
+                <video controls loop muted autoplay playsinline class="profile-video"
+                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    poster="https://placehold.co/256x144/FFC107/FFFFFF?text=Vidéo%20de%20Présentation"
+                    aria-label="Vidéo de présentation de Mathilde Martine PAISLEY">
+                    Votre navigateur ne supporte pas la balise vidéo.
+                </video>
+            </div>
+
+            <div class="profile-section">
                 <div class="flex-grow text-texte-principal">
                     <p class="text-lg leading-relaxed mb-4">
                         Je suis <strong>Mathilde Martine PAISLEY</strong>, née le 26 février 1974 à Paris 13e.
@@ -419,17 +420,7 @@
                     </ul>
                     <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
                 </div>
-                <div class="card-bg-subtle price-card" aria-label="Offre Freelance Partage Salarial">
-                    <h3 class="text-2xl font-bold">Partage Salarial</h3>
-                    <p class="price-text text-xl font-extrabold">Sur Mesure</p>
-                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
-                        <li>Solution flexible pour vos besoins ponctuels.</li>
-                        <li>Accès à une expertise sans engagement long terme.</li>
-                        <li>Optimisation de vos coûts RH.</li>
-                    </ul>
-                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Échanger sur le Partage Salarial</a>
-                </div>
-                <div class="card-bg-subtle price-card featured" aria-label="Offre Freelance Projet Moyen Terme - Recommandée">
+                <div class="card-bg-subtle price-card" aria-label="Offre Freelance Projet Moyen Terme">
                     <h3 class="text-2xl font-bold">Projet Moyen Terme</h3>
                     <p class="price-text text-xl font-extrabold">Forfait Projet</p>
                     <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
@@ -438,7 +429,7 @@
                         <li>Refonte de processus</li>
                         <li>Mise en conformité majeure</li>
                     </ul>
-                    <a href="#contact" class="inline-block investment-button-featured px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
+                    <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
                 </div>
                 <div class="card-bg-subtle price-card" aria-label="Offre Freelance Accompagnement Long Terme">
                     <h3 class="text-2xl font-bold">Accompagnement Long Terme</h3>
@@ -449,6 +440,16 @@
                         <li>Veille sociale personnalisée</li>
                     </ul>
                     <a href="#contact" class="inline-block investment-button-blue px-6 py-3 rounded-full font-semibold transition">Demander une offre Freelance</a>
+                </div>
+                <div class="card-bg-subtle price-card featured" aria-label="Offre Freelance Partage Salarial - Recommandée">
+                    <h3 class="text-2xl font-bold">Partage Salarial</h3>
+                    <p class="price-text text-xl font-extrabold">Sur Mesure</p>
+                    <ul class="list-none space-y-2 text-texte-principal text-left mx-auto max-w-xs mb-6 bullet-accent">
+                        <li>Solution flexible pour vos besoins ponctuels.</li>
+                        <li>Accès à une expertise sans engagement long terme.</li>
+                        <li>Optimisation de vos coûts RH.</li>
+                    </ul>
+                    <a href="#contact" class="inline-block investment-button-featured px-6 py-3 rounded-full font-semibold transition">Échanger sur le Partage Salarial</a>
                 </div>
             </div>
 
@@ -465,7 +466,7 @@
                 Découvrez les logiciels, plateformes et méthodologies que je maîtrise pour optimiser les processus RH et SIRH. Ma polyvalence garantit une adaptation rapide à votre environnement.
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <div class="card-bg-subtle">
+                <div class="card-bg-subtle text-left">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-3">Logiciels SIRH</h3>
                     <ul class="list-none space-y-2 text-texte-principal bullet-accent">
                         <li><strong class="text-principal-fonce">Squash :</strong> Outil de gestion de tests et de recette.</li>
@@ -477,13 +478,14 @@
                         <li><strong class="text-principal-fonce">Chronotime :</strong> Logiciel de gestion des temps et des plannings.</li>
                     </ul>
                 </div>
-                <div class="card-bg-subtle">
+                <div class="card-bg-subtle text-left">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-3">Outils Bureautiques</h3>
                     <ul class="list-none space-y-2 text-texte-principal bullet-accent">
                         <li><strong class="text-principal-fonce">Suite Office 365 :</strong> Maîtrise avancée de Word, Excel (tableaux croisés dynamiques, fonctions avancées), PowerPoint, Outlook, Teams.</li>
+                        <li><strong class="text-principal-fonce">Google Workspace :</strong> Maîtrise de Google Docs, Sheets, Slides, Gmail, Calendar, Meet.</li>
                     </ul>
                 </div>
-                <div class="card-bg-subtle">
+                <div class="card-bg-subtle text-left">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-3">Gestion de Projet</h3>
                     <ul class="list-none space-y-2 text-texte-principal bullet-accent">
                         <li><strong class="text-principal-fonce">Trello :</strong> Outil de gestion de projet visuel basé sur la méthode Kanban.</li>
@@ -492,7 +494,7 @@
                         <li><strong class="text-principal-fonce">Diagramme de Gantt :</strong> Méthode classique de planification visuelle.</li>
                     </ul>
                 </div>
-                <div class="card-bg-subtle">
+                <div class="card-bg-subtle text-left">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-3">Méthodologies Agile</h3>
                     <ul class="list-none space-y-2 text-texte-principal bullet-accent">
                         <li><strong class="text-principal-fonce">Scrum :</strong> Cadre de développement Agile pour la gestion de projets complexes.</li>
@@ -512,7 +514,7 @@
                 Retrouvez ici une sélection de liens vers les administrations françaises et organismes clés, indispensables pour la veille et la pratique en paie, droit social et juridique. Ces ressources sont des piliers pour une information fiable et à jour.
             </p>
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="card-bg-subtle">
+                <div class="card-bg-subtle text-left">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-3">Administrations & Organismes Publics</h3>
                     <ul class="list-none space-y-2 text-texte-principal bullet-accent">
                         <li><a href="https://www.urssaf.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">URSSAF :</strong> L'organisme de recouvrement des cotisations sociales.</a></li>
@@ -528,7 +530,7 @@
                         <li><a href="https://www.pole-emploi.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">France Travail (ex-Pôle Emploi) :</strong> Accompagnement des demandeurs d'emploi et des entreprises.</a></li>
                     </ul>
                 </div>
-                <div class="card-bg-subtle">
+                <div class="card-bg-subtle text-left">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-3">Ressources & Veille</h3>
                     <ul class="list-none space-y-2 text-texte-principal bullet-accent">
                         <li><a href="https://www.editions-legislatives.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Editions Législatives :</strong> Veille juridique et sociale (accès professionnel).</a></li>
@@ -536,6 +538,15 @@
                         <li><a href="https://www.rfpaye.grouperf.com/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">RF Paye (Groupe Revue Fiduciaire) :</strong> Actualités et dossiers sur la paie.</a></li>
                         <li><a href="https://www.wk-rh.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">WK RH :</strong> Solutions et informations pour les professionnels des RH.</a></li>
                         <li><a href="https://www.actu-juridique.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Actu-Juridique :</strong> Actualités du droit pour les professionnels.</a></li>
+                        <li><a href="https://www.journal-officiel.gouv.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Journal Officiel :</strong> Publication des lois et décrets.</a></li>
+                        <li><a href="https://www.service-public.fr/professionnels-entreprises/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Service-Public Pro :</strong> Informations pour les professionnels et entreprises.</a></li>
+                        <li><a href="https://www.economie.gouv.fr/entreprises/droit-travail" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Ministère de l'Économie - Droit du travail :</strong> Informations et fiches pratiques.</a></li>
+                        <li><a href="https://www.cci.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">CCI France :</strong> Chambres de Commerce et d'Industrie.</a></li>
+                        <li><a href="https://www.medef.com/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">MEDEF :</strong> Mouvement des entreprises de France.</a></li>
+                        <li><a href="https://www.cpme.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">CPME :</strong> Confédération des Petites et Moyennes Entreprises.</a></li>
+                        <li><a href="https://www.apec.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">APEC :</strong> Association pour l'emploi des cadres.</a></li>
+                        <li><a href="https://www.cadremploi.fr/actualites/actualites-rh" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Cadremploi - Actualités RH :</strong> Articles et conseils.</a></li>
+                        <li><a href="https://www.lesechos.fr/thema/rh" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Les Echos - Théma RH :</strong> Actualités économiques et RH.</a></li>
                     </ul>
                 </div>
             </div>
@@ -552,28 +563,89 @@
             </p>
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
                 <div class="card-bg-subtle project-card" data-project-id="projet1">
-                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Déploiement Solution Octave (Ministère Justice)</h3>
-                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> CGI pour Ministère de la Justice</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2023-2024</p>
-                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> AMOA SIRH pour la gestion de la paie des personnes détenues.</p>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Déploiement SIRH Octave pour la gestion de la paie des personnes détenues</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Janvier 2023 - Juin 2024</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle AMOA SIRH</p>
+                    <p class="text-texte-principal text-base">
+                        <strong>Contexte & Objectifs :</strong> Accompagnement du Ministère de la Justice pour le déploiement de la solution SIRH Octave dans 189 établissements pénitentiaires, afin de moderniser et fiabiliser la gestion de la paie des personnes détenues.
+                        <br><br>
+                        <strong>Actions Clés :</strong>
+                        <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                            <li>Analyse approfondie des besoins spécifiques et rédaction des spécifications fonctionnelles détaillées.</li>
+                            <li>Réalisation complète de la recette fonctionnelle DSN (Déclaration Sociale Nominative) : rédaction de scripts de tests, élaboration de cas de test exhaustifs, exécution rigoureuse des scénarios et documentation des résultats.</li>
+                            <li>Détection proactive, qualification et correction des anomalies, avec remontée structurée aux équipes de développement.</li>
+                            <li>Suivi attentif des corrections et nouvelle exécution des tests (rejets, reprises) jusqu'à la validation finale pour la mise en production.</li>
+                            <li>Accompagnement efficace des utilisateurs finaux (formation opérationnelle, assistance réactive, support dédié à la montée en compétence).</li>
+                        </ul>
+                        <br>
+                        <strong>Outils utilisés :</strong> HR Access 4YOU V9, Octave, Squash (pour la gestion des tests).
+                        <br><br>
+                        <strong>Résultats & Impact :</strong> Modernisation et fiabilisation significative du processus de paie pour un public spécifique, garantissant la conformité et l'autonomie des utilisateurs.
+                    </p>
                 </div>
                 <div class="card-bg-subtle project-card" data-project-id="projet2">
-                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Structuration Référentiel Paie (CSP)</h3>
-                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> Epi-Use France pour Groupe Tereos</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2018-2022</p>
-                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> Mise en place d'un Centre de Services Partagés Paie multi-sites.</p>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Structuration d'un Référentiel Paie et mise en place d'un Centre de Services Partagés (CSP)</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Novembre 2018 - Mars 2022</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Consultante Paie SIRH</p>
+                    <p class="text-texte-principal text-base">
+                        <strong>Contexte & Objectifs :</strong> Participation à la création d'un Centre de Services Partagés pour un grand groupe, visant à centraliser et harmoniser les processus de paie et de gestion RH suite au départ progressif des gestionnaires.
+                        <br><br>
+                        <strong>Actions Clés :</strong>
+                        <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                            <li>Reprise approfondie de la connaissance métier paie sur 20 sites impactés par le déploiement du CSP (outil Pléiade et SAP).</li>
+                            <li>Mise à jour complète des procédures de paie (processus de traitement, contrôles, pratiques locales).</li>
+                            <li>Rédaction claire et concise de guides utilisateurs pour les outils Pléiade et SAP.</li>
+                            <li>Organisation et animation dynamique d'ateliers de relecture et de mises en situation avec les gestionnaires locaux.</li>
+                            <li>Formation et transfert de compétences aux nouvelles recrues internes (CDI) reprenant les postes de gestionnaires paie.</li>
+                            <li>Élaboration d'un livre blanc paie consolidant les pratiques standards et les adaptations spécifiques.</li>
+                        </ul>
+                        <br>
+                        <strong>Outils utilisés :</strong> Pléiade (Paie & GTA), SAP (Paie).
+                        <br><br>
+                        <strong>Résultats & Impact :</strong> Amélioration significative de l'efficience des opérations RH, réduction des erreurs et standardisation des pratiques paie à l'échelle du groupe.
+                    </p>
                 </div>
                 <div class="card-bg-subtle project-card" data-project-id="projet3">
-                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Modélisation Processus RH & Contrôle Paie</h3>
-                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> CGI pour Air Liquide</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2023-2024</p>
-                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> Optimisation des processus RH et fiabilisation des contrôles de paie.</p>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Modélisation de Processus RH et Fiabilisation des Contrôles de Paie</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Janvier 2023 - Juin 2024</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle</p>
+                    <p class="text-texte-principal text-base">
+                        <strong>Contexte & Objectifs :</strong> Mission d'optimisation des processus RH et de fiabilisation des contrôles de paie au sein d'une grande entreprise.
+                        <br><br>
+                        <strong>Actions Clés :</strong>
+                        <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                            <li>Analyse et modélisation des processus RH existants, identification des points de friction et des opportunités d'amélioration.</li>
+                            <li>Reprise complète et mise à jour du référentiel paie, incluant le recensement et l'actualisation des rubriques de paie et des règles spécifiques par site.</li>
+                            <li>Interviews approfondies des gestionnaires paie sur de nombreux sites pour formaliser les pratiques réelles.</li>
+                            <li>Mise en place de mécanismes de contrôle renforcés pour garantir l'exactitude et la conformité des données de paie.</li>
+                            <li>Prise en compte rigoureuse des évolutions d'organisation (ventes de sites, changements de périmètre RH, mutations internes).</li>
+                        </ul>
+                        <br>
+                        <strong>Outils utilisés :</strong> HR Access, Excel (fonctions avancées pour l'analyse des données).
+                        <br><br>
+                        <strong>Résultats & Impact :</strong> Amélioration de la qualité et de l'efficacité des opérations RH, réduction des risques de non-conformité et optimisation des processus internes.
+                    </p>
                 </div>
                 <div class="card-bg-subtle project-card" data-project-id="projet4">
-                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Coordination Paie & Administration RH</h3>
-                    <p class="text-texte-principal text-base mb-2"><strong>Client :</strong> Talent Solutions</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Période :</strong> 2022</p>
-                    <p class="text-texte-principal text-base"><strong>Rôle :</strong> Gestion opérationnelle de la paie et de l'administration du personnel pour plusieurs entités.</p>
+                    <h3 class="text-xl font-semibold text-principal-fonce mb-2">Coordination Opérationnelle de la Paie et Administration RH</h3>
+                    <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Juillet 2022 - Décembre 2022</p>
+                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Chargée RH - Coordination Paie & Administration RH</p>
+                    <p class="text-texte-principal text-base">
+                        <strong>Contexte & Objectifs :</strong> Gestion opérationnelle complète de la paie et de l'administration du personnel pour plusieurs entités, visant à assurer la conformité réglementaire et la fluidité des processus.
+                        <br><br>
+                        <strong>Actions Clés :</strong>
+                        <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                            <li>Gestion complète du cycle de paie pour 4 entités et 350 collaborateurs (collecte EVP, bulletins, cotisations, DSN).</li>
+                            <li>Gestion administrative : mise en œuvre de démarches pour améliorer l'efficacité des processus (DPAE, contrats, avenants, soldes de tout compte).</li>
+                            <li>Encadrement d'équipe : transfert de compétences et mise en place de pratiques de mentorat pour le développement professionnel.</li>
+                            <li>Coordination des congés et des absences (maladie, maternité, AT/MP, congés payés, RTT) selon les politiques RH.</li>
+                            <li>Interface avec les organismes sociaux (URSSAF, CPAM, MSA, Retraite, Prévoyance).</li>
+                        </ul>
+                        <br>
+                        <strong>Outils utilisés :</strong> Cegid People net GA et VSA.
+                        <br><br>
+                        <strong>Résultats & Impact :</strong> Garantie de la conformité réglementaire, fiabilisation des données de paie et amélioration de l'efficacité administrative.
+                    </p>
                 </div>
             </div>
             <div class="section-nav-buttons">
@@ -585,11 +657,14 @@
         <section id="communaute" class="section-container" aria-labelledby="communaute-title">
             <h2 id="communaute-title" class="section-title">Ma Communauté d'Échange & de Soutien</h2>
             <p class="text-lg leading-relaxed mb-6">
-                Au-delà de mon parcours professionnel, j'ai à cœur de partager ma passion et mon expertise. C'est pourquoi j'anime un groupe d'échange et d'entraide dédié aux personnes qui préparent leur certificat en gestion de paie. Ce projet est né de ma conviction profonde que le transfert de connaissances est une richesse inestimable, et que l'on apprend toujours les uns des autres.
+                Au-delà de mon parcours professionnel, j'ai à cœur de partager ma passion et mon expertise. C'est pourquoi j'anime un groupe d'échange et d'entraide dédié aux personnes qui préparent leurs <strong>titres professionnels ou certifications professionnelles de gestionnaire de paie</strong>, notamment via la formation Studi.
             </p>
             <h3 class="text-2xl font-semibold text-principal-fonce mb-4 text-left">Notre Concept : Un Espace de Croissance Collective</h3>
             <p class="text-lg leading-relaxed mb-6">
-                Ce groupe est un lieu d'échange dynamique où chacun peut poser ses questions, partager ses expériences et consolider ses acquis. Mon rôle est de guider, d'apporter des éclaircissements et de stimuler les discussions pour favoriser une montée en compétences collective et bienveillante. Nous abordons des cas pratiques, des points de législation complexes et des astuces pour maîtriser les subtilités de la paie.
+                Ce groupe est né de la conviction que faire une formation à distance peut être difficile. C'est un lieu d'échange dynamique où chacun peut poser ses questions, partager ses expériences et consolider ses acquis. Mon rôle est de guider, d'apporter des éclaircissements basés sur mes 20 ans d'expérience, et de stimuler les discussions pour favoriser une montée en compétences collective et bienveillante. Nous abordons des cas pratiques, des points de législation complexes et des astuces pour maîtriser les subtilités de la paie.
+            </p>
+            <p class="text-lg leading-relaxed mb-6">
+                Cette communauté me permet également de rester connectée aux réalités de l'apprentissage actuel et aux évolutions du métier, grâce aux retours directs des apprenants. C'est un échange mutuellement enrichissant qui me permet de continuer à monter en compétence sur le métier que j'adore.
             </p>
 
             <div class="text-center my-8">
@@ -601,7 +676,7 @@
 
             <h3 class="text-2xl font-semibold text-principal-fonce mb-4 text-left">Rejoignez la Communauté ou Contribuez !</h3>
             <p class="text-lg leading-relaxed mb-6">
-                Nous sommes toujours ouverts à accueillir de nouvelles personnes désireuses d'apprendre, mais aussi des <strong>"sachants"</strong> qui souhaitent partager leur expertise et aider les futurs professionnels à s'épanouir. Si vous êtes animé(e) par le partage et le transfert de connaissances, si you souhaitez soutenir, accompagner ou même proposer des stages, votre place est parmi nous !
+                Nous sommes toujours ouverts à accueillir de nouvelles personnes désireuses d'apprendre, mais aussi des <strong>"sachants"</strong> qui souhaitent partager leur expertise et aider les futurs professionnels à s'épanouir. Si vous êtes animé(e) par le partage et le transfert de connaissances, si vous souhaitez soutenir, accompagner ou même proposer des stages, votre place est parmi nous !
             </p>
 
             <div class="section-nav-buttons">
@@ -687,20 +762,19 @@
             <h3 class="text-2xl font-semibold text-principal-fonce mb-6 text-left">Retours Clients</h3>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="card-bg-subtle testimonial-card">
-                    <p class="text-lg text-texte-principal mb-4">"Mathilde a transformé notre gestion de paie. Son expertise et sa rigueur ont été précieuses pour la mise en conformité et l'optimisation de nos processus. Une vraie professionnelle !"</p>
-                    <p class="font-semibold text-principal-fonce">- Jean Dupont, DRH chez [Nom de l'entreprise]</p>
+                    <h4 class="font-bold text-lg text-principal-fonce mb-2">Un accompagnement précieux et authentique</h4>
+                    <p class="text-lg text-texte-principal mb-4 text-justify leading-relaxed">"Je souhaite exprimer ma sincère gratitude à Mathilde PAISLEY pour l'aide **précieuse** qu'elle m'a apportée durant ma formation en gestionnaire de paie et en ressources humaines. Son **expertise** et sa **passion** pour le domaine se ressentent à chaque interaction. Elle a su me guider avec **bienveillance**, répondant à mes questions et m'encourageant à explorer des sujets complexes. Grâce à son soutien, j'ai non seulement renforcé mes compétences et j’ai pu en apprendre encore plus dans le domaine de la paie et ressources humaines. Mathilde PAISLEY a une **capacité unique à créer un environnement d'apprentissage positif**, ce qui a rendu ma formation encore plus enrichissante. Je recommande vivement ses services à quiconque cherche un **accompagnement authentique et efficace**. Merci encore pour tout ! ☺️"</p>
+                    <p class="font-semibold text-principal-fonce">- Dounia Assakkour</p>
                 </div>
                 <div class="card-bg-subtle testimonial-card">
-                    <p class="text-lg text-texte-principal mb-4">"Grâce à l'accompagnement de Mathilde sur notre projet SIRH, nous avons pu déployer la solution dans les délais et budgets impartis. Sa vision fonctionnelle est un atout majeur."</p>
-                    <p class="font-semibold text-principal-fonce">- Sophie Martin, Chef de Projet SIRH chez [Nom de l'entreprise]</p>
+                    <h4 class="font-bold text-lg text-principal-fonce mb-2">Une source d'inspiration et de motivation</h4>
+                    <p class="text-lg text-texte-principal mb-4 text-justify leading-relaxed">"Je tiens à partager mon expérience avec Mathilde qui a été une source d'**inspiration et de motivation** tout au long de mon parcours professionnel. Grâce à son soutien et à son engagement, j'ai pu réussir ma formation MBA CDO, et je ne pourrais être plus ravi des résultats. Mathilde est une personne très **professionnelle** qui pousse les autres à aller de l'avant. Elle a une **personnalité fascinante** et apporte une aide précieuse à ceux qui l'entourent. Elle est toujours attentive au respect des normes de travail et donne le meilleur d'elle-même dans tout ce qu'elle entreprend. Sa **passion et son dévouement sont contagieux**, et j'apprécie énormément son approche dynamique et bienveillante. Je suis reconnaissant d'avoir croisé son chemin, et je suis sûr que son influence continuera à faire une différence positive dans la vie de nombreux autres."</p>
+                    <p class="font-semibold text-principal-fonce">- Sébia PREIRA</p>
                 </div>
                 <div class="card-bg-subtle testimonial-card">
-                    <p class="text-lg text-texte-principal mb-4">"Le groupe d'échange animé par Mathilde est une ressource incroyable. Ses conseils pratiques et son soutien ont été déterminants pour ma réussite au certificat de paie."</p>
-                    <p class="font-semibold text-principal-fonce">- Fatima Z, Étudiante en gestion de paie</p>
-                </div>
-                <div class="card-bg-subtle testimonial-card">
-                    <p class="text-lg text-texte-principal mb-4">"Une collaboratrice hors pair, capable de s'adapter à des environnements complexes et d'apporter des solutions innovantes. Je la recommande vivement pour tout projet RH ou SIRH."</p>
-                    <p class="font-semibold text-principal-fonce">- Marc L., Consultant Senior</p>
+                    <h4 class="font-bold text-lg text-principal-fonce mb-2">Une organisatrice de confiance, avec tant de cœur</h4>
+                    <p class="text-lg text-texte-principal mb-4 text-justify leading-relaxed">"J’ai eu la chance de pouvoir compter sur Mathilde Paisley à plusieurs reprises pour l’organisation d’anniversaires et de fêtes de famille. Même en dehors de tout cadre professionnel, elle s’est toujours investie avec **sérieux, enthousiasme et générosité**. Sans jamais compter son temps ni son énergie, Mathilde a su tout **coordonner** : idées de thème, décoration, organisation logistique, accueil des invités, gestion du déroulement de la journée… Elle **pense à tout, anticipe les besoins** et apporte une vraie **touche personnelle** à chaque moment. Grâce à elle, ces événements ont été non seulement réussis, mais aussi profondément **chaleureux et mémorable**. C’est une personne de **confiance**, sur qui l’on peut vraiment s’appuyer. Merci encore Mathilde pour tout ce que tu fais, avec tant de cœur."</p>
+                    <p class="font-semibold text-principal-fonce">- Nadège GAMAIN</p>
                 </div>
             </div>
             <div class="section-nav-buttons">
@@ -737,38 +811,62 @@
                 N'hésitez pas à me contacter pour toute opportunité ou question. Je serais ravie d'échanger avec vous.
             </p>
             <div class="max-w-xl mx-auto">
-                <form action="YOUR_FORM_SUBMISSION_URL" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white p-8 rounded-lg shadow-lg">
                     <div class="mb-4">
-                        <label for="name" class="block text-principal-fonce text-lg font-semibold mb-2">Votre Nom :</label>
-                        <input type="text" id="name" name="name" class="form-field" placeholder="Nom Prénom" required aria-required="true">
+                        <label for="prenom" class="block text-principal-fonce text-lg font-semibold mb-2">Prénom :</label>
+                        <input type="text" id="prenom" name="Prénom" class="form-field" placeholder="Votre prénom" required aria-required="true">
                     </div>
                     <div class="mb-4">
-                        <label for="email" class="block text-principal-fonce text-lg font-semibold mb-2">Votre Email :</label>
-                        <input type="email" id="email" name="email" class="form-field" placeholder="votre.email@exemple.com" required aria-required="true">
+                        <label for="nom" class="block text-principal-fonce text-lg font-semibold mb-2">Nom :</label>
+                        <input type="text" id="nom" name="Nom" class="form-field" placeholder="Votre nom" required aria-required="true">
                     </div>
                     <div class="mb-4">
-                        <label for="subject" class="block text-principal-fonce text-lg font-semibold mb-2">Sujet :</label>
-                        <input type="text" id="subject" name="subject" class="form-field" placeholder="Demande de renseignement, Proposition de collaboration..." required aria-required="true">
+                        <label for="telephone" class="block text-principal-fonce text-lg font-semibold mb-2">Téléphone :</label>
+                        <input type="tel" id="telephone" name="Téléphone" class="form-field" placeholder="Ex: 06 12 34 56 78" required aria-required="true">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-principal-fonce text-lg font-semibold mb-2">Email :</label>
+                        <input type="email" id="email" name="Email" class="form-field" placeholder="votre.email@exemple.com" required aria-required="true">
+                    </div>
+                    <div class="mb-4">
+                        <label for="fonction" class="block text-principal-fonce text-lg font-semibold mb-2">Fonction :</label>
+                        <input type="text" id="fonction" name="Fonction" class="form-field" placeholder="Ex: DRH, Chef de projet" required aria-required="true">
+                    </div>
+                    <div class="mb-4">
+                        <label for="societe" class="block text-principal-fonce text-lg font-semibold mb-2">Nom de la Société :</label>
+                        <input type="text" id="societe" name="Nom de la Société" class="form-field" placeholder="Nom de votre entreprise" required aria-required="true">
+                    </div>
+                    <div class="mb-4">
+                        <label for="siret" class="block text-principal-fonce text-lg font-semibold mb-2">Numéro SIRET :</label>
+                        <input type="text" id="siret" name="Numéro SIRET" class="form-field" placeholder="Votre numéro SIRET (si applicable)" required aria-required="true">
+                    </div>
+                    <div class="mb-4">
+                        <label for="sujet" class="block text-principal-fonce text-lg font-semibold mb-2">Offre(s) d'intérêt (Sujet) :</label>
+                        <select id="sujet" name="Sujet" class="form-field" multiple required aria-required="true">
+                            <option value="">Sélectionnez une ou plusieurs options</option>
+                            <option value="Conseil & AMOA SIRH">Conseil & AMOA SIRH</option>
+                            <option value="Optimisation Processus Paie">Optimisation Processus Paie</option>
+                            <option value="Gestion des Temps & Activités (GTA)">Gestion des Temps & Activités (GTA)</option>
+                            <option value="Formation & Accompagnement">Formation & Accompagnement</option>
+                            <option value="Veille Sociale & Juridique">Veille Sociale & Juridique</option>
+                            <option value="Support Fonctionnel SIRH">Support Fonctionnel SIRH</option>
+                            <option value="Autre">Autre</option>
+                        </select>
                     </div>
                     <div class="mb-6">
-                        <label for="message" class="block text-principal-fonce text-lg font-semibold mb-2">Votre Message :</label>
-                        <textarea id="message" name="message" class="form-field" rows="5" placeholder="Écrivez votre message ici..." required aria-required="true"></textarea>
+                        <label for="message" class="block text-principal-fonce text-lg font-semibold mb-2">Votre Message (facultatif) :</label>
+                        <textarea id="message" name="Message" class="form-field" rows="5" placeholder="Écrivez votre message ici..."></textarea>
                     </div>
                     <button type="submit" class="submit-button w-full">Envoyer le message <i class="fas fa-paper-plane ml-2"></i></button>
                 </form>
             </div>
 
             <div class="space-y-3 text-lg text-center font-['Montserrat'] mt-10">
-                <p><i class="fas fa-envelope mr-2 text-accent-unique"></i> Email : <a href="mailto:mathilde.martine.paisley@gmail.com">mathilde.martine.paisley@gmail.com</a></p>
-                <p><i class="fas fa-phone mr-2 text-accent-unique"></i> Téléphone : 06 85 90 08 87</p>
                 <p><i class="fas fa-envelope mr-2 text-accent-unique"></i> Email : <a href="mailto:contact@mmpaisley-paie-sirh.com">contact@mmpaisley-paie-sirh.com</a></p>
+                <p><i class="fas fa-phone mr-2 text-accent-unique"></i> Téléphone : 06 85 90 08 87</p>
             </div>
             <div class="social-icons text-center mt-8">
                 <a href="https://www.linkedin.com/in/mathildemartinepaisley/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Mathilde Martine PAISLEY"><i class="fab fa-linkedin"></i></a>
-                <!-- Ajoutez d'autres icônes si vous en avez, ex:
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Profil Facebook"><i class="fab fa-facebook-square"></i></a>
-                <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Profil Twitter"><i class="fab fa-twitter-square"></i></a>
-                -->
             </div>
             <div class="section-nav-buttons mt-8">
                 <a href="#accueil" class="nav-button"><i class="fas fa-home mr-2"></i> Retour à l'Accueil</a>
@@ -802,12 +900,10 @@
             </div>
             <div class="footer-column">
                 <h4>Contact & Réseaux</h4>
-                <p>Email : <a href="mailto:mathilde.martine.paisley@gmail.com">mathilde.martine.paisley@gmail.com</a></p>
-                <p>Téléphone : <a href="tel:+33685900887">06 85 90 08 87</a></p>
                 <p>Email : <a href="mailto:contact@mmpaisley-paie-sirh.com">contact@mmpaisley-paie-sirh.com</a></p>
+                <p>Téléphone : <a href="tel:+33685900887">06 85 90 08 87</a></p>
                 <div class="footer-social-icons">
                     <a href="https://www.linkedin.com/in/mathildemartinepaisley/" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <!-- Ajoutez d'autres icônes si vous en avez -->
                 </div>
             </div>
         </div>
@@ -828,44 +924,101 @@
     <div id="project-modal-projet1" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
             <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
-            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Déploiement Solution Octave (Ministère Justice)</h3>
-            <p class="text-texte-principal mb-2"><strong>Client :</strong> CGI pour Ministère de la Justice</p>
-            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2023-2024</p>
-            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> AMOA SIRH pour la gestion de la paie des personnes détenues.</p>
-            <p class="text-texte-principal"><strong>Description :</strong> Accompagnement du Ministère de la Justice dans le déploiement de la solution SIRH Octave pour la paie des détenus. Mon rôle a consisté à analyser les besoins spécifiques, rédiger les spécifications fonctionnelles, coordonner les équipes techniques et métiers, et assurer la recette de la solution pour garantir sa conformité avec les exigences légales et les processus internes. Ce projet a permis de moderniser et de fiabiliser la gestion de la paie pour un public spécifique.</p>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Déploiement SIRH Octave pour la gestion de la paie des personnes détenues</h3>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> Janvier 2023 - Juin 2024</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle AMOA SIRH</p>
+            <p class="text-texte-principal text-base">
+                <strong>Contexte & Objectifs :</strong> Accompagnement du Ministère de la Justice pour le déploiement de la solution SIRH Octave dans 189 établissements pénitentiaires, afin de moderniser et fiabiliser la gestion de la paie des personnes détenues.
+                <br><br>
+                <strong>Actions Clés :</strong>
+                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                    <li>Analyse approfondie des besoins spécifiques et rédaction des spécifications fonctionnelles détaillées.</li>
+                    <li>Réalisation complète de la recette fonctionnelle DSN (Déclaration Sociale Nominative) : rédaction de scripts de tests, élaboration de cas de test exhaustifs, exécution rigoureuse des scénarios et documentation des résultats.</li>
+                    <li>Détection proactive, qualification et correction des anomalies, avec remontée structurée aux équipes de développement.</li>
+                    <li>Suivi attentif des corrections et nouvelle exécution des tests (rejets, reprises) jusqu'à la validation finale pour la mise en production.</li>
+                    <li>Accompagnement efficace des utilisateurs finaux (formation opérationnelle, assistance réactive, support dédié à la montée en compétence).</li>
+                </ul>
+                <br>
+                <strong>Outils utilisés :</strong> HR Access 4YOU V9, Octave, Squash (pour la gestion des tests).
+                <br><br>
+                <strong>Résultats & Impact :</strong> Modernisation et fiabilisation significative du processus de paie pour un public spécifique, garantissant la conformité et l'autonomie des utilisateurs.
+            </p>
         </div>
     </div>
 
     <div id="project-modal-projet2" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
             <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
-            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Structuration Référentiel Paie (CSP)</h3>
-            <p class="text-texte-principal mb-2"><strong>Client :</strong> Epi-Use France pour Groupe Tereos</p>
-            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2018-2022</p>
-            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Mise en place d'un Centre de Services Partagés Paie multi-sites.</p>
-            <p class="text-texte-principal"><strong>Description :</strong> Projet d'envergure visant à centraliser et harmoniser les processus de paie et de gestion RH pour le Groupe Tereos via un Centre de Services Partagés. J'ai été en charge de la structuration du référentiel de paie, de l'uniformisation des pratiques et de l'accompagnement au changement pour les différentes entités du groupe. Ce projet a grandement contribué à l'efficience des opérations RH et à la réduction des erreurs.</p>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Structuration d'un Référentiel Paie et mise en place d'un Centre de Services Partagés (CSP)</h3>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> Novembre 2018 - Mars 2022</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Paie SIRH</p>
+            <p class="text-texte-principal text-base">
+                <strong>Contexte & Objectifs :</strong> Participation à la création d'un Centre de Services Partagés pour un grand groupe, visant à centraliser et harmoniser les processus de paie et de gestion RH suite au départ progressif des gestionnaires.
+                <br><br>
+                <strong>Actions Clés :</strong>
+                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                    <li>Reprise approfondie de la connaissance métier paie sur 20 sites impactés par le déploiement du CSP (outil Pléiade et SAP).</li>
+                    <li>Mise à jour complète des procédures de paie (processus de traitement, contrôles, pratiques locales).</li>
+                    <li>Rédaction claire et concise de guides utilisateurs pour les outils Pléiade et SAP.</li>
+                    <li>Organisation et animation dynamique d'ateliers de relecture et de mises en situation avec les gestionnaires locaux.</li>
+                    <li>Formation et transfert de compétences aux nouvelles recrues internes (CDI) reprenant les postes de gestionnaires paie.</li>
+                    <li>Élaboration d'un livre blanc paie consolidant les pratiques standards et les adaptations spécifiques.</li>
+                </ul>
+                <br>
+                <strong>Outils utilisés :</strong> Pléiade (Paie & GTA), SAP (Paie).
+                <br><br>
+                <strong>Résultats & Impact :</strong> Amélioration significative de l'efficience des opérations RH, réduction des erreurs et standardisation des pratiques paie à l'échelle du groupe.
+            </p>
         </div>
     </div>
 
     <div id="project-modal-projet3" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
             <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
-            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Modélisation Processus RH & Contrôle Paie</h3>
-            <p class="text-texte-principal mb-2"><strong>Client :</strong> CGI pour Air Liquide</p>
-            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2023-2024</p>
-            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Optimisation des processus RH et fiabilisation des contrôles de paie.</p>
-            <p class="text-texte-principal"><strong>Description :</strong> Mission axée sur l'analyse et la modélisation des processus RH existants chez Air Liquide, avec un accent particulier sur la fiabilisation et l'optimisation des contrôles de paie. J'ai identifié les points de friction, proposé des améliorations processuelles et mis en place des mécanismes de contrôle renforcés pour garantir l'exactitude et la conformité des données de paie. L'objectif était d'améliorer la qualité et l'efficacité des opérations RH.</p>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Modélisation de Processus RH et Fiabilisation des Contrôles de Paie</h3>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> Janvier 2023 - Juin 2024</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle</p>
+            <p class="text-texte-principal text-base">
+                <strong>Contexte & Objectifs :</strong> Mission d'optimisation des processus RH et de fiabilisation des contrôles de paie au sein d'une grande entreprise.
+                <br><br>
+                <strong>Actions Clés :</strong>
+                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                    <li>Analyse et modélisation des processus RH existants, identification des points de friction et des opportunités d'amélioration.</li>
+                    <li>Reprise complète et mise à jour du référentiel paie, incluant le recensement et l'actualisation des rubriques de paie et des règles spécifiques par site.</li>
+                    <li>Interviews approfondies des gestionnaires paie sur de nombreux sites pour formaliser les pratiques réelles.</li>
+                    <li>Mise en place de mécanismes de contrôle renforcés pour garantir l'exactitude et la conformité des données de paie.</li>
+                    <li>Prise en compte rigoureuse des évolutions d'organisation (ventes de sites, changements de périmètre RH, mutations internes).</li>
+                </ul>
+                <br>
+                <strong>Outils utilisés :</strong> HR Access, Excel (fonctions avancées pour l'analyse des données).
+                <br><br>
+                <strong>Résultats & Impact :</strong> Amélioration de la qualité et de l'efficacité des opérations RH, réduction des risques de non-conformité et optimisation des processus internes.
+            </p>
         </div>
     </div>
 
     <div id="project-modal-projet4" class="project-modal hidden fixed inset-0 flex items-center justify-center p-4 z-50">
         <div class="bg-white rounded-lg shadow-xl p-6 max-w-xl w-full relative">
             <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
-            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Coordination Paie & Administration RH</h3>
-            <p class="text-texte-principal mb-2"><strong>Client :</strong> Talent Solutions</p>
-            <p class="text-texte-principal mb-2"><strong>Période :</strong> 2022</p>
-            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Gestion opérationnelle de la paie et de l'administration du personnel pour plusieurs entités.</p>
-            <p class="text-texte-principal"><strong>Description :</strong> Prise en charge de la coordination de la paie et de l'administration RH pour diverses entités au sein de Talent Solutions. Ce rôle a impliqué la gestion complète du cycle de paie, de l'entrée à la sortie des collaborateurs, y compris la DSN, les cotisations, les arrêts maladie, et le support aux collaborateurs. J'ai veillé à la conformité réglementaire et à la fluidité des processus administratifs.</p>
+            <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Coordination Opérationnelle de la Paie et Administration RH</h3>
+            <p class="text-texte-principal mb-2"><strong>Période :</strong> Juillet 2022 - Décembre 2022</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Chargée RH - Coordination Paie & Administration RH</p>
+            <p class="text-texte-principal text-base">
+                <strong>Contexte & Objectifs :</strong> Gestion opérationnelle complète de la paie et de l'administration du personnel pour plusieurs entités, visant à assurer la conformité réglementaire et la fluidité des processus.
+                <br><br>
+                <strong>Actions Clés :</strong>
+                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                    <li>Gestion complète du cycle de paie pour 4 entités et 350 collaborateurs (collecte EVP, bulletins, cotisations, DSN).</li>
+                    <li>Gestion administrative : mise en œuvre de démarches pour améliorer l'efficacité des processus (DPAE, contrats, avenants, soldes de tout compte).</li>
+                    <li>Encadrement d'équipe : transfert de compétences et mise en place de pratiques de mentorat pour le développement professionnel.</li>
+                    <li>Coordination des congés et des absences (maladie, maternité, AT/MP, congés payés, RTT) selon les politiques RH.</li>
+                    <li>Interface avec les organismes sociaux (URSSAF, CPAM, MSA, Retraite, Prévoyance).</li>
+                </ul>
+                <br>
+                <strong>Outils utilisés :</strong> Cegid People net GA et VSA.
+                <br><br>
+                <strong>Résultats & Impact :</strong> Garantie de la conformité réglementaire, fiabilisation des données de paie et amélioration de l'efficacité administrative.
+            </p>
         </div>
     </div>
 

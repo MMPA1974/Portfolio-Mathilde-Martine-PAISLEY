@@ -1,7 +1,8 @@
 /* --- Variables Personnalisées (Couleurs) --- */
 :root {
     --color-principal-fonce: #001F3F; /* Bleu Marine Profond - Élégant, professionnel */
-    --color-fond-clair: #FFFFFF; /* Blanc pur pour les sections */
+    --color-fond-clair: #FFFFFF; /* Blanc pur pour le fond du body */
+    --color-fond-texte-clair: #FDF5E6; /* Blanc cassé pour le fond des sections de texte */
     --color-texte-principal: #36454F; /* Charcoal - Texte sombre, très lisible */
     --color-accent-secondaire: #F4B3C2; /* Rose doux et subtil pour les accents */
     --color-gris-subtil: #E0E0E0; /* Light Gray - Pour les bordures et fonds légers */
@@ -15,12 +16,24 @@
     --gradient-gold: linear-gradient(to right, var(--gold-light), var(--gold-medium), var(--gold-dark));
     /* Couleur d'accent unique pour les éléments qui ne peuvent pas être un dégradé (ex: icônes, bordures simples) */
     --color-accent-unique: var(--gold-medium); /* Utilise le ton moyen pour la cohérence */
+
+    /* Variables pour la taille de l'entête et de ses éléments */
+    --header-height-initial: 200px; /* Hauteur initiale de l'entête */
+    --header-height-scrolled: 100px; /* Hauteur de l'entête après scroll */
+    --h1-font-size-initial: 2rem;
+    --h1-font-size-scrolled: 1.2rem;
+    --p-font-size-initial: 0.9rem;
+    --p-font-size-scrolled: 0.7rem;
+    --cta-padding-initial: 0.7rem 1.8rem;
+    --cta-padding-scrolled: 0.4rem 1rem;
+    --cta-font-size-initial: 0.9rem;
+    --cta-font-size-scrolled: 0.7rem;
 }
 
 /* --- Styles de Base --- */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--color-fond-clair); /* Le fond du body peut rester OldLace ou être blanc */
+    background-color: var(--color-fond-clair); /* Le fond du body est blanc pur */
     color: var(--color-texte-principal);
     display: flex;
     flex-direction: column;
@@ -28,7 +41,7 @@ body {
     margin: 0;
     line-height: 1.6;
     scroll-behavior: smooth; /* Ajout pour une navigation fluide */
-    padding-top: 50px; /* Espace pour la barre de navigation fixe en haut */
+    padding-top: var(--header-height-initial); /* Espace pour l'entête initiale */
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
@@ -58,15 +71,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.4rem 0.7rem; /* Padding réduit pour des onglets plus petits */
     border-radius: 1.2rem; /* Arrondi ajusté */
     border: 1px solid rgba(255, 255, 255, 0.4); /* Bordure plus subtile */
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
     font-size: 0.75rem; /* Taille de police réduite pour des onglets plus petits */
     white-space: nowrap;
     display: inline-block;
 }
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: var(--color-accent-unique);
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
+    border-color: var(--color-principal-fonce); /* Bordure bleue foncée au survol */
     transform: translateY(-1px); /* Effet plus subtil */
     box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Ombre ajustée */
 }
@@ -86,63 +100,85 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem 1rem;
+    padding: 0.8rem 1rem; /* Padding réduit pour compacter l'entête */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    position: relative; /* Garde la position relative pour le logo et le bouton mobile */
-    padding-top: 2rem; /* Réduit le padding top car la nav est fixe */
+    position: fixed; /* Fixé pour permettre le shrinking */
+    top: 50px; /* Commence après la nav-bar-top */
+    width: 100%;
+    z-index: 90; /* En dessous de la nav-bar-top */
+    transition: all 0.3s ease; /* Transition pour le shrinking */
+    height: calc(var(--header-height-initial) - 50px); /* Hauteur initiale moins la nav-bar-top */
+    overflow: hidden; /* Cache le contenu qui dépasse lors du shrinking */
 }
-.logo-placeholder {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    height: 70px;
-    width: 160px;
-    background-color: transparent;
-    border: 2px dashed rgba(255, 255, 255, 0.4);
+
+.hero-bg.scrolled {
+    height: calc(var(--header-height-scrolled) - 50px); /* Hauteur réduite après scroll */
+    padding: 0.4rem 1rem; /* Padding encore plus réduit */
+}
+
+.hero-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.75rem;
     text-align: center;
-    box-sizing: border-box;
-    z-index: 50;
-    cursor: pointer;
-    transition: border-color 0.3s ease, color 0.3s ease;
+    width: 100%;
+    transition: all 0.3s ease;
 }
-.logo-placeholder:hover {
-    border-color: var(--color-accent-unique);
-    color: var(--color-accent-unique);
+
+.hero-bg.scrolled .hero-content {
+    /* Pas de padding ici, géré par hero-bg.scrolled */
 }
+
 .hero-bg h1 {
-    font-size: 2.25rem;
-    margin-bottom: 0.3rem;
+    font-size: var(--h1-font-size-initial);
+    margin-bottom: 0.2rem;
     line-height: 1.2;
     color: var(--color-fond-clair);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    transition: font-size 0.3s ease, margin-bottom 0.3s ease;
 }
+.hero-bg.scrolled h1 {
+    font-size: var(--h1-font-size-scrolled);
+    margin-bottom: 0; /* Supprime la marge pour compacter */
+}
+
 .hero-bg p {
-    font-size: 1rem;
+    font-size: var(--p-font-size-initial);
     line-height: 1.4;
     color: var(--color-fond-clair);
     max-width: 700px;
-    margin: 0 auto 1rem auto;
+    margin: 0 auto 0.8rem auto;
+    transition: font-size 0.3s ease, margin 0.3s ease;
 }
-.cta-button {
-    background: var(--gradient-gold);
-    color: var(--color-principal-fonce);
-    padding: 0.8rem 2rem;
+.hero-bg.scrolled p {
+    font-size: var(--p-font-size-scrolled);
+    margin: 0; /* Supprime la marge pour compacter */
+    opacity: 0; /* Cache le texte */
+    height: 0; /* Réduit la hauteur */
+    overflow: hidden;
+}
+
+.hero-bg .cta-button {
+    padding: var(--cta-padding-initial);
     border-radius: 2rem;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: var(--cta-font-size-initial);
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     display: inline-block;
-    margin-top: 0.8rem;
+    margin-top: 0.6rem;
+}
+.hero-bg.scrolled .cta-button {
+    padding: var(--cta-padding-scrolled);
+    font-size: var(--cta-font-size-scrolled);
+    margin-top: 0; /* Supprime la marge pour compacter */
 }
 .cta-button:hover {
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
     transform: translateY(-3px) scale(1.01);
     box-shadow: 0 5px 12px rgba(0,0,0,0.4);
 }
@@ -154,7 +190,7 @@ main {
     padding-bottom: 2.5rem; /* Espace avant le pied de page ajusté */
 }
 .section-container {
-    background-color: var(--color-fond-clair); /* Fond blanc pour les sections */
+    background-color: var(--color-fond-texte-clair); /* Fond blanc cassé pour le texte des sections */
     border-radius: 1rem;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     padding: 2.5rem;
@@ -275,16 +311,17 @@ footer {
         display: flex;
     }
     body {
-        padding-top: 50px; /* Ajustement pour desktop */
+        padding-top: var(--header-height-initial); /* Ajustement pour desktop */
     }
     .hero-bg {
-        padding-top: 2rem; /* Ajusté pour desktop */
+        padding-top: 0.8rem; /* Ajusté pour desktop */
+        padding-bottom: 0.8rem; /* Ajusté pour desktop */
     }
     .hero-bg h1 {
-        font-size: 2.8rem;
+        font-size: var(--h1-font-size-initial); /* Utilise la variable */
     }
     .hero-bg p {
-        font-size: 1.05rem;
+        font-size: var(--p-font-size-initial); /* Utilise la variable */
     }
     main {
         padding-top: 2.5rem;
@@ -293,10 +330,28 @@ footer {
         padding: 2.8rem;
     }
     .logo-placeholder {
-        top: 20px;
+        top: 50%; /* Centré verticalement */
         left: 20px;
+        transform: translateY(-50%); /* Ajustement pour un centrage parfait */
         height: 60px;
         width: 140px;
+    }
+
+    /* Styles pour l'état scrolled sur desktop */
+    .hero-bg.scrolled {
+        height: var(--header-height-scrolled);
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+    .hero-bg.scrolled h1 {
+        font-size: var(--h1-font-size-scrolled);
+    }
+    .hero-bg.scrolled p {
+        font-size: var(--p-font-size-scrolled);
+    }
+    .hero-bg.scrolled .cta-button {
+        padding: var(--cta-padding-scrolled);
+        font-size: var(--cta-font-size-scrolled);
     }
 }
 @media (max-width: 767px) {
@@ -304,16 +359,17 @@ footer {
         display: none;
     }
     body {
-        padding-top: 50px; /* Ajustement pour mobile */
+        padding-top: var(--header-height-initial); /* Ajustement pour mobile */
     }
     .hero-bg {
-        padding-top: 3.5rem; /* Ajusté pour mobile */
+        padding-top: 1.5rem; /* Ajusté pour mobile */
+        padding-bottom: 1.5rem; /* Ajusté pour mobile */
     }
     .hero-bg h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem; /* Taille du titre ajustée */
     }
     .hero-bg p {
-        font-size: 0.9rem;
+        font-size: 0.85rem; /* Taille du paragraphe ajustée */
     }
     .logo-placeholder {
         height: 40px;
@@ -328,6 +384,23 @@ footer {
     .section-title {
         font-size: 1.8rem;
     }
+
+    /* Styles pour l'état scrolled sur mobile (similaire au desktop mais avec des valeurs mobiles) */
+    .hero-bg.scrolled {
+        height: calc(var(--header-height-scrolled) - 50px); /* Hauteur réduite après scroll, ajustée pour mobile */
+        padding-top: 0.4rem;
+        padding-bottom: 0.4rem;
+    }
+    .hero-bg.scrolled h1 {
+        font-size: 1rem; /* Taille du titre encore plus petite sur mobile */
+    }
+    .hero-bg.scrolled p {
+        display: none; /* Cache le paragraphe sur mobile pour compacter */
+    }
+    .hero-bg.scrolled .cta-button {
+        padding: 0.3rem 0.8rem; /* Bouton encore plus petit sur mobile */
+        font-size: 0.6rem;
+    }
 }
 
 /* Styles pour les boutons de navigation entre sections */
@@ -336,7 +409,7 @@ footer {
     margin-top: 2.5rem;
     display: flex;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 1.5rem; /* Augmenté l'espace entre les boutons */
     flex-wrap: wrap;
     align-items: center;
 }
@@ -347,15 +420,15 @@ footer {
     border-radius: 0.6rem;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     border: none;
     cursor: pointer;
     font-size: 1rem;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 .nav-button:hover {
-    background-color: var(--color-principal-fonce);
-    color: var(--color-fond-clair);
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
     transform: translateY(-2px) scale(1.01);
     box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
@@ -366,14 +439,14 @@ footer {
     padding: 0.4rem 0.8rem;
     border-radius: 0.4rem;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     border: none;
     cursor: pointer;
     font-size: 0.8rem;
 }
 .nav-button-small:hover {
-    background: var(--color-accent-unique);
-    color: var(--color-principal-fonce);
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
     transform: translateY(-1px);
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
@@ -385,7 +458,7 @@ footer {
     border-radius: 0.8rem;
     padding: 1.8rem;
     box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -395,6 +468,8 @@ footer {
     text-align: center; /* Centré pour les cartes individuelles */
 }
 .card-bg-subtle:hover {
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
     transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
@@ -442,6 +517,11 @@ footer {
     top: 0.05em;
     font-size: 1.2em;
 }
+.bullet-accent-small li::before { /* Pour les listes plus petites dans les projets */
+    font-size: 1em;
+    top: 0.2em;
+}
+
 
 /* Styles pour la section "Qui suis-je ?" - Vidéo et texte */
 .profile-section {
@@ -462,21 +542,22 @@ footer {
 .profile-video-container {
     position: relative;
     padding: 6px;
-    border-radius: 50%; /* Rendu circulaire */
+    border-radius: 1rem; /* Bordure carrée/rectangulaire */
     background: var(--gradient-gold);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     width: 256px; /* Taille fixe pour le conteneur */
-    height: 256px;
+    height: 144px; /* Ratio 16:9 pour vidéo */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Important pour le clip circulaire */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
 }
 .profile-video-container video.profile-video {
     display: block;
-    border-radius: 50%; /* Rend la vidéo circulaire */
-    object-fit: cover; /* Assure que la vidéo couvre le cercle sans déformation */
-    border: 3px solid var(--color-fond-clair); /* Bordure intérieure */
+    border-radius: 0.8rem; /* Bordure légèrement arrondie pour la vidéo */
+    object-fit: cover;
+    border: 3px solid var(--color-fond-texte-clair); /* Bordure intérieure */
     width: 100%;
     height: 100%;
 }
@@ -487,55 +568,54 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 1.2rem;
+    padding: 1.5rem 1rem; /* Padding réduit */
     height: 100%;
     text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Ombre plus légère */
 }
 .price-card h3 {
-    font-size: 2.25rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem; /* Taille réduite */
+    margin-bottom: 0.8rem;
 }
-/* Style pour le texte des prix - maintenant lisible et taille ajustée */
 .price-card .price-text {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 800;
+    font-size: 2rem; /* Taille réduite */
+    margin-bottom: 1rem;
+    font-weight: 700; /* Moins gras */
     color: var(--color-principal-fonce);
 }
 
 .price-card ul {
     text-align: left;
     width: 100%;
-    max-width: 280px;
-    margin-bottom: 2rem;
+    max-width: 250px; /* Limite de largeur réduite */
+    margin-bottom: 1.5rem;
     flex-grow: 1;
 }
 
-/* Styles pour les boutons d'investissement - texte blanc */
+/* Styles pour les boutons d'investissement */
 .investment-button-blue {
     background-color: var(--color-principal-fonce);
     color: var(--color-fond-clair);
-    padding: 1.2rem 2.8rem;
-    font-size: 1.1rem;
-    border-radius: 2.5rem;
+    padding: 0.8rem 2rem; /* Padding réduit */
+    font-size: 0.95rem; /* Taille réduite */
+    border-radius: 2rem;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     border: 2px solid var(--color-principal-fonce);
 }
 .investment-button-blue:hover {
-    background-color: var(--color-fond-clair);
-    color: var(--color-principal-fonce);
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
     border-color: var(--color-principal-fonce);
 }
 
-
 .price-card.featured {
     background: linear-gradient(to bottom right, var(--gold-light) 0%, var(--gold-medium) 100%);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* Ombre ajustée */
+    transform: scale(1.03); /* Effet plus subtil */
     color: var(--color-principal-fonce);
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem; /* Padding ajusté */
 }
 .price-card.featured h3, .price-card.featured p, .price-card.featured li, .price-card.featured strong {
     color: var(--color-principal-fonce) !important;
@@ -543,22 +623,22 @@ footer {
 .price-card.featured::before {
     background: var(--color-principal-fonce);
 }
-/* Style spécifique pour le bouton de la carte "featured" - texte blanc */
+/* Style spécifique pour le bouton de la carte "featured" */
 .investment-button-featured {
     background-color: var(--color-principal-fonce);
     color: var(--color-fond-clair);
-    padding: 1.2rem 2.8rem;
-    font-size: 1.1rem;
-    border-radius: 2.5rem;
+    padding: 0.8rem 2rem; /* Padding réduit */
+    font-size: 0.95rem; /* Taille réduite */
+    border-radius: 2rem;
     text-decoration: none;
     font-weight: bold;
     border: 2px solid var(--color-fond-clair);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 .investment-button-featured:hover {
-    background-color: var(--color-fond-clair);
-    color: var(--color-principal-fonce);
-    border-color: var(--color-principal-fonce);
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
+    border-color: var(--color-principal-fonce); /* Bordure bleue foncée au survol */
 }
 
 
@@ -595,12 +675,12 @@ textarea.form-field {
     font-size: 1rem;
     cursor: pointer;
     border: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
 }
 .submit-button:hover {
-    background-color: var(--color-principal-fonce);
-    color: var(--color-fond-clair);
+    background-color: var(--color-fond-clair); /* Devient blanc au survol */
+    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
     transform: translateY(-1px) scale(1.01);
     box-shadow: 0 5px 12px rgba(0,0,0,0.2);
 }
@@ -960,4 +1040,31 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
 .quiz-results.fail {
     background-color: #F8D7DA;
     color: #721C24;
+}
+
+/* Styles pour les questions du quiz avec emojis et couleurs */
+.quiz-question.q1 p { color: #007bff; } /* Bleu */
+.quiz-question.q2 p { color: #28a745; } /* Vert */
+.quiz-question.q3 p { color: #dc3545; } /* Rouge */
+.quiz-question.q4 p { color: #ffc107; } /* Jaune */
+.quiz-question.q5 p { color: #6f42c1; } /* Violet */
+.quiz-question.q6 p { color: #17a2b8; } /* Cyan */
+.quiz-question.q7 p { color: #e83e8c; } /* Rose */
+.quiz-question.q8 p { color: #fd7e14; } /* Orange */
+.quiz-question.q9 p { color: #6c757d; } /* Gris */
+.quiz-question.q10 p { color: #20c997; } /* Turquoise */
+
+/* Style pour le bouton d'écoute des questions */
+.listen-button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 0.5em;
+    vertical-align: middle;
+    color: var(--color-principal-fonce);
+    transition: transform 0.2s ease;
+}
+.listen-button:hover {
+    transform: scale(1.1);
 }

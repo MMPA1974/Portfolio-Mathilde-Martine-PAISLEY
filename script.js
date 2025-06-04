@@ -7,9 +7,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
     const sections = document.querySelectorAll('main section'); // Sélectionne toutes les sections principales
+    const mainHeader = document.getElementById('mainHeader'); // L'élément header principal
 
-    // Log pour vérifier que les sections sont trouvées
-    console.log('Sections found:', sections.length, sections);
+    // Définition des variables CSS pour les tailles de l'entête
+    // Ces valeurs doivent correspondre à celles définies dans style.css
+    const headerHeightInitial = 200; // Hauteur initiale de l'entête en px
+    const headerHeightScrolled = 100; // Hauteur de l'entête après scroll en px
+
+    // Applique les variables CSS via JavaScript pour une gestion centralisée
+    document.documentElement.style.setProperty('--header-height-initial', `${headerHeightInitial}px`);
+    document.documentElement.style.setProperty('--header-height-scrolled', `${headerHeightScrolled}px`);
+    document.documentElement.style.setProperty('--h1-font-size-initial', '2rem');
+    document.documentElement.style.setProperty('--h1-font-size-scrolled', '1.2rem');
+    document.documentElement.style.setProperty('--p-font-size-initial', '0.9rem');
+    document.documentElement.style.setProperty('--p-font-size-scrolled', '0.7rem');
+    document.documentElement.style.setProperty('--cta-padding-initial', '0.7rem 1.8rem');
+    document.documentElement.style.setProperty('--cta-padding-scrolled', '0.4rem 1rem');
+    document.documentElement.style.setProperty('--cta-font-size-initial', '0.9rem');
+    document.documentElement.style.setProperty('--cta-font-size-scrolled', '0.7rem');
+
+    // Ajuste le padding-top du body pour éviter que le contenu ne soit masqué par l'entête fixe
+    document.body.style.paddingTop = `${headerHeightInitial}px`;
+
 
     const currentYearElement = document.getElementById('currentYear');
     if (currentYearElement) {
@@ -96,6 +115,21 @@ document.addEventListener('DOMContentLoaded', function () {
         showSection('#accueil'); // Par défaut à la section d'accueil si pas de hachage ou hachage invalide
     }
 
+    // Logique pour le shrinking de l'entête au scroll
+    window.addEventListener('scroll', () => {
+        // Un seuil de 50px est généralement suffisant pour détecter un début de scroll
+        if (window.scrollY > 50) {
+            mainHeader.classList.add('scrolled');
+            // Ajuste le padding-top du body pour la hauteur réduite de l'entête
+            document.body.style.paddingTop = `${headerHeightScrolled}px`;
+        } else {
+            mainHeader.classList.remove('scrolled');
+            // Réinitialise le padding-top du body à la hauteur initiale
+            document.body.style.paddingTop = `${headerHeightInitial}px`;
+        }
+    });
+
+
     /**
      * Initialise le graphique Chart.js pour la section 'Mon Expertise'.
      * Cette fonction est conçue pour être appelée uniquement lorsque la section est visible.
@@ -114,20 +148,20 @@ document.addEventListener('DOMContentLoaded', function () {
                         label: 'Niveau de Maîtrise / Expérience (sur 5)',
                         data: [4.2, 4.5, 4.0, 4.3, 4.0, 4.0],
                         backgroundColor: [
-                            'rgba(255, 215, 0, 0.7)',
-                            'rgba(218, 165, 32, 0.7)',
-                            'rgba(184, 134, 11, 0.7)',
-                            'rgba(255, 215, 0, 0.7)',
-                            'rgba(218, 165, 32, 0.7)',
-                            'rgba(184, 134, 11, 0.7)'
+                            'var(--gold-light)',
+                            'var(--gold-medium)',
+                            'var(--gold-dark)',
+                            'var(--gold-light)',
+                            'var(--gold-medium)',
+                            'var(--gold-dark)'
                         ],
                         borderColor: [
-                            'rgb(255, 215, 0)',
-                            'rgb(218, 165, 32)',
-                            'rgb(184, 134, 11)',
-                            'rgb(255, 215, 0)',
-                            'rgb(218, 165, 32)',
-                            'rgb(184, 134, 11)'
+                            'var(--gold-dark)', // Utilise une bordure plus foncée pour le contraste
+                            'var(--gold-dark)',
+                            'var(--gold-dark)',
+                            'var(--gold-dark)',
+                            'var(--gold-dark)',
+                            'var(--gold-dark)'
                         ],
                         borderWidth: 1,
                         borderRadius: 5
@@ -271,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* --- Quiz RH Logic --- */
     const quizQuestions = [
         {
-            question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ?",
+            question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ? 📊",
             options: [
                 "A) Simplifier le calcul des impôts sur le revenu.",
                 "B) Remplacer toutes les déclarations sociales et fiscales.",
@@ -281,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "C) Transmettre les données sociales des salariés aux organismes de protection sociale."
         },
         {
-            question: "Qu'est-ce que le précompte professionnel ?",
+            question: "Qu'est-ce que le précompte professionnel ? 💰",
             options: [
                 "A) Une avance sur salaire.",
                 "B) L'impôt sur le revenu prélevé à la source sur le salaire.",
@@ -291,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) L'impôt sur le revenu prélevé à la source sur le salaire."
         },
         {
-            question: "Quelle est la durée légale du travail hebdomadaire en France pour un temps plein ?",
+            question: "Quelle est la durée légale du travail hebdomadaire en France pour un temps plein ? ⏰",
             options: [
                 "A) 39 heures.",
                 "B) 35 heures.",
@@ -301,7 +335,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) 35 heures."
         },
         {
-            question: "Quel est le rôle principal d'un SIRH ?",
+            question: "Quel est le rôle principal d'un SIRH ? 💻",
             options: [
                 "A) Gérer la comptabilité de l'entreprise.",
                 "B) Optimiser la gestion des ressources humaines via des outils informatiques.",
@@ -311,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) Optimiser la gestion des ressources humaines via des outils informatiques."
         },
         {
-            question: "Qu'est-ce qu'une GPEC ?",
+            question: "Qu'est-ce qu'une GPEC ? 📈",
             options: [
                 "A) Gestion Prévisionnelle des Emplois et des Compétences.",
                 "B) Grande Entreprise de Prestations Externalisées et de Conseil.",
@@ -321,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "A) Gestion Prévisionnelle des Emplois et des Compétences."
         },
         {
-            question: "En cas d'accident du travail, qui est le premier organisme à indemniser le salarié ?",
+            question: "En cas d'accident du travail, qui est le premier organisme à indemniser le salarié ? 🏥",
             options: [
                 "A) L'employeur.",
                 "B) L'assurance chômage.",
@@ -331,7 +365,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "C) La Sécurité Sociale (CPAM)."
         },
         {
-            question: "Qu'est-ce que la subrogation en matière de paie ?",
+            question: "Qu'est-ce que la subrogation en matière de paie ? 🔄",
             options: [
                 "A) Le remplacement d'un salarié absent par un autre.",
                 "B) Le maintien de salaire par l'employeur qui perçoit directement les IJSS.",
@@ -341,7 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) Le maintien de salaire par l'employeur qui perçoit directement les IJSS."
         },
         {
-            question: "Quel document est obligatoire pour tout salarié à la fin de chaque mois ?",
+            question: "Quel document est obligatoire pour tout salarié à la fin de chaque mois ? 📄",
             options: [
                 "A) Le contrat de travail.",
                 "B) Le règlement intérieur.",
@@ -351,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "C) Le bulletin de paie."
         },
         {
-            question: "Qu'est-ce que le solde de tout compte ?",
+            question: "Qu'est-ce que le solde de tout compte ? 💼",
             options: [
                 "A) Le montant total des salaires versés sur une année.",
                 "B) Un document récapitulant les sommes versées au salarié à la rupture de son contrat.",
@@ -361,7 +395,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) Un document récapitulant les sommes versées au salarié à la rupture de son contrat."
         },
         {
-            question: "Quelle est la principale fonction du logiciel Chronotime ?",
+            question: "Quelle est la principale fonction du logiciel Chronotime ? 📅",
             options: [
                 "A) La gestion de la paie.",
                 "B) La gestion des temps et des activités (GTA).",
@@ -387,18 +421,39 @@ document.addEventListener('DOMContentLoaded', function () {
         quizQuestionsContainer.innerHTML = ''; // Clear previous questions
         quizQuestions.forEach((q, index) => {
             const questionDiv = document.createElement('div');
-            questionDiv.classList.add('quiz-question');
-            questionDiv.innerHTML = `
-                <p>${index + 1}. ${q.question}</p>
-                <div class="quiz-options">
-                    ${q.options.map((option, optIndex) => `
-                        <label>
-                            <input type="radio" name="question${index}" value="${option}" data-question-index="${index}" data-option-index="${optIndex}">
-                            ${option}
-                        </label>
-                    `).join('')}
-                </div>
+            // Ajout d'une classe dynamique pour le style des questions
+            questionDiv.classList.add('quiz-question', `q${index + 1}`);
+            
+            // Création de l'élément p pour la question
+            const questionTextElement = document.createElement('p');
+            questionTextElement.innerHTML = `${index + 1}. ${q.question}`;
+            questionDiv.appendChild(questionTextElement);
+
+            // Ajout du bouton d'écoute si la synthèse vocale est supportée
+            if ('speechSynthesis' in window) {
+                const listenButton = document.createElement('button');
+                listenButton.classList.add('listen-button');
+                listenButton.innerHTML = '🔊';
+                listenButton.title = "Écouter la question";
+                listenButton.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Empêche le clic de se propager aux options
+                    const utterance = new SpeechSynthesisUtterance(q.question);
+                    window.speechSynthesis.speak(utterance);
+                });
+                questionTextElement.prepend(listenButton); // Ajoute le bouton avant le texte de la question
+            }
+
+            const optionsDiv = document.createElement('div');
+            optionsDiv.classList.add('quiz-options');
+            optionsDiv.innerHTML = `
+                ${q.options.map((option, optIndex) => `
+                    <label>
+                        <input type="radio" name="question${index}" value="${option}" data-question-index="${index}" data-option-index="${optIndex}">
+                        <strong>${option}</strong>
+                    </label>
+                `).join('')}
             `;
+            questionDiv.appendChild(optionsDiv);
             quizQuestionsContainer.appendChild(questionDiv);
         });
     }
