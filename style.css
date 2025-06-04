@@ -6,9 +6,9 @@
     --color-accent-secondaire: #F4B3C2; /* Rose doux et subtil pour les accents */
     --color-gris-subtil: #E0E0E0; /* Light Gray - Pour les bordures et fonds légers */
 
-    /* Nuances de doré métallique pour le dégradé */
+    /* Nuances de doré métallique pour le dégradé (ajusté pour être plus pétillant) */
     --gold-light: #FFD700;   /* Or classique, plus clair */
-    --gold-medium: #DAA520;  /* Goldenrod, ton moyen */
+    --gold-medium: #FFC107;  /* Ambre - Plus pétillant que Goldenrod */
     --gold-dark: #B8860B;    /* Dark Goldenrod, plus profond */
 
     /* Dégradé doré à réutiliser */
@@ -44,6 +44,8 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     position: relative;
+    /* Ajustement du padding-top pour laisser de la place à la nav en haut */
+    padding-top: 6rem; /* Espace pour la barre de navigation en haut */
 }
 .logo-placeholder {
     position: absolute;
@@ -100,11 +102,13 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 5px 12px rgba(0,0,0,0.4); /* Ombre ajustée */
 }
 
-/* --- Barre de Navigation --- */
-.nav-bar-bg {
-    background-color: var(--color-principal-fonce);
-    position: sticky;
+/* --- Barre de Navigation (maintenant en haut du header) --- */
+.nav-bar-top {
+    background-color: var(--color-principal-fonce); /* Garde la couleur de fond */
+    width: 100%;
+    position: absolute; /* Positionne en haut du header */
     top: 0;
+    left: 0;
     z-index: 40;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
@@ -112,19 +116,19 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem; /* Espace entre les liens ajusté */
-    padding: 0.5rem 0; /* Padding ajusté */
+    gap: 0.4rem; /* Espace entre les liens ajusté pour plus petit */
+    padding: 0.4rem 0; /* Padding ajusté pour plus petit */
     list-style: none;
     margin: 0;
 }
 .nav-link {
     color: var(--color-fond-clair);
-    padding: 0.5rem 0.9rem; /* Padding ajusté */
-    border-radius: 1.5rem; /* Arrondi ajusté */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure plus subtile */
+    padding: 0.4rem 0.7rem; /* Padding réduit pour des onglets plus petits */
+    border-radius: 1.2rem; /* Arrondi ajusté */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Bordure plus subtile */
     transition: all 0.3s ease;
     text-decoration: none;
-    font-size: 0.85rem; /* Taille de police ajustée */
+    font-size: 0.75rem; /* Taille de police réduite pour des onglets plus petits */
     white-space: nowrap;
     display: inline-block;
 }
@@ -217,6 +221,9 @@ footer {
     cursor: pointer;
     font-size: 1.6rem; /* Icône ajustée */
     z-index: 60;
+    /* Position ajustée pour être relative au header */
+    top: 0.8rem;
+    right: 0.8rem;
 }
 
 .mobile-nav-links {
@@ -224,7 +231,7 @@ footer {
     flex-direction: column;
     background-color: var(--color-principal-fonce);
     position: absolute;
-    top: 0;
+    top: 0; /* Reste en haut de la fenêtre */
     left: 0;
     width: 100%;
     height: 100vh;
@@ -269,6 +276,7 @@ footer {
     }
     .hero-bg {
         padding: 2rem 1.5rem; /* Ajusté pour desktop */
+        padding-top: 6rem; /* Ajustement pour la nav en haut */
     }
     .hero-bg h1 {
         font-size: 2.8rem; /* Ajusté pour desktop */
@@ -430,7 +438,7 @@ footer {
     font-size: 1.2em; /* Taille ajustée */
 }
 
-/* Styles pour la section "Qui suis-je ?" - Image et texte */
+/* Styles pour la section "Qui suis-je ?" - Vidéo et texte */
 .profile-section {
     display: flex;
     flex-direction: column;
@@ -442,23 +450,32 @@ footer {
         flex-direction: row;
         text-align: left;
     }
-    .profile-image-container {
+    .profile-video-container { /* Changé de .profile-image-container */
         flex-shrink: 0;
     }
 }
-.profile-image-container {
+.profile-video-container { /* Nouveau style pour le conteneur vidéo */
     position: relative;
     padding: 6px; /* Espace pour le cadre doré ajusté */
     border-radius: 50%;
     background: var(--gradient-gold);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Ombre ajustée */
+    width: 256px; /* Largeur du conteneur */
+    height: 256px; /* Hauteur du conteneur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Assure que le contenu débordant est masqué pour le cercle */
 }
-.profile-image-container img {
+.profile-video-container video.profile-video { /* Nouveau style pour la vidéo */
     display: block;
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius: 50%; /* Rend la vidéo circulaire */
+    object-fit: cover; /* Assure que la vidéo couvre le cercle sans déformation */
     border: 3px solid var(--color-fond-clair); /* Bordure intérieure ajustée */
+    width: 100%; /* La vidéo prend toute la largeur du conteneur */
+    height: 100%; /* La vidéo prend toute la hauteur du conteneur */
 }
+
 /* Styles pour les cartes de tarifs */
 .price-card {
     display: flex;
