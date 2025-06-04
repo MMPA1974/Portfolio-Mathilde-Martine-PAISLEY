@@ -41,7 +41,7 @@ body {
     margin: 0;
     line-height: 1.6;
     scroll-behavior: smooth; /* Ajout pour une navigation fluide */
-    padding-top: var(--header-height-initial); /* Espace pour l'entête initiale */
+    padding-top: 50px; /* Espace pour la barre de navigation fixe en haut */
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
@@ -161,6 +161,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-bg .cta-button {
+    background: var(--gradient-gold);
+    color: var(--color-principal-fonce);
     padding: var(--cta-padding-initial);
     border-radius: 2rem;
     text-decoration: none;
