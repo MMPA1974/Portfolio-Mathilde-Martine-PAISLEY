@@ -16,16 +16,14 @@
     --gradient-gold: linear-gradient(to right, var(--gold-light), var(--gold-medium), var(--gold-dark));
     /* Couleur d'accent unique pour les éléments qui ne peuvent pas être un dégradé (ex: icônes, bordures simples) */
     --color-accent-unique: var(--gold-medium); /* Utilise le ton moyen pour la cohérence */
-    /* Version transparente de l'accent secondaire pour les icônes */
-    --color-accent-secondaire-rgba: rgba(255, 193, 7, 0.1); 
     /* Couleur spécifique pour la rose dans le header pour éviter le conflit avec l'accent secondaire générique */
     --color-accent-secondaire-rose: #F4B3C2;
 
 
     /* Variables pour la taille de l'entête et de ses éléments */
     /* Valeurs initiales plus larges et lisibles */
-    --header-height-initial: 250px; /* Augmenté pour plus d'espace */
-    --header-height-scrolled: 90px;
+    --header-height-initial: 300px; /* Augmenté pour plus d'espace, incluant la navigation */
+    --header-height-scrolled: 140px; /* Ajusté pour le scroll, incluant la navigation réduite */
     --h1-font-size-initial: 2.8rem; /* Augmenté pour le titre principal */
     --h1-font-size-scrolled: 1.5rem; /* Ajusté pour le scroll */
     --p-font-size-initial: 1.1rem; /* Augmenté pour le slogan */
@@ -34,6 +32,8 @@
     --cta-padding-scrolled: 0.5rem 1.2rem; /* Ajusté */
     --cta-font-size-initial: 1rem; /* Augmenté */
     --cta-font-size-scrolled: 0.8rem; /* Ajusté */
+    --nav-height-initial: 60px; /* Hauteur initiale de la nav dans le header */
+    --nav-height-scrolled: 50px; /* Hauteur réduite de la nav dans le header */
 }
 
 /* --- Styles de Base --- */
@@ -53,89 +53,6 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
 }
 
-/* --- Barre de Navigation Fixée en Haut de la Page --- */
-.nav-bar-top {
-    background-color: var(--color-principal-fonce);
-    width: 100%;
-    position: fixed; /* Fixée à la fenêtre */
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Assure qu'elle est au-dessus du reste */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.nav-links-container {
-    display: flex;
-    flex-wrap: nowrap; /* Empêche le retour à la ligne */
-    justify-content: center;
-    gap: 0.2rem; /* Réduit l'espace entre les liens pour les compacter */
-    padding: 0.4rem 0; /* Padding ajusté pour plus petit */
-    list-style: none;
-    margin: 0;
-    overflow-x: auto; /* Permet le défilement horizontal si trop d'éléments */
-    -webkit-overflow-scrolling: touch; /* Améliore le défilement sur iOS */
-    scrollbar-width: none; /* Cache la scrollbar pour Firefox */
-}
-.nav-links-container::-webkit-scrollbar { /* Cache la scrollbar pour Chrome/Safari */
-    display: none;
-}
-
-.nav-link {
-    color: var(--color-fond-clair);
-    padding: 0.3rem 0.6rem; /* Padding réduit pour des onglets plus petits */
-    border-radius: 1.5rem; /* Arrondi ajusté */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure plus subtile et moins visible */
-    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-    font-size: 0.75rem; /* Taille de police réduite */
-    white-space: nowrap;
-    display: flex; /* Utilise flexbox pour l'icône et le texte */
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.nav-link .icon-only {
-    display: block; /* Affiché par défaut */
-    font-size: 1.1rem; /* Taille de l'icône */
-}
-
-.nav-link .text-on-hover {
-    display: none; /* Caché par défaut */
-    margin-left: 0.4rem; /* Espace entre icône et texte */
-}
-
-.nav-link:hover .icon-only {
-    display: none; /* Cache l'icône au survol */
-}
-
-.nav-link:hover .text-on-hover {
-    display: block; /* Affiche le texte au survol */
-}
-
-.nav-link:hover {
-    background-color: var(--color-fond-clair); /* Devient blanc au survol */
-    color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
-    border-color: var(--color-principal-fonce); /* Bordure bleue foncée au survol */
-    transform: translateY(-1px); /* Effet plus subtil */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* Ombre ajustée */
-}
-.nav-link.active {
-    background: var(--gradient-gold);
-    color: var(--color-principal-fonce);
-    transform: translateY(-2px); /* Effet plus subtil */
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2); /* Ombre ajustée */
-    font-weight: 600; /* Moins épais */
-    border-color: var(--gold-dark);
-}
-.nav-link.active .icon-only { /* L'onglet actif affiche l'icône et le texte */
-    display: block;
-}
-.nav-link.active .text-on-hover { /* L'onglet actif affiche l'icône et le texte */
-    display: block;
-    margin-left: 0.4rem;
-}
-
-
 /* --- En-tête (Hero Section) --- */
 .hero-bg {
     background-color: var(--color-principal-fonce);
@@ -147,9 +64,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     position: fixed; /* Fixé pour permettre le shrinking */
-    top: 0; /* Géré par JS pour décaler après la nav-bar-top */
+    top: 0;
     width: 100%;
-    z-index: 90; /* En dessous de la nav-bar-top */
+    z-index: 90; /* En dessous de la nav-bar-top qui n'est plus fixed */
     transition: all 0.3s ease; /* Transition pour le shrinking */
     height: var(--header-height-initial); /* Hauteur initiale via variable */
     overflow: hidden; /* Cache le contenu qui dépasse lors du shrinking */
@@ -168,7 +85,6 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: 100%;
     transition: all 0.3s ease;
-    /* Assure que le contenu du hero est toujours visible */
     position: relative;
     z-index: 2; /* Au-dessus des éléments potentiellement masqués */
     padding-top: 20px; /* Ajoute un peu d'espace si nécessaire */
@@ -259,10 +175,100 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: contain;
 }
 
+/* --- Barre de Navigation Fixée dans l'En-tête --- */
+.nav-bar-top {
+    background-color: var(--color-principal-fonce); /* Conserve le fond de la nav */
+    width: 100%;
+    /* Retiré position: fixed; car le parent .hero-bg est déjà fixed */
+    margin-top: 1.5rem; /* Marge par rapport au CTA */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Conserve l'ombre */
+    transition: all 0.3s ease;
+    height: var(--nav-height-initial); /* Hauteur initiale de la nav */
+    overflow: hidden; /* Cache les éléments si elle rétrécit */
+}
+
+.hero-bg.scrolled .nav-bar-top {
+    margin-top: 0.5rem; /* Réduit la marge au scroll */
+    height: var(--nav-height-scrolled); /* Réduit la hauteur de la nav */
+}
+
+.nav-links-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 0.4rem 0;
+    list-style: none;
+    margin: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+.nav-links-container::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-link {
+    color: var(--color-fond-clair);
+    padding: 0.3rem 0.6rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Comportement emoji par défaut, texte au survol pour TOUS les liens de nav */
+.nav-link .icon-only {
+    display: block; /* Affiché par défaut */
+    font-size: 1.1rem;
+}
+
+.nav-link .text-on-hover {
+    display: none; /* Caché par défaut */
+    margin-left: 0.4rem;
+}
+
+.nav-link:hover .icon-only {
+    display: none; /* Cache l'icône au survol */
+}
+
+.nav-link:hover .text-on-hover {
+    display: block; /* Affiche le texte au survol */
+}
+
+/* L'onglet actif se comporte comme les autres liens de nav */
+.nav-link.active {
+    background: var(--gradient-gold);
+    color: var(--color-principal-fonce);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    font-weight: 600;
+    border-color: var(--gold-dark);
+}
+.nav-link.active .icon-only {
+    display: block; /* Toujours l'icône par défaut pour l'actif */
+}
+.nav-link.active .text-on-hover {
+    display: none; /* Le texte de l'actif est caché par défaut, apparaît au survol */
+}
+.nav-link.active:hover .icon-only {
+    display: none;
+}
+.nav-link.active:hover .text-on-hover {
+    display: block;
+}
+
+
 /* Styles pour les sections de contenu (pages individuelles) */
 main {
     flex-grow: 1;
-    padding-top: 1.5rem; /* Espace après la barre de navigation ajusté, sera compensé par le padding-top du body en JS */
+    /* padding-top sera géré par script.js pour s'adapter à la hauteur de l'en-tête dynamique */
     padding-bottom: 2.5rem; /* Espace avant le pied de page ajusté */
 }
 .section-container {
@@ -332,24 +338,24 @@ footer {
     padding: 0.6rem;
     cursor: pointer;
     font-size: 1.6rem;
-    z-index: 1001; /* Plus élevé que la nav-bar-top */
-    position: fixed; /* Fixé pour le mobile aussi */
-    top: 8px; /* Ajusté pour être en haut de la page */
-    right: 8px; /* Ajusté pour être en haut de la page */
+    z-index: 1001; /* Plus élevé que l'en-tête */
+    position: absolute; /* Relative au .hero-bg parent */
+    top: 8px; /* Ajusté pour être en haut de la nav dans le header */
+    right: 8px; /* Ajusté pour être en haut de la nav dans le header */
 }
 
 .mobile-nav-links {
     display: none;
     flex-direction: column;
     background-color: var(--color-principal-fonce);
-    position: fixed; /* Fixé à la fenêtre */
+    position: fixed; /* Reste fixed pour le menu overlay */
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     overflow-y: auto;
-    padding-top: 70px;
-    z-index: 1000; /* Assure qu'il est au-dessus du reste */
+    padding-top: 70px; /* Espace pour le bouton de fermeture/titre si besoin */
+    z-index: 1000; /* Assure qu'il est au-dessus de tout */
     animation: slideInLeft 0.4s ease-out;
 }
 @keyframes slideInLeft {
@@ -358,7 +364,6 @@ footer {
 }
 .mobile-nav-links.active {
     display: flex;
-
 }
 
 .mobile-nav-link {
@@ -386,37 +391,26 @@ footer {
     .nav-links-container {
         display: flex;
     }
-    body {
-        /* padding-top sera géré par script.js pour s'adapter à la hauteur de l'en-tête */
-    }
+    /* Hauteur du header ajustée pour desktop, incluant la navigation */
     .hero-bg {
-        padding-top: 1.5rem; /* Ajusté pour desktop */
-        padding-bottom: 1.5rem; /* Ajusté pour desktop */
-        height: var(--header-height-initial); /* Laisser la hauteur initiale pour desktop */
-        min-height: 250px; /* Minimum pour s'assurer que tout rentre */
+        height: var(--header-height-initial);
+        min-height: 300px;
     }
     .hero-bg.scrolled {
         height: var(--header-height-scrolled);
-        padding-top: 0.8rem;
-        padding-bottom: 0.8rem;
+    }
+    /* Masque les slogans et autres éléments non essentiels au scroll pour desktop */
+    .hero-bg.scrolled .hero-slogan {
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        margin: 0;
     }
     .hero-bg h1 {
         font-size: var(--h1-font-size-initial); /* Utilise la variable */
     }
     .hero-bg.scrolled h1 {
         font-size: var(--h1-font-size-scrolled);
-    }
-    .hero-bg p.hero-slogan { /* Cible spécifiquement le slogan */
-        font-size: var(--p-font-size-initial); /* Utilise la variable */
-        opacity: 1; /* Reste visible par défaut */
-        height: auto; /* Hauteur automatique */
-        overflow: visible; /* Contenu visible */
-    }
-    .hero-bg.scrolled p.hero-slogan {
-        font-size: var(--p-font-size-scrolled);
-        opacity: 0; /* Cache le texte au scroll */
-        height: 0; /* Réduit la hauteur pour le masquer */
-        overflow: hidden;
     }
     .hero-bg .cta-button {
         padding: var(--cta-padding-initial);
@@ -426,57 +420,51 @@ footer {
         padding: var(--cta-padding-scrolled);
         font-size: var(--cta-font-size-scrolled);
     }
-    main {
-        padding-top: 2.5rem;
-    }
-    .section-container {
-        padding: 2.8rem;
-    }
     .logo-placeholder {
-        top: 50%; /* Centré verticalement */
+        top: 50%;
         left: 20px;
-        transform: translateY(-50%); /* Ajustement pour un centrage parfait */
+        transform: translateY(-50%);
         height: 60px;
         width: 140px;
     }
+    /* La nav-bar-top se réduit aussi sur desktop */
+    .hero-bg.scrolled .nav-bar-top {
+        height: var(--nav-height-scrolled);
+        padding: 0.2rem 0; /* Réduit le padding de la nav au scroll */
+    }
+    .nav-link {
+        padding: 0.3rem 0.6rem; /* Ajuste le padding des liens nav pour s'intégrer */
+    }
 }
+
 @media (max-width: 767px) {
     .nav-links-container {
-        display: none;
+        display: none; /* Cache la barre de nav principale sur mobile */
     }
-    body {
-        /* padding-top sera géré par script.js pour s'adapter à la hauteur de l'en-tête */
-    }
+    /* Hauteur du header ajustée pour mobile, incluant la navigation */
     .hero-bg {
-        padding-top: 1.5rem; /* Ajusté pour mobile */
-        padding-bottom: 1.5rem; /* Ajusté pour mobile */
-        height: auto; /* Hauteur automatique pour s'adapter au contenu */
-        min-height: 180px; /* Minimum pour le contenu mobile */
-    }
-    .hero-bg h1 {
-        font-size: 1.6rem; /* Taille du titre ajustée */
-        white-space: normal; /* Permet le retour à la ligne */
-    }
-    .hero-bg p.hero-slogan { /* Cible spécifiquement le slogan */
-        font-size: 0.85rem; /* Taille du paragraphe ajustée */
-        opacity: 1; /* Reste visible par défaut */
-        height: auto; /* Hauteur automatique */
-        overflow: visible; /* Contenu visible */
-        padding: 0 10px; /* Ajoute un peu de padding latéral */
+        height: auto;
+        min-height: 250px; /* Un peu plus d'espace sur mobile */
     }
     .hero-bg.scrolled {
         height: var(--header-height-scrolled); /* Hauteur réduite après scroll, ajustée pour mobile */
-        padding-top: 0.8rem;
-        padding-bottom: 0.8rem;
     }
-    .hero-bg.scrolled h1 {
-        font-size: 1rem; /* Taille du titre encore plus petite sur mobile */
+    .hero-bg h1 {
+        font-size: 1.6rem;
+        white-space: normal;
+    }
+    .hero-bg p.hero-slogan {
+        font-size: 0.85rem;
+        opacity: 1;
+        height: auto;
+        overflow: visible;
+        padding: 0 10px;
     }
     .hero-bg.scrolled p.hero-slogan {
-        display: none; /* Cache le paragraphe sur mobile pour compacter */
+        display: none;
     }
     .hero-bg.scrolled .cta-button {
-        padding: 0.3rem 0.8rem; /* Bouton encore plus petit sur mobile */
+        padding: 0.3rem 0.8rem;
         font-size: 0.6rem;
     }
     .logo-placeholder {
@@ -492,22 +480,15 @@ footer {
     .section-title {
         font-size: 1.8rem;
     }
-
-    /* Ajustement des onglets de navigation pour mobile si affichés */
-    .nav-link .text-on-hover {
-        display: block; /* Toujours afficher le texte sur mobile si l'onglet est visible */
-        margin-left: 0.4rem;
+    /* La nav-bar-top est cachée sur mobile car le menu mobile prend le relais */
+    .nav-bar-top {
+        display: none;
     }
-    .nav-link .icon-only {
-        display: block; /* Toujours afficher l'icône sur mobile */
-    }
-    .nav-link:hover .icon-only {
-        display: block; /* Ne pas cacher l'icône au survol sur mobile */
-    }
-    .nav-link:hover .text-on-hover {
-        display: block; /* Le texte reste visible au survol sur mobile */
+    .mobile-menu-button {
+        display: block; /* S'assure que le bouton mobile est visible sur mobile */
     }
 }
+
 
 /* Styles pour les boutons de navigation entre sections */
 .section-nav-buttons {
@@ -1186,39 +1167,6 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
     color: #721C24;
 }
 
-/* Style pour le bouton d'écoute des questions */
-.listen-button {
-    background: none;
-    border: none;
-    font-size: 1.2em;
-    cursor: pointer;
-    margin-left: 0.5em;
-    vertical-align: middle;
-    color: var(--color-principal-fonce);
-    transition: transform 0.2s ease;
-    flex-shrink: 0; /* Empêche le bouton de rétrécir */
-}
-.listen-button:hover {
-    transform: scale(1.1);
-}
-
-/* Style pour le bouton d'écoute des options */
-.listen-button-option {
-    background: none;
-    border: none;
-    font-size: 0.9em; /* Plus petit que le bouton de question */
-    cursor: pointer;
-    margin-left: auto; /* Aligne le bouton à droite dans la flexbox */
-    vertical-align: middle;
-    color: var(--color-texte-principal); /* Utilise la couleur du texte normal */
-    transition: transform 0.2s ease;
-    flex-shrink: 0; /* Empêche le bouton de rétrécir */
-}
-.listen-button-option:hover {
-    transform: scale(1.1);
-    color: var(--color-principal-fonce); /* Devient bleu foncé au survol */
-}
-
 /* Styles pour les onglets de la section "Mes Offres" */
 .tab-button {
     padding: 10px 15px; /* Ajusté pour être plus petit */
@@ -1226,7 +1174,7 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
     border: 1px solid var(--color-gris-subtil);
     border-radius: 8px;
     cursor: pointer;
-    background-color: var(--color-fond-elements-clairs);
+    background-color: var(--color-fond-texte-clair); /* Rétablir la couleur de fond pour la section Mes Offres */
     color: var(--color-texte-principal);
     font-weight: 600;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
@@ -1235,7 +1183,7 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem; /* Taille de police légèrement réduite */
 }
 .tab-button:hover {
-    background-color: var(--color-fond-elements-clairs-hover);
+    background-color: var(--color-fond-clair); /* Rétablir la couleur de fond au survol pour la section Mes Offres */
     color: var(--color-principal-fonce);
 }
 .tab-button.active {
@@ -1259,4 +1207,9 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
 }
 .icon-circle i {
     font-size: 2.2rem;
+}
+
+/* Styles pour la barre de navigation principale lorsqu'elle est dans l'en-tête (pour s'assurer qu'elle n'est pas fixed à nouveau) */
+#header-tabs { /* Ce sélecteur est désormais inutile car il s'agissait du conteneur des onglets entreprises/particuliers dans le header, qui ont été déplacés. */
+    display: none; /* S'assurer qu'il n'y a pas d'éléments résiduels */
 }

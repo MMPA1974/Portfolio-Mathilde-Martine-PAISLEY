@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOMContentLoaded fired: script.js is running.');
 
     // --- Gestion des onglets dans la section "Mes Offres" ---
+    // Ces onglets sont de retour dans la section "Mes Offres"
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -30,14 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Définition des variables CSS pour les tailles de l'entête
     // Ces valeurs doivent correspondre à celles définies dans style.css
-    // Elles sont définies ici pour être utilisées dans le JS pour le padding du body
-    const headerHeightInitial = 250; // Hauteur initiale de l'entête en px
-    const headerHeightScrolled = 90; // Hauteur de l'entête après scroll en px
-    const navBarTopHeight = 50; // Hauteur de la barre de navigation du haut (à ajuster si elle change dans CSS)
+    // Elles représentent désormais la HAUTEUR TOTALE de l'en-tête, y compris la navigation
+    const headerHeightInitial = 300; // Hauteur initiale de l'entête en px (incluant la nav)
+    const headerHeightScrolled = 140; // Hauteur de l'entête après scroll en px (incluant la nav réduite)
 
     // Ajuste le padding-top du body pour éviter que le contenu ne soit masqué par l'entête fixe
-    // Cette valeur est calculée en fonction de la hauteur du header et de la barre de navigation fixe
-    document.body.style.paddingTop = `${headerHeightInitial + navBarTopHeight}px`;
+    // Utilise directement la hauteur de l'en-tête car la navigation est maintenant intégrée
+    document.body.style.paddingTop = `${headerHeightInitial}px`;
 
     // Met à jour l'année courante dans le pied de page
     const currentYearElement = document.getElementById('currentYear');
@@ -130,11 +130,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.scrollY > 50) { // Un seuil de 50px est généralement suffisant pour détecter un début de scroll
             mainHeader.classList.add('scrolled');
             // Ajuste le padding-top du body pour la hauteur réduite de l'entête
-            document.body.style.paddingTop = `${headerHeightScrolled + navBarTopHeight}px`;
+            document.body.style.paddingTop = `${headerHeightScrolled}px`;
         } else {
             mainHeader.classList.remove('scrolled');
             // Réinitialise le padding-top du body à la hauteur initiale
-            document.body.style.paddingTop = `${headerHeightInitial + navBarTopHeight}px`;
+            document.body.style.paddingTop = `${headerHeightInitial}px`;
         }
     });
 
@@ -420,23 +420,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const quizResultsDiv = document.getElementById('quiz-results');
 
     /**
-     * Initializes Speech Synthesis Utterance for text-to-speech.
-     * @param {string} text - The text to be spoken.
-     */
-    function speakText(text) {
-        if ('speechSynthesis' in window) {
-            // Cancel any ongoing speech
-            window.speechSynthesis.cancel();
-            const utterance = new SpeechSynthesisUtterance(text);
-            // Optional: set language, voice, pitch, rate
-            utterance.lang = 'fr-FR';
-            window.speechSynthesis.speak(utterance);
-        } else {
-            console.warn("Speech synthesis not supported in this browser.");
-        }
-    }
-
-    /**
      * Renders the quiz questions and options into the HTML.
      */
     function renderQuiz() {
@@ -455,19 +438,6 @@ document.addEventListener('DOMContentLoaded', function () {
             questionTextElement.innerHTML = `${index + 1}. ${q.question}`;
             questionDiv.appendChild(questionTextElement);
 
-            // Ajout du bouton d'écoute si la synthèse vocale est supportée
-            if ('speechSynthesis' in window) {
-                const listenButton = document.createElement('button');
-                listenButton.classList.add('listen-button');
-                listenButton.innerHTML = '🔊';
-                listenButton.title = "Écouter la question";
-                listenButton.addEventListener('click', function(e) {
-                    e.stopPropagation(); // Empêche le clic de se propager aux options
-                    speakText(q.question);
-                });
-                questionTextElement.prepend(listenButton); // Ajoute le bouton avant le texte de la question
-            }
-
             const optionsDiv = document.createElement('div');
             optionsDiv.classList.add('quiz-options');
             optionsDiv.innerHTML = `
@@ -475,21 +445,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     <label class="option-${String.fromCharCode(65 + optIndex).toLowerCase()}">
                         <input type="radio" name="question${index}" value="${option}" data-question-index="${index}" data-option-index="${optIndex}">
                         <span>${option}</span>
-                         ${'speechSynthesis' in window ? `<button class="listen-button-option" data-text="${option}" title="Écouter la proposition">🔊</button>` : ''}
                     </label>
                 `).join('')}
             `;
             questionDiv.appendChild(optionsDiv);
             quizQuestionsContainer.appendChild(questionDiv);
-        });
-
-        // Ajouter les écouteurs pour les boutons de lecture des options
-        document.querySelectorAll('.listen-button-option').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const textToSpeak = this.dataset.text;
-                speakText(textToSpeak);
-            });
         });
     }
 
@@ -545,7 +505,6 @@ document.addEventListener('DOMContentLoaded', function () {
             quizResultsDiv.classList.add('fail');
         }
         quizResultsDiv.textContent = resultText;
-        speakText(resultText); // Read out the quiz results
     }
 
     // Event listener for quiz submission
@@ -568,37 +527,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
         quizObserver.observe(quizRhSection);
     }
-
-    /* --- General Audio Speaker Logic --- */
-    // Select all elements with the 'listen-button' class that have a data-text attribute
-    const generalListenButtons = document.querySelectorAll('.listen-button[data-text]');
-
-    generalListenButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.stopPropagation(); // Prevent clicks from propagating
-            const textToSpeak = this.dataset.text;
-            if (textToSpeak) {
-                speakText(textToSpeak);
-            }
-        });
-    });
-
-    // Optional: Stop speech when navigating to a new section or scrolling significantly
-    window.addEventListener('scroll', () => {
-        if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
-            // Stop speech if scrolling, to avoid reading irrelevant content
-            // You might want to fine-tune this condition
-            // window.speechSynthesis.cancel();
-        }
-    });
-
-    // Stop speech when a new section is shown (triggered by nav links)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function() {
-            if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
-                window.speechSynthesis.cancel();
-            }
-        });
-    });
 
 });
