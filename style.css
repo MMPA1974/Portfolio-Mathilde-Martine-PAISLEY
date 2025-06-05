@@ -16,18 +16,24 @@
     --gradient-gold: linear-gradient(to right, var(--gold-light), var(--gold-medium), var(--gold-dark));
     /* Couleur d'accent unique pour les éléments qui ne peuvent pas être un dégradé (ex: icônes, bordures simples) */
     --color-accent-unique: var(--gold-medium); /* Utilise le ton moyen pour la cohérence */
+    /* Version transparente de l'accent secondaire pour les icônes */
+    --color-accent-secondaire-rgba: rgba(255, 193, 7, 0.1); 
+    /* Couleur spécifique pour la rose dans le header pour éviter le conflit avec l'accent secondaire générique */
+    --color-accent-secondaire-rose: #F4B3C2;
+
 
     /* Variables pour la taille de l'entête et de ses éléments */
-    --header-height-initial: 200px; /* Hauteur initiale de l'entête */
-    --header-height-scrolled: 100px; /* Hauteur de l'entête après scroll */
-    --h1-font-size-initial: 2rem;
-    --h1-font-size-scrolled: 1.2rem;
-    --p-font-size-initial: 0.9rem;
-    --p-font-size-scrolled: 0.7rem;
-    --cta-padding-initial: 0.7rem 1.8rem;
-    --cta-padding-scrolled: 0.4rem 1rem;
-    --cta-font-size-initial: 0.9rem;
-    --cta-font-size-scrolled: 0.7rem;
+    /* Valeurs initiales plus larges et lisibles */
+    --header-height-initial: 250px; /* Augmenté pour plus d'espace */
+    --header-height-scrolled: 90px;
+    --h1-font-size-initial: 2.8rem; /* Augmenté pour le titre principal */
+    --h1-font-size-scrolled: 1.5rem; /* Ajusté pour le scroll */
+    --p-font-size-initial: 1.1rem; /* Augmenté pour le slogan */
+    --p-font-size-scrolled: 0.8rem; /* Ajusté pour le scroll */
+    --cta-padding-initial: 1rem 2.5rem; /* Augmenté */
+    --cta-padding-scrolled: 0.5rem 1.2rem; /* Ajusté */
+    --cta-font-size-initial: 1rem; /* Augmenté */
+    --cta-font-size-scrolled: 0.8rem; /* Ajusté */
 }
 
 /* --- Styles de Base --- */
@@ -41,7 +47,7 @@ body {
     margin: 0;
     line-height: 1.6;
     scroll-behavior: smooth; /* Ajout pour une navigation fluide */
-    padding-top: 50px; /* Espace pour la barre de navigation fixe en haut */
+    /* padding-top sera géré par script.js pour s'adapter à la hauteur de l'en-tête */
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
@@ -54,29 +60,58 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed; /* Fixée à la fenêtre */
     top: 0;
     left: 0;
-    z-index: 100; /* Assure qu'elle est au-dessus du reste */
+    z-index: 1000; /* Assure qu'elle est au-dessus du reste */
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .nav-links-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
     justify-content: center;
-    gap: 0.4rem; /* Espace entre les liens ajusté pour plus petit */
+    gap: 0.2rem; /* Réduit l'espace entre les liens pour les compacter */
     padding: 0.4rem 0; /* Padding ajusté pour plus petit */
     list-style: none;
     margin: 0;
+    overflow-x: auto; /* Permet le défilement horizontal si trop d'éléments */
+    -webkit-overflow-scrolling: touch; /* Améliore le défilement sur iOS */
+    scrollbar-width: none; /* Cache la scrollbar pour Firefox */
 }
+.nav-links-container::-webkit-scrollbar { /* Cache la scrollbar pour Chrome/Safari */
+    display: none;
+}
+
 .nav-link {
     color: var(--color-fond-clair);
-    padding: 0.4rem 0.7rem; /* Padding réduit pour des onglets plus petits */
-    border-radius: 1.2rem; /* Arrondi ajusté */
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Bordure plus subtile */
+    padding: 0.3rem 0.6rem; /* Padding réduit pour des onglets plus petits */
+    border-radius: 1.5rem; /* Arrondi ajusté */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordure plus subtile et moins visible */
     transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
-    font-size: 0.75rem; /* Taille de police réduite pour des onglets plus petits */
+    font-size: 0.75rem; /* Taille de police réduite */
     white-space: nowrap;
-    display: inline-block;
+    display: flex; /* Utilise flexbox pour l'icône et le texte */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
+
+.nav-link .icon-only {
+    display: block; /* Affiché par défaut */
+    font-size: 1.1rem; /* Taille de l'icône */
+}
+
+.nav-link .text-on-hover {
+    display: none; /* Caché par défaut */
+    margin-left: 0.4rem; /* Espace entre icône et texte */
+}
+
+.nav-link:hover .icon-only {
+    display: none; /* Cache l'icône au survol */
+}
+
+.nav-link:hover .text-on-hover {
+    display: block; /* Affiche le texte au survol */
+}
+
 .nav-link:hover {
     background-color: var(--color-fond-clair); /* Devient blanc au survol */
     color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
@@ -92,6 +127,14 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600; /* Moins épais */
     border-color: var(--gold-dark);
 }
+.nav-link.active .icon-only { /* L'onglet actif affiche l'icône et le texte */
+    display: block;
+}
+.nav-link.active .text-on-hover { /* L'onglet actif affiche l'icône et le texte */
+    display: block;
+    margin-left: 0.4rem;
+}
+
 
 /* --- En-tête (Hero Section) --- */
 .hero-bg {
@@ -100,21 +143,21 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 1rem; /* Padding réduit pour compacter l'entête */
+    padding: 1.5rem 1rem; /* Padding augmenté */
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     position: fixed; /* Fixé pour permettre le shrinking */
-    top: 50px; /* Commence après la nav-bar-top */
+    top: 0; /* Géré par JS pour décaler après la nav-bar-top */
     width: 100%;
     z-index: 90; /* En dessous de la nav-bar-top */
     transition: all 0.3s ease; /* Transition pour le shrinking */
-    height: calc(var(--header-height-initial) - 50px); /* Hauteur initiale moins la nav-bar-top */
+    height: var(--header-height-initial); /* Hauteur initiale via variable */
     overflow: hidden; /* Cache le contenu qui dépasse lors du shrinking */
 }
 
 .hero-bg.scrolled {
-    height: calc(var(--header-height-scrolled) - 50px); /* Hauteur réduite après scroll */
-    padding: 0.4rem 1rem; /* Padding encore plus réduit */
+    height: var(--header-height-scrolled); /* Hauteur réduite après scroll via variable */
+    padding: 0.8rem 1rem; /* Padding encore plus réduit */
 }
 
 .hero-content {
@@ -125,34 +168,42 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     width: 100%;
     transition: all 0.3s ease;
-}
-
-.hero-bg.scrolled .hero-content {
-    /* Pas de padding ici, géré par hero-bg.scrolled */
+    /* Assure que le contenu du hero est toujours visible */
+    position: relative;
+    z-index: 2; /* Au-dessus des éléments potentiellement masqués */
+    padding-top: 20px; /* Ajoute un peu d'espace si nécessaire */
 }
 
 .hero-bg h1 {
     font-size: var(--h1-font-size-initial);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.4rem; /* Légère marge */
     line-height: 1.2;
     color: var(--color-fond-clair);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
     transition: font-size 0.3s ease, margin-bottom 0.3s ease;
+    white-space: normal; /* Permet au titre de s'adapter */
+    word-break: keep-all; /* Évite de couper les mots */
+    min-width: 250px; /* S'assure que le h1 ne devient pas trop petit */
+    text-wrap: balance; /* Tente d'équilibrer les lignes du titre */
 }
 .hero-bg.scrolled h1 {
     font-size: var(--h1-font-size-scrolled);
     margin-bottom: 0; /* Supprime la marge pour compacter */
+    white-space: nowrap; /* Force sur une ligne si possible en scroll */
+    text-overflow: ellipsis; /* Ajoute ... si le texte est trop long */
+    overflow: hidden; /* Cache le texte qui dépasse */
 }
 
-.hero-bg p {
+.hero-bg .hero-slogan { /* Renommé pour cibler uniquement ce paragraphe */
     font-size: var(--p-font-size-initial);
     line-height: 1.4;
     color: var(--color-fond-clair);
     max-width: 700px;
-    margin: 0 auto 0.8rem auto;
-    transition: font-size 0.3s ease, margin 0.3s ease;
+    margin: 0 auto 1rem auto; /* Plus de marge pour le texte initial */
+    transition: font-size 0.3s ease, margin 0.3s ease, opacity 0.3s ease, height 0.3s ease;
+    white-space: normal; /* Permet le retour à la ligne */
 }
-.hero-bg.scrolled p {
+.hero-bg.scrolled .hero-slogan {
     font-size: var(--p-font-size-scrolled);
     margin: 0; /* Supprime la marge pour compacter */
     opacity: 0; /* Cache le texte */
@@ -171,7 +222,8 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     display: inline-block;
-    margin-top: 0.6rem;
+    margin-top: 1rem; /* Plus de marge */
+    white-space: nowrap; /* Empêche le bouton de se couper */
 }
 .hero-bg.scrolled .cta-button {
     padding: var(--cta-padding-scrolled);
@@ -184,11 +236,33 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-3px) scale(1.01);
     box-shadow: 0 5px 12px rgba(0,0,0,0.4);
 }
+.logo-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 20px; /* Positionnement à gauche */
+    transform: translateY(-50%);
+    height: 60px;
+    width: 140px;
+    background-color: transparent; /* Pas de fond */
+    border: none; /* Pas de bordure */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; /* Couleur du texte si texte dans le placeholder */
+    font-size: 0.8rem;
+    text-align: center;
+    z-index: 100;
+}
+.logo-placeholder img {
+    height: 100%;
+    width: auto; /* Ajuste la largeur automatiquement */
+    object-fit: contain;
+}
 
 /* Styles pour les sections de contenu (pages individuelles) */
 main {
     flex-grow: 1;
-    padding-top: 1.5rem; /* Espace après la barre de navigation ajusté */
+    padding-top: 1.5rem; /* Espace après la barre de navigation ajusté, sera compensé par le padding-top du body en JS */
     padding-bottom: 2.5rem; /* Espace avant le pied de page ajusté */
 }
 .section-container {
@@ -258,7 +332,7 @@ footer {
     padding: 0.6rem;
     cursor: pointer;
     font-size: 1.6rem;
-    z-index: 101; /* Plus élevé que la nav-bar-top */
+    z-index: 1001; /* Plus élevé que la nav-bar-top */
     position: fixed; /* Fixé pour le mobile aussi */
     top: 8px; /* Ajusté pour être en haut de la page */
     right: 8px; /* Ajusté pour être en haut de la page */
@@ -275,7 +349,7 @@ footer {
     height: 100vh;
     overflow-y: auto;
     padding-top: 70px;
-    z-index: 100; /* Assure qu'il est au-dessus du reste */
+    z-index: 1000; /* Assure qu'il est au-dessus du reste */
     animation: slideInLeft 0.4s ease-out;
 }
 @keyframes slideInLeft {
@@ -313,17 +387,44 @@ footer {
         display: flex;
     }
     body {
-        padding-top: var(--header-height-initial); /* Ajustement pour desktop */
+        /* padding-top sera géré par script.js pour s'adapter à la hauteur de l'en-tête */
     }
     .hero-bg {
-        padding-top: 0.8rem; /* Ajusté pour desktop */
-        padding-bottom: 0.8rem; /* Ajusté pour desktop */
+        padding-top: 1.5rem; /* Ajusté pour desktop */
+        padding-bottom: 1.5rem; /* Ajusté pour desktop */
+        height: var(--header-height-initial); /* Laisser la hauteur initiale pour desktop */
+        min-height: 250px; /* Minimum pour s'assurer que tout rentre */
+    }
+    .hero-bg.scrolled {
+        height: var(--header-height-scrolled);
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
     }
     .hero-bg h1 {
         font-size: var(--h1-font-size-initial); /* Utilise la variable */
     }
-    .hero-bg p {
+    .hero-bg.scrolled h1 {
+        font-size: var(--h1-font-size-scrolled);
+    }
+    .hero-bg p.hero-slogan { /* Cible spécifiquement le slogan */
         font-size: var(--p-font-size-initial); /* Utilise la variable */
+        opacity: 1; /* Reste visible par défaut */
+        height: auto; /* Hauteur automatique */
+        overflow: visible; /* Contenu visible */
+    }
+    .hero-bg.scrolled p.hero-slogan {
+        font-size: var(--p-font-size-scrolled);
+        opacity: 0; /* Cache le texte au scroll */
+        height: 0; /* Réduit la hauteur pour le masquer */
+        overflow: hidden;
+    }
+    .hero-bg .cta-button {
+        padding: var(--cta-padding-initial);
+        font-size: var(--cta-font-size-initial);
+    }
+    .hero-bg.scrolled .cta-button {
+        padding: var(--cta-padding-scrolled);
+        font-size: var(--cta-font-size-scrolled);
     }
     main {
         padding-top: 2.5rem;
@@ -338,40 +439,45 @@ footer {
         height: 60px;
         width: 140px;
     }
-
-    /* Styles pour l'état scrolled sur desktop */
-    .hero-bg.scrolled {
-        height: var(--header-height-scrolled);
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
-    }
-    .hero-bg.scrolled h1 {
-        font-size: var(--h1-font-size-scrolled);
-    }
-    .hero-bg.scrolled p {
-        font-size: var(--p-font-size-scrolled);
-    }
-    .hero-bg.scrolled .cta-button {
-        padding: var(--cta-padding-scrolled);
-        font-size: var(--cta-font-size-scrolled);
-    }
 }
 @media (max-width: 767px) {
     .nav-links-container {
         display: none;
     }
     body {
-        padding-top: var(--header-height-initial); /* Ajustement pour mobile */
+        /* padding-top sera géré par script.js pour s'adapter à la hauteur de l'en-tête */
     }
     .hero-bg {
         padding-top: 1.5rem; /* Ajusté pour mobile */
         padding-bottom: 1.5rem; /* Ajusté pour mobile */
+        height: auto; /* Hauteur automatique pour s'adapter au contenu */
+        min-height: 180px; /* Minimum pour le contenu mobile */
     }
     .hero-bg h1 {
         font-size: 1.6rem; /* Taille du titre ajustée */
+        white-space: normal; /* Permet le retour à la ligne */
     }
-    .hero-bg p {
+    .hero-bg p.hero-slogan { /* Cible spécifiquement le slogan */
         font-size: 0.85rem; /* Taille du paragraphe ajustée */
+        opacity: 1; /* Reste visible par défaut */
+        height: auto; /* Hauteur automatique */
+        overflow: visible; /* Contenu visible */
+        padding: 0 10px; /* Ajoute un peu de padding latéral */
+    }
+    .hero-bg.scrolled {
+        height: var(--header-height-scrolled); /* Hauteur réduite après scroll, ajustée pour mobile */
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+    .hero-bg.scrolled h1 {
+        font-size: 1rem; /* Taille du titre encore plus petite sur mobile */
+    }
+    .hero-bg.scrolled p.hero-slogan {
+        display: none; /* Cache le paragraphe sur mobile pour compacter */
+    }
+    .hero-bg.scrolled .cta-button {
+        padding: 0.3rem 0.8rem; /* Bouton encore plus petit sur mobile */
+        font-size: 0.6rem;
     }
     .logo-placeholder {
         height: 40px;
@@ -387,21 +493,19 @@ footer {
         font-size: 1.8rem;
     }
 
-    /* Styles pour l'état scrolled sur mobile (similaire au desktop mais avec des valeurs mobiles) */
-    .hero-bg.scrolled {
-        height: calc(var(--header-height-scrolled) - 50px); /* Hauteur réduite après scroll, ajustée pour mobile */
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
+    /* Ajustement des onglets de navigation pour mobile si affichés */
+    .nav-link .text-on-hover {
+        display: block; /* Toujours afficher le texte sur mobile si l'onglet est visible */
+        margin-left: 0.4rem;
     }
-    .hero-bg.scrolled h1 {
-        font-size: 1rem; /* Taille du titre encore plus petite sur mobile */
+    .nav-link .icon-only {
+        display: block; /* Toujours afficher l'icône sur mobile */
     }
-    .hero-bg.scrolled p {
-        display: none; /* Cache le paragraphe sur mobile pour compacter */
+    .nav-link:hover .icon-only {
+        display: block; /* Ne pas cacher l'icône au survol sur mobile */
     }
-    .hero-bg.scrolled .cta-button {
-        padding: 0.3rem 0.8rem; /* Bouton encore plus petit sur mobile */
-        font-size: 0.6rem;
+    .nav-link:hover .text-on-hover {
+        display: block; /* Le texte reste visible au survol sur mobile */
     }
 }
 
@@ -431,6 +535,7 @@ footer {
 .nav-button:hover {
     background-color: var(--color-fond-clair); /* Devient blanc au survol */
     color: var(--color-principal-fonce); /* Texte bleu foncé au survol */
+    border-color: var(--color-principal-fonce); /* Bordure bleue foncée au survol */
     transform: translateY(-2px) scale(1.01);
     box-shadow: 0 5px 12px rgba(0,0,0,0.15);
 }
@@ -563,6 +668,35 @@ footer {
     width: 100%;
     height: 100%;
 }
+
+/* NEW: Styles pour le fond "papier à l'ancienne" */
+.old-paper-background {
+    background-color: #F8F5E9; /* Couleur crème pour papier vieilli */
+    border: 1px solid #D4C7B7; /* Bordure subtile */
+    border-radius: 15px; /* Bords légèrement arrondis */
+    padding: 2.5rem; /* Plus de padding pour l'effet papier */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.05); /* Ombre douce et effet de profondeur */
+    position: relative;
+    font-family: 'Playfair Display', serif; /* Police manuscrite ou élégante */
+    color: #4A3C30; /* Couleur de texte plus foncée pour contraste */
+    line-height: 1.8; /* Espacement de ligne pour lisibilité */
+    text-align: justify; /* Justifie le texte à l'intérieur */
+}
+
+/* Effet de bord déchiré ou vieilli (facultatif mais ajoute au réalisme) */
+.old-paper-background::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 10px dashed rgba(0, 0, 0, 0.05); /* Bordure hachurée très subtile */
+    border-radius: 20px;
+    z-index: -1;
+    pointer-events: none;
+}
+
 
 /* Styles pour les cartes de tarifs */
 .price-card {
@@ -984,17 +1118,24 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
 }
 
 .quiz-options label {
-    display: block;
+    display: flex; /* Utilise flexbox pour aligner l'input, le texte et le bouton */
+    align-items: center; /* Centre verticalement */
     margin-bottom: 0.8rem;
     cursor: pointer;
     font-size: 1rem;
-    color: var(--color-texte-principal);
     padding: 0.6rem 0.8rem;
     border: 1px solid #ccc;
     border-radius: 0.3rem;
     transition: background-color 0.2s ease, border-color 0.2s ease;
     text-align: left; /* Options text aligned left */
 }
+
+/* Couleurs des propositions du quiz */
+.quiz-options label.option-a { color: #E83E8C; } /* Rose Fuchsia pour A */
+.quiz-options label.option-b { color: #001F3F; } /* Bleu Marine Profond pour B */
+.quiz-options label.option-c { color: #FD7E14; } /* Orange Foncé pour C */
+.quiz-options label.option-d { color: #20C997; } /* Vert Vif pour D */
+
 
 .quiz-options label:hover {
     background-color: #f0f0f0;
@@ -1004,6 +1145,7 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
 .quiz-options input[type="radio"] {
     margin-right: 0.8rem;
     transform: scale(1.2); /* Slightly larger radio buttons */
+    flex-shrink: 0; /* Empêche le bouton radio de rétrécir */
 }
 
 /* Feedback for correct/incorrect answers */
@@ -1044,18 +1186,6 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
     color: #721C24;
 }
 
-/* Styles pour les questions du quiz avec emojis et couleurs */
-.quiz-question.q1 p { color: #007bff; } /* Bleu */
-.quiz-question.q2 p { color: #28a745; } /* Vert */
-.quiz-question.q3 p { color: #dc3545; } /* Rouge */
-.quiz-question.q4 p { color: #ffc107; } /* Jaune */
-.quiz-question.q5 p { color: #6f42c1; } /* Violet */
-.quiz-question.q6 p { color: #17a2b8; } /* Cyan */
-.quiz-question.q7 p { color: #e83e8c; } /* Rose */
-.quiz-question.q8 p { color: #fd7e14; } /* Orange */
-.quiz-question.q9 p { color: #6c757d; } /* Gris */
-.quiz-question.q10 p { color: #20c997; } /* Turquoise */
-
 /* Style pour le bouton d'écoute des questions */
 .listen-button {
     background: none;
@@ -1066,7 +1196,67 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
     vertical-align: middle;
     color: var(--color-principal-fonce);
     transition: transform 0.2s ease;
+    flex-shrink: 0; /* Empêche le bouton de rétrécir */
 }
 .listen-button:hover {
     transform: scale(1.1);
+}
+
+/* Style pour le bouton d'écoute des options */
+.listen-button-option {
+    background: none;
+    border: none;
+    font-size: 0.9em; /* Plus petit que le bouton de question */
+    cursor: pointer;
+    margin-left: auto; /* Aligne le bouton à droite dans la flexbox */
+    vertical-align: middle;
+    color: var(--color-texte-principal); /* Utilise la couleur du texte normal */
+    transition: transform 0.2s ease;
+    flex-shrink: 0; /* Empêche le bouton de rétrécir */
+}
+.listen-button-option:hover {
+    transform: scale(1.1);
+    color: var(--color-principal-fonce); /* Devient bleu foncé au survol */
+}
+
+/* Styles pour les onglets de la section "Mes Offres" */
+.tab-button {
+    padding: 10px 15px; /* Ajusté pour être plus petit */
+    margin: 0 4px; /* Réduit l'espace entre les boutons */
+    border: 1px solid var(--color-gris-subtil);
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--color-fond-elements-clairs);
+    color: var(--color-texte-principal);
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    min-width: 140px; /* Réduit la largeur minimale */
+    text-align: center;
+    font-size: 0.9rem; /* Taille de police légèrement réduite */
+}
+.tab-button:hover {
+    background-color: var(--color-fond-elements-clairs-hover);
+    color: var(--color-principal-fonce);
+}
+.tab-button.active {
+    background-color: var(--color-accent-unique);
+    color: var(--color-fond-clair);
+    border-color: var(--color-accent-unique);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour les icônes dans les cartes de la section Particuliers */
+.icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 193, 7, 0.1); /* Version transparente de l'accent secondaire */
+    margin: 0 auto 1rem;
+    color: var(--color-accent-unique); /* Couleur de l'icône */
+}
+.icon-circle i {
+    font-size: 2.2rem;
 }

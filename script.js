@@ -2,6 +2,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Log pour s'assurer que le script se charge
     console.log('DOMContentLoaded fired: script.js is running.');
 
+    // --- Gestion des onglets dans la section "Mes Offres" ---
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.dataset.target;
+
+            // Masquer tous les contenus des onglets et désactiver tous les boutons d'onglets
+            tabContents.forEach(content => content.classList.add('hidden'));
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Afficher le contenu cible et activer le bouton cliqué
+            document.getElementById(targetId).classList.remove('hidden');
+            button.classList.add('active');
+        });
+    });
+
+    // --- Gestion du menu mobile et de la navigation par section ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelectorAll('.nav-link');
@@ -11,25 +30,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Définition des variables CSS pour les tailles de l'entête
     // Ces valeurs doivent correspondre à celles définies dans style.css
-    const headerHeightInitial = 200; // Hauteur initiale de l'entête en px
-    const headerHeightScrolled = 100; // Hauteur de l'entête après scroll en px
-
-    // Applique les variables CSS via JavaScript pour une gestion centralisée
-    document.documentElement.style.setProperty('--header-height-initial', `${headerHeightInitial}px`);
-    document.documentElement.style.setProperty('--header-height-scrolled', `${headerHeightScrolled}px`);
-    document.documentElement.style.setProperty('--h1-font-size-initial', '2rem');
-    document.documentElement.style.setProperty('--h1-font-size-scrolled', '1.2rem');
-    document.documentElement.style.setProperty('--p-font-size-initial', '0.9rem');
-    document.documentElement.style.setProperty('--p-font-size-scrolled', '0.7rem');
-    document.documentElement.style.setProperty('--cta-padding-initial', '0.7rem 1.8rem');
-    document.documentElement.style.setProperty('--cta-padding-scrolled', '0.4rem 1rem');
-    document.documentElement.style.setProperty('--cta-font-size-initial', '0.9rem');
-    document.documentElement.style.setProperty('--cta-font-size-scrolled', '0.7rem');
+    // Elles sont définies ici pour être utilisées dans le JS pour le padding du body
+    const headerHeightInitial = 250; // Hauteur initiale de l'entête en px
+    const headerHeightScrolled = 90; // Hauteur de l'entête après scroll en px
+    const navBarTopHeight = 50; // Hauteur de la barre de navigation du haut (à ajuster si elle change dans CSS)
 
     // Ajuste le padding-top du body pour éviter que le contenu ne soit masqué par l'entête fixe
-    document.body.style.paddingTop = `${headerHeightInitial}px`;
+    // Cette valeur est calculée en fonction de la hauteur du header et de la barre de navigation fixe
+    document.body.style.paddingTop = `${headerHeightInitial + navBarTopHeight}px`;
 
-
+    // Met à jour l'année courante dans le pied de page
     const currentYearElement = document.getElementById('currentYear');
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
@@ -117,15 +127,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Logique pour le shrinking de l'entête au scroll
     window.addEventListener('scroll', () => {
-        // Un seuil de 50px est généralement suffisant pour détecter un début de scroll
-        if (window.scrollY > 50) {
+        if (window.scrollY > 50) { // Un seuil de 50px est généralement suffisant pour détecter un début de scroll
             mainHeader.classList.add('scrolled');
             // Ajuste le padding-top du body pour la hauteur réduite de l'entête
-            document.body.style.paddingTop = `${headerHeightScrolled}px`;
+            document.body.style.paddingTop = `${headerHeightScrolled + navBarTopHeight}px`;
         } else {
             mainHeader.classList.remove('scrolled');
             // Réinitialise le padding-top du body à la hauteur initiale
-            document.body.style.paddingTop = `${headerHeightInitial}px`;
+            document.body.style.paddingTop = `${headerHeightInitial + navBarTopHeight}px`;
         }
     });
 
@@ -305,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* --- Quiz RH Logic --- */
     const quizQuestions = [
         {
-            question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ? 📊",
+            question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ?",
             options: [
                 "A) Simplifier le calcul des impôts sur le revenu.",
                 "B) Remplacer toutes les déclarations sociales et fiscales.",
@@ -315,7 +324,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "C) Transmettre les données sociales des salariés aux organismes de protection sociale."
         },
         {
-            question: "Qu'est-ce que le précompte professionnel ? 💰",
+            question: "Qu'est-ce que le précompte professionnel ?",
             options: [
                 "A) Une avance sur salaire.",
                 "B) L'impôt sur le revenu prélevé à la source sur le salaire.",
@@ -325,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) L'impôt sur le revenu prélevé à la source sur le salaire."
         },
         {
-            question: "Quelle est la durée légale du travail hebdomadaire en France pour un temps plein ? ⏰",
+            question: "Quelle est la durée légale du travail hebdomadaire en France pour un temps plein ?",
             options: [
                 "A) 39 heures.",
                 "B) 35 heures.",
@@ -335,7 +344,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) 35 heures."
         },
         {
-            question: "Quel est le rôle principal d'un SIRH ? 💻",
+            question: "Quel est le rôle principal d'un SIRH ?",
             options: [
                 "A) Gérer la comptabilité de l'entreprise.",
                 "B) Optimiser la gestion des ressources humaines via des outils informatiques.",
@@ -345,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) Optimiser la gestion des ressources humaines via des outils informatiques."
         },
         {
-            question: "Qu'est-ce qu'une GPEC ? 📈",
+            question: "Qu'est-ce qu'une GPEC ?",
             options: [
                 "A) Gestion Prévisionnelle des Emplois et des Compétences.",
                 "B) Grande Entreprise de Prestations Externalisées et de Conseil.",
@@ -355,7 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "A) Gestion Prévisionnelle des Emplois et des Compétences."
         },
         {
-            question: "En cas d'accident du travail, qui est le premier organisme à indemniser le salarié ? 🏥",
+            question: "En cas d'accident du travail, qui est le premier organisme à indemniser le salarié ?",
             options: [
                 "A) L'employeur.",
                 "B) L'assurance chômage.",
@@ -365,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "C) La Sécurité Sociale (CPAM)."
         },
         {
-            question: "Qu'est-ce que la subrogation en matière de paie ? 🔄",
+            question: "Qu'est-ce que la subrogation en matière de paie ?",
             options: [
                 "A) Le remplacement d'un salarié absent par un autre.",
                 "B) Le maintien de salaire par l'employeur qui perçoit directement les IJSS.",
@@ -375,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) Le maintien de salaire par l'employeur qui perçoit directement les IJSS."
         },
         {
-            question: "Quel document est obligatoire pour tout salarié à la fin de chaque mois ? 📄",
+            question: "Quel document est obligatoire pour tout salarié à la fin de chaque mois ?",
             options: [
                 "A) Le contrat de travail.",
                 "B) Le règlement intérieur.",
@@ -385,7 +394,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "C) Le bulletin de paie."
         },
         {
-            question: "Qu'est-ce que le solde de tout compte ? 💼",
+            question: "Qu'est-ce que le solde de tout compte ?",
             options: [
                 "A) Le montant total des salaires versés sur une année.",
                 "B) Un document récapitulant les sommes versées au salarié à la rupture de son contrat.",
@@ -395,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function () {
             answer: "B) Un document récapitulant les sommes versées au salarié à la rupture de son contrat."
         },
         {
-            question: "Quelle est la principale fonction du logiciel Chronotime ? 📅",
+            question: "Quelle est la principale fonction du logiciel Chronotime ?",
             options: [
                 "A) La gestion de la paie.",
                 "B) La gestion des temps et des activités (GTA).",
@@ -409,6 +418,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const quizQuestionsContainer = document.getElementById('quiz-questions');
     const submitQuizButton = document.getElementById('submit-quiz');
     const quizResultsDiv = document.getElementById('quiz-results');
+
+    /**
+     * Initializes Speech Synthesis Utterance for text-to-speech.
+     * @param {string} text - The text to be spoken.
+     */
+    function speakText(text) {
+        if ('speechSynthesis' in window) {
+            // Cancel any ongoing speech
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            // Optional: set language, voice, pitch, rate
+            utterance.lang = 'fr-FR';
+            window.speechSynthesis.speak(utterance);
+        } else {
+            console.warn("Speech synthesis not supported in this browser.");
+        }
+    }
 
     /**
      * Renders the quiz questions and options into the HTML.
@@ -437,8 +463,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 listenButton.title = "Écouter la question";
                 listenButton.addEventListener('click', function(e) {
                     e.stopPropagation(); // Empêche le clic de se propager aux options
-                    const utterance = new SpeechSynthesisUtterance(q.question);
-                    window.speechSynthesis.speak(utterance);
+                    speakText(q.question);
                 });
                 questionTextElement.prepend(listenButton); // Ajoute le bouton avant le texte de la question
             }
@@ -447,14 +472,24 @@ document.addEventListener('DOMContentLoaded', function () {
             optionsDiv.classList.add('quiz-options');
             optionsDiv.innerHTML = `
                 ${q.options.map((option, optIndex) => `
-                    <label>
+                    <label class="option-${String.fromCharCode(65 + optIndex).toLowerCase()}">
                         <input type="radio" name="question${index}" value="${option}" data-question-index="${index}" data-option-index="${optIndex}">
-                        <strong>${option}</strong>
+                        <span>${option}</span>
+                         ${'speechSynthesis' in window ? `<button class="listen-button-option" data-text="${option}" title="Écouter la proposition">🔊</button>` : ''}
                     </label>
                 `).join('')}
             `;
             questionDiv.appendChild(optionsDiv);
             quizQuestionsContainer.appendChild(questionDiv);
+        });
+
+        // Ajouter les écouteurs pour les boutons de lecture des options
+        document.querySelectorAll('.listen-button-option').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const textToSpeak = this.dataset.text;
+                speakText(textToSpeak);
+            });
         });
     }
 
@@ -510,6 +545,7 @@ document.addEventListener('DOMContentLoaded', function () {
             quizResultsDiv.classList.add('fail');
         }
         quizResultsDiv.textContent = resultText;
+        speakText(resultText); // Read out the quiz results
     }
 
     // Event listener for quiz submission
@@ -532,4 +568,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
         quizObserver.observe(quizRhSection);
     }
+
+    /* --- General Audio Speaker Logic --- */
+    // Select all elements with the 'listen-button' class that have a data-text attribute
+    const generalListenButtons = document.querySelectorAll('.listen-button[data-text]');
+
+    generalListenButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent clicks from propagating
+            const textToSpeak = this.dataset.text;
+            if (textToSpeak) {
+                speakText(textToSpeak);
+            }
+        });
+    });
+
+    // Optional: Stop speech when navigating to a new section or scrolling significantly
+    window.addEventListener('scroll', () => {
+        if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+            // Stop speech if scrolling, to avoid reading irrelevant content
+            // You might want to fine-tune this condition
+            // window.speechSynthesis.cancel();
+        }
+    });
+
+    // Stop speech when a new section is shown (triggered by nav links)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function() {
+            if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+        });
+    });
+
 });
