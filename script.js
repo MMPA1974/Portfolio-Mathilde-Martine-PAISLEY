@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('main section'); // Sélectionne toutes les sections principales
     const mainHeader = document.getElementById('mainHeader'); // L'élément header principal
 
-    // Définition des variables CSS pour les tailles de l'entête
-    // Ces valeurs doivent correspondre à celles définies dans style.css
+    // Définition des variables CSS pour les tailles de l'en-tête
+    // Ces valeurs DOIVENT correspondre à celles définies dans style.css
     // Elles représentent désormais la HAUTEUR TOTALE de l'en-tête, y compris la navigation
-    const headerHeightInitial = 300; // Hauteur initiale de l'entête en px (incluant la nav)
-    const headerHeightScrolled = 140; // Hauteur de l'entête après scroll en px (incluant la nav réduite)
+    const headerHeightInitial = 350; // Hauteur initiale de l'en-tête en px (incluant la nav)
+    const headerHeightScrolled = 140; // Hauteur de l'en-tête après scroll en px (incluant la nav réduite)
 
-    // Ajuste le padding-top du body pour éviter que le contenu ne soit masqué par l'entête fixe
+    // Ajuste le padding-top du body pour éviter que le contenu ne soit masqué par l'en-tête fixe
     // Utilise directement la hauteur de l'en-tête car la navigation est maintenant intégrée
     document.body.style.paddingTop = `${headerHeightInitial}px`;
 
@@ -125,11 +125,11 @@ document.addEventListener('DOMContentLoaded', function () {
         showSection('#accueil'); // Par défaut à la section d'accueil si pas de hachage ou hachage invalide
     }
 
-    // Logique pour le shrinking de l'entête au scroll
+    // Logique pour le shrinking de l'en-tête au scroll
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) { // Un seuil de 50px est généralement suffisant pour détecter un début de scroll
             mainHeader.classList.add('scrolled');
-            // Ajuste le padding-top du body pour la hauteur réduite de l'entête
+            // Ajuste le padding-top du body pour la hauteur réduite de l'en-tête
             document.body.style.paddingTop = `${headerHeightScrolled}px`;
         } else {
             mainHeader.classList.remove('scrolled');
@@ -280,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (targetModal) {
                 targetModal.classList.add('active');
                 projectModalBackdrop.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Disable scroll on body
+                document.body.style.overflow = 'hidden'; // Désactive le défilement du corps
             }
         });
     });
@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (parentModal) {
                 parentModal.classList.remove('active');
                 projectModalBackdrop.classList.add('hidden');
-                document.body.style.overflow = ''; // Enable scroll on body
+                document.body.style.overflow = ''; // Active le défilement du corps
             }
         });
     });
@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.style.overflow = '';
     });
 
-    // Close modal with Escape key
+    // Ferme la modale avec la touche Échap
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             projectModals.forEach(modal => modal.classList.remove('active'));
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    /* --- Quiz RH Logic --- */
+    /* --- Logique du Quiz RH --- */
     const quizQuestions = [
         {
             question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ?",
@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.warn("Quiz container not found, skipping quiz rendering.");
             return;
         }
-        quizQuestionsContainer.innerHTML = ''; // Clear previous questions
+        quizQuestionsContainer.innerHTML = ''; // Efface les questions précédentes
         quizQuestions.forEach((q, index) => {
             const questionDiv = document.createElement('div');
             // Ajout d'une classe dynamique pour le style des questions
@@ -458,14 +458,14 @@ document.addEventListener('DOMContentLoaded', function () {
      */
     function submitQuiz() {
         let score = 0;
-        quizResultsDiv.innerHTML = ''; // Clear previous results
-        quizResultsDiv.classList.remove('success', 'fail'); // Clear previous styling
+        quizResultsDiv.innerHTML = ''; // Efface les résultats précédents
+        quizResultsDiv.classList.remove('success', 'fail'); // Efface le style précédent
 
         quizQuestions.forEach((q, index) => {
             const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
-            const questionDiv = quizQuestionsContainer.children[index]; // Get the question div
+            const questionDiv = quizQuestionsContainer.children[index]; // Obtient le div de la question
 
-            // Reset previous feedback classes
+            // Réinitialise les classes de feedback précédentes
             questionDiv.classList.remove('correct', 'incorrect');
             questionDiv.querySelectorAll('label').forEach(label => {
                 label.classList.remove('selected', 'correct-answer');
@@ -480,11 +480,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     questionDiv.classList.add('correct');
                 } else {
                     questionDiv.classList.add('incorrect');
-                    // Highlight the correct answer if the user was wrong
+                    // Met en évidence la bonne réponse si l'utilisateur s'est trompé
                     questionDiv.querySelector(`input[value="${q.answer}"]`).closest('label').classList.add('correct-answer');
                 }
             } else {
-                // If no option was selected, mark as incorrect and show correct answer
+                // Si aucune option n'a été sélectionnée, marque comme incorrect et affiche la bonne réponse
                 questionDiv.classList.add('incorrect');
                 questionDiv.querySelector(`input[value="${q.answer}"]`).closest('label').classList.add('correct-answer');
             }
@@ -499,7 +499,7 @@ document.addEventListener('DOMContentLoaded', function () {
             quizResultsDiv.classList.add('success');
         } else if (percentage >= 50) {
             resultText += " Bien ! Continuez à approfondir vos connaissances.";
-            quizResultsDiv.classList.add('fail'); // Can use a neutral style here if desired
+            quizResultsDiv.classList.add('fail'); // Peut utiliser un style neutre ici si désiré
         } else {
             resultText += " Vous pouvez encore vous améliorer. N'hésitez pas à consulter les ressources !";
             quizResultsDiv.classList.add('fail');
@@ -507,23 +507,23 @@ document.addEventListener('DOMContentLoaded', function () {
         quizResultsDiv.textContent = resultText;
     }
 
-    // Event listener for quiz submission
+    // Écouteur d'événement pour la soumission du quiz
     if (submitQuizButton) {
         submitQuizButton.addEventListener('click', submitQuiz);
     }
 
-    // Render the quiz when the quiz section becomes active
+    // Affiche le quiz lorsque la section quiz-rh devient active
     const quizRhSection = document.getElementById('quiz-rh');
     if (quizRhSection) {
         const quizObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target.id === 'quiz-rh') {
                     console.log('Quiz RH section is visible, rendering quiz.');
-                    renderQuiz(); // Render the quiz when the section is visible
-                    quizObserver.unobserve(entry.target); // Stop observing after initial render
+                    renderQuiz(); // Affiche le quiz lorsque la section est visible
+                    quizObserver.unobserve(entry.target); // Arrête d'observer après le rendu initial
                 }
             });
-        }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+        }, { threshold: 0.1 }); // Se déclenche lorsque 10% de la section est visible
 
         quizObserver.observe(quizRhSection);
     }

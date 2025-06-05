@@ -22,12 +22,12 @@
 
     /* Variables pour la taille de l'entête et de ses éléments */
     /* Valeurs initiales plus larges et lisibles */
-    --header-height-initial: 300px; /* Augmenté pour plus d'espace, incluant la navigation */
-    --header-height-scrolled: 140px; /* Ajusté pour le scroll, incluant la navigation réduite */
+    --header-height-initial: 350px; /* Augmenté pour plus d'espace, incluant la navigation */
+    --header-height-scrolled: 140px; /* Ajusté pour le scroll, pour ne pas couper les onglets */
     --h1-font-size-initial: 2.8rem; /* Augmenté pour le titre principal */
     --h1-font-size-scrolled: 1.5rem; /* Ajusté pour le scroll */
     --p-font-size-initial: 1.1rem; /* Augmenté pour le slogan */
-    --p-font-size-scrolled: 0.8rem; /* Ajusté pour le scroll */
+    --p-font-size-scrolled: 0.7rem; /* Ajusté pour le scroll, réduit encore */
     --cta-padding-initial: 1rem 2.5rem; /* Augmenté */
     --cta-padding-scrolled: 0.5rem 1.2rem; /* Ajusté */
     --cta-font-size-initial: 1rem; /* Augmenté */
@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-bg h1 {
     font-size: var(--h1-font-size-initial);
-    margin-bottom: 0.4rem; /* Légère marge */
+    margin-bottom: 2rem; /* Augmenté l'espace entre le titre et le CTA/rose */
     line-height: 1.2;
     color: var(--color-fond-clair);
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .hero-bg.scrolled h1 {
     font-size: var(--h1-font-size-scrolled);
-    margin-bottom: 0; /* Supprime la marge pour compacter */
+    margin-bottom: 0.2rem; /* Réduit la marge pour compacter mais garde un peu d'espace */
     white-space: nowrap; /* Force sur une ligne si possible en scroll */
     text-overflow: ellipsis; /* Ajoute ... si le texte est trop long */
     overflow: hidden; /* Cache le texte qui dépasse */
@@ -119,12 +119,13 @@ h1, h2, h3, h4, h5, h6 {
     transition: font-size 0.3s ease, margin 0.3s ease, opacity 0.3s ease, height 0.3s ease;
     white-space: normal; /* Permet le retour à la ligne */
 }
+/* Comportement au scroll : le slogan ne disparaît plus, il rétrécit */
 .hero-bg.scrolled .hero-slogan {
-    font-size: var(--p-font-size-scrolled);
-    margin: 0; /* Supprime la marge pour compacter */
-    opacity: 0; /* Cache le texte */
-    height: 0; /* Réduit la hauteur */
-    overflow: hidden;
+    font-size: var(--p-font-size-scrolled); /* Utilise la taille réduite au scroll */
+    margin: 0.2rem auto; /* Marge réduite mais visible */
+    opacity: 1; /* Reste visible */
+    height: auto; /* Hauteur automatique */
+    overflow: visible; /* Contenu visible */
 }
 
 .hero-bg .cta-button {
@@ -144,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-bg.scrolled .cta-button {
     padding: var(--cta-padding-scrolled);
     font-size: var(--cta-font-size-scrolled);
-    margin-top: 0; /* Supprime la marge pour compacter */
+    margin-top: 0.5rem; /* Garde un peu de marge pour le bouton */
 }
 .cta-button:hover {
     background-color: var(--color-fond-clair); /* Devient blanc au survol */
@@ -155,10 +156,10 @@ h1, h2, h3, h4, h5, h6 {
 .logo-placeholder {
     position: absolute;
     top: 50%;
-    left: 20px; /* Positionnement à gauche */
+    left: 2rem; /* Augmenté l'espace à gauche (environ 32px) */
     transform: translateY(-50%);
-    height: 60px;
-    width: 140px;
+    height: 100px; /* Augmenté la hauteur du conteneur du logo */
+    width: 230px; /* Augmenté la largeur du conteneur du logo */
     background-color: transparent; /* Pas de fond */
     border: none; /* Pas de bordure */
     display: flex;
@@ -170,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 100;
 }
 .logo-placeholder img {
-    height: 100%;
+    height: 100%; /* Le logo prend toute la hauteur du conteneur */
     width: auto; /* Ajuste la largeur automatiquement */
     object-fit: contain;
 }
@@ -185,24 +186,29 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
     height: var(--nav-height-initial); /* Hauteur initiale de la nav */
     overflow: hidden; /* Cache les éléments si elle rétrécit */
+    display: flex; /* Utilise flexbox pour centrer le contenu */
+    align-items: center; /* Centre verticalement */
+    justify-content: center; /* Centre horizontalement */
+    padding: 0.4rem 0; /* Padding ajusté */
 }
 
 .hero-bg.scrolled .nav-bar-top {
-    margin-top: 0.5rem; /* Réduit la marge au scroll */
+    margin-top: 0; /* Remonte la nav complètement au scroll pour éviter de la couper */
     height: var(--nav-height-scrolled); /* Réduit la hauteur de la nav */
+    padding: 0.2rem 0; /* Réduit le padding de la nav au scroll */
 }
 
 .nav-links-container {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 0.2rem;
-    padding: 0.4rem 0;
+    gap: 0.8rem; /* AUGMENTÉ l'espace entre les liens de nav */
     list-style: none;
     margin: 0;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    align-items: center; /* S'assure que les liens sont centrés verticalement dans leur conteneur */
 }
 .nav-links-container::-webkit-scrollbar {
     display: none;
@@ -217,27 +223,27 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     font-size: 0.75rem;
     white-space: nowrap;
-    display: flex;
+    display: flex; /* Utilise flexbox pour l'icône et le texte */
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-/* Comportement emoji par défaut, texte au survol pour TOUS les liens de nav */
+/* Comportement emoji par défaut, emoji + texte au survol pour TOUS les liens de nav */
 .nav-link .icon-only {
-    display: block; /* Affiché par défaut */
+    display: block; /* Toujours visible par défaut (actif ou non) */
     font-size: 1.1rem;
 }
 
 .nav-link .text-on-hover {
-    display: none; /* Caché par défaut */
-    margin-left: 0.4rem;
+    display: none; /* Caché par défaut (actif ou non) */
+    margin-left: 0.4rem; /* Espace entre icône et texte */
 }
 
+/* Au survol, pour les liens actifs et non-actifs : afficher l'icône ET le texte */
 .nav-link:hover .icon-only {
-    display: none; /* Cache l'icône au survol */
+    display: block; /* Garde l'icône visible au survol */
 }
-
 .nav-link:hover .text-on-hover {
     display: block; /* Affiche le texte au survol */
 }
@@ -252,17 +258,12 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--gold-dark);
 }
 .nav-link.active .icon-only {
-    display: block; /* Toujours l'icône par défaut pour l'actif */
+    display: block; /* L'icône est visible par défaut quand l'onglet est actif */
 }
 .nav-link.active .text-on-hover {
-    display: none; /* Le texte de l'actif est caché par défaut, apparaît au survol */
+    display: none; /* Le texte est caché par défaut quand l'onglet est actif */
 }
-.nav-link.active:hover .icon-only {
-    display: none;
-}
-.nav-link.active:hover .text-on-hover {
-    display: block;
-}
+/* Pas de règles spécifiques :hover nécessaires pour l'état actif, car les règles .nav-link:hover s'appliquent */
 
 
 /* Styles pour les sections de contenu (pages individuelles) */
@@ -401,16 +402,18 @@ footer {
     }
     /* Masque les slogans et autres éléments non essentiels au scroll pour desktop */
     .hero-bg.scrolled .hero-slogan {
-        opacity: 0;
-        height: 0;
-        overflow: hidden;
-        margin: 0;
+        font-size: var(--p-font-size-scrolled); /* Utilise la taille réduite au scroll */
+        margin: 0.2rem auto; /* Marge réduite mais visible */
+        opacity: 1; /* Reste visible */
+        height: auto; /* Hauteur automatique */
+        overflow: visible; /* Contenu visible */
     }
     .hero-bg h1 {
         font-size: var(--h1-font-size-initial); /* Utilise la variable */
     }
     .hero-bg.scrolled h1 {
         font-size: var(--h1-font-size-scrolled);
+        margin-bottom: 0.2rem; /* Réduit la marge pour compacter mais garde un peu d'espace */
     }
     .hero-bg .cta-button {
         padding: var(--cta-padding-initial);
@@ -419,16 +422,18 @@ footer {
     .hero-bg.scrolled .cta-button {
         padding: var(--cta-padding-scrolled);
         font-size: var(--cta-font-size-scrolled);
+        margin-top: 0.5rem; /* Garde un peu de marge pour le bouton */
     }
     .logo-placeholder {
         top: 50%;
-        left: 20px;
+        left: 2rem; /* Espace à gauche (environ 32px) */
         transform: translateY(-50%);
-        height: 60px;
-        width: 140px;
+        height: 100px; /* Hauteur du conteneur du logo */
+        width: 230px; /* Largeur du conteneur du logo */
     }
     /* La nav-bar-top se réduit aussi sur desktop */
     .hero-bg.scrolled .nav-bar-top {
+        margin-top: 0; /* Remonte la nav complètement au scroll pour éviter de la couper */
         height: var(--nav-height-scrolled);
         padding: 0.2rem 0; /* Réduit le padding de la nav au scroll */
     }
@@ -461,15 +466,20 @@ footer {
         padding: 0 10px;
     }
     .hero-bg.scrolled p.hero-slogan {
-        display: none;
+        font-size: var(--p-font-size-scrolled); /* Utilise la taille réduite au scroll */
+        margin: 0.2rem auto; /* Marge réduite mais visible */
+        opacity: 1; /* Reste visible */
+        height: auto; /* Hauteur automatique */
+        overflow: visible; /* Contenu visible */
     }
     .hero-bg.scrolled .cta-button {
         padding: 0.3rem 0.8rem;
         font-size: 0.6rem;
+        margin-top: 0.5rem; /* Garde un peu de marge pour le bouton */
     }
     .logo-placeholder {
-        height: 40px;
-        width: 100px;
+        height: 50px; /* Ajuste la hauteur du logo sur mobile */
+        width: 150px; /* Ajuste la largeur du logo sur mobile */
         font-size: 0.5rem;
         top: 8px;
         left: 8px;
@@ -1209,7 +1219,15 @@ body, p, li, a, span, div, h1, h2, h3, h4, h5, h6 {
     font-size: 2.2rem;
 }
 
-/* Styles pour la barre de navigation principale lorsqu'elle est dans l'en-tête (pour s'assurer qu'elle n'est pas fixed à nouveau) */
-#header-tabs { /* Ce sélecteur est désormais inutile car il s'agissait du conteneur des onglets entreprises/particuliers dans le header, qui ont été déplacés. */
-    display: none; /* S'assurer qu'il n'y a pas d'éléments résiduels */
+/* Style pour la nouvelle boîte d'avertissement */
+.disclaimer-box {
+    background-color: #f8f8f8; /* Fond légèrement gris */
+    border: 1px solid #e0e0e0; /* Bordure subtile */
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: justify !important; /* Pour justifier le texte à l'intérieur */
+    font-size: 0.9rem;
+    color: #555;
 }

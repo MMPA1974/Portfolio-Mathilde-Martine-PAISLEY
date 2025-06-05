@@ -19,12 +19,14 @@
 
     <header class="hero-bg" id="mainHeader">
         <div class="logo-placeholder" role="img" aria-label="Logo de Mathilde Martine PAISLEY">
-            <img src="https://placehold.co/140x60/001F3F/FFFFFF?text=Votre%20Logo" alt="Logo de Mathilde Martine PAISLEY" class="h-full w-full object-contain">
+            <!-- Chemin relatif vers votre logo. Assurez-vous que le fichier 'logo.png' est dans un dossier 'images' à la racine de votre projet. -->
+            <img src="/MonPortfolio/Autres/Logo Mathilde Martine PAISLEY.png" alt="Logo de Mathilde Martine PAISLEY" class="h-full w-full object-contain">
         </div>
         <div class="hero-content">
             <h1 class="font-bold">Mathilde Martine PAISLEY <span class="text-accent-secondaire-rose">🌹</span></h1>
             <p class="text-center text-fond-clair hero-slogan">Conseil Paie, GTA, RH & SIRH - Conformité Sociale<br>Accompagnement Opérationnel & Transformationnel</p>
             <a href="#contact" class="cta-button">Discutons de Votre Projet !</a>
+            <!-- NOUVEL EMPLACEMENT DE LA BARRE DE NAVIGATION -->
             <nav class="nav-bar-top">
                 <div class="container mx-auto px-6 py-3">
                     <ul class="nav-links-container" role="menubar">
@@ -277,7 +279,7 @@
 
             <div class="section-nav-buttons">
                 <a href="#parcours" class="nav-button">Découvrir Mon Parcours <i class="fas fa-arrow-right ml-2"></i></a>
-                <a href="#ma-vision-valeurs" class="nav-button"><i class="fas fa-gem mr-2"></i> Retour à Ma Valeur Ajoutée</a>
+                <a href="#ma-valeur-ajoutee" class="nav-button"><i class="fas fa-gem mr-2"></i> Retour à Ma Valeur Ajoutée</a>
             </div>
         </section>
         <section id="parcours" class="section-container" aria-labelledby="parcours-title">
@@ -417,6 +419,7 @@
                 Que vous soyez une **entreprise** à la recherche d'une expertise RH/Paie de pointe, ou un **particulier** ayant besoin de réponses claires et d'un accompagnement bienveillant, découvrez l'offre qui vous correspond.
             </p>
 
+            <!-- Les onglets "Pour les Entreprises" et "Pour les Particuliers" sont de nouveau ici -->
             <div class="flex justify-center mb-8">
                 <button class="tab-button active" data-target="entreprises-offer">🏢 Pour les Entreprises</button>
                 <button class="tab-button" data-target="particuliers-offer">👤 Pour les Particuliers</button>
@@ -531,7 +534,7 @@
                         <div class="icon-circle mb-4"><i class="fas fa-hand-holding-heart text-accent-unique text-3xl"></i></div>
                         <h6 class="text-xl font-semibold text-principal-fonce mb-2">L'Expérience du Terrain : Le Vécu avant tout.</h6>
                         <p class="text-texte-principal">
-                            Contrairement aux réponses génériques ou des IA, mes conseils sont forgés par **20 ans d'expérience concrète** en RH et Paie. J'ai été confrontée aux situations que vous vivez, je comprends les enjeux, et je vous apporte des solutions pragmatiques basées sur la **réalité du terrain**.
+                            Contrairement aux réponses génériques ou des IA, mes conseils sont forgés par **20 ans d'expérience concrète** en RH et Paie. J'ai été confrontée aux situations que vous vivez, je comprends les enjeux, et je vous apporte des solutions pragratiques basées sur la **réalité du terrain**.
                         </p>
                     </div>
                     <div class="card-bg-subtle p-6 rounded-lg shadow-sm">
@@ -573,11 +576,14 @@
                     </li>
                 </ol>
 
-                <div class="text-center mt-10">
-                    <a href="#contact" class="cta-button text-base px-6 py-3">Demander un appel découverte</a>
-                    <p class="text-sm text-gray-600 mt-4 italic">
-                        *Important : Ce service vise à clarifier vos droits et situations administratives RH/Paie. Il ne constitue en aucun cas un conseil juridique ou fiscal engageant. Si votre question dépasse le cadre de nos compétences ou relève du domaine légal strict, nous vous signalerons la nécessité de consulter un professionnel du droit.
+                <!-- Section de texte encadrée -->
+                <div class="disclaimer-box text-center mt-10 p-6 rounded-lg shadow-md bg-white border border-gray-200">
+                    <p class="text-sm text-gray-600 italic">
+                        *Important : Ce service vise à clarifier vos droits et situations administratives RH/Paie. Il ne constitue en aucun cas un conseil juridique ou fiscal engageant. Si votre question dépasse le cadre de nos compétences ou relève du domaine légal strict, nous vous signalera la nécessité de consulter un professionnel du droit.
                     </p>
+                </div>
+                <div class="text-center mt-6">
+                    <a href="#contact" class="cta-button text-base px-6 py-3">Demander un appel découverte</a>
                 </div>
             </div>
             <div class="section-nav-buttons">
@@ -666,7 +672,6 @@
                         <li><a href="https://www.actu-juridique.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Actu-Juridique :</strong> Actualités du droit pour les professionnels.</a></li>
                         <li><a href="https://www.journal-officiel.gouv.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Journal Officiel :</strong> Publication des lois et décrets.</a></li>
                         <li><a href="https://www.service-public.fr/professionnels-entreprises/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Service-Public Pro :</strong> Informations pour les professionnels et entreprises.</a></li>
-                        <li><a href="https://www.economie.gouv.fr/entreprises/droit-travail" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">Ministère de l'Économie - Droit du travail :</strong> Informations et fiches pratiques.</a></li>
                         <li><a href="https://www.cci.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">CCI France :</strong> Chambres de Commerce et d'Industrie.</a></li>
                         <li><a href="https://www.medef.com/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">MEDEF :</strong> Mouvement des entreprises de France.</a></li>
                         <li><a href="https://www.cpme.fr/" target="_blank" rel="noopener noreferrer"><strong class="text-principal-fonce">CPME :</strong> Confédération des Petites et Moyennes Entreprises.</a></li>
@@ -720,7 +725,7 @@
                 <div class="card-bg-subtle project-card" data-project-id="projet1">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Déploiement SIRH Octave pour la gestion de la paie des personnes détenues</h3>
                     <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Janvier 2023 - Juin 2024</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle AMOA SIRH</p>
+                    <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle AMOA SIRH</p>
                     <p class="text-texte-principal text-base">
                         <strong>Contexte & Objectifs :</strong> Accompagnement du Ministère de la Justice pour le déploiement de la solution SIRH Octave dans 189 établissements pénitentiaires, afin de moderniser et fiabiliser la gestion de la paie des personnes détenues.
                         <br><br>
@@ -739,7 +744,7 @@
                 <div class="card-bg-subtle project-card" data-project-id="projet2">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Structuration d'un Référentiel Paie et mise en place d'un Centre de Services Partagés (CSP)</h3>
                     <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Novembre 2018 - Mars 2022</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Consultante Paie SIRH</p>
+                    <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle AMOA SIRH</p>
                     <p class="text-texte-principal text-base">
                         <strong>Contexte & Objectifs :</strong> Participation à la création d'un Centre de Services Partagés pour un grand groupe, visant à centraliser et harmoniser les processus de paie et de gestion RH suite au départ progressif des gestionnaires.
                         <br><br>
@@ -758,8 +763,8 @@
                 </div>
                 <div class="card-bg-subtle project-card" data-project-id="projet3">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Modélisation de Processus RH et Fiabilisation des Contrôles de Paie</h3>
-                    <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Janvier 2023 - Juin 2024</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle</p>
+                    <p class="text-texte-principal mb-2"><strong>Période :</strong> Janvier 2023 - Juin 2024</p>
+                    <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle</p>
                     <p class="text-texte-principal text-base">
                         <strong>Contexte & Objectifs :</strong> Mission d'optimisation des processus RH et de fiabilisation des contrôles de paie au sein d'une grande entreprise.
                         <br><br>
@@ -777,8 +782,8 @@
                 </div>
                 <div class="card-bg-subtle project-card" data-project-id="projet4">
                     <h3 class="text-xl font-semibold text-principal-fonce mb-2">Coordination Opérationnelle de la Paie et Administration RH</h3>
-                    <p class="text-texte-principal text-base mb-2"><strong>Période :</strong> Juillet 2022 - Décembre 2022</p>
-                    <p class="text-texte-principal text-base mb-4"><strong>Rôle :</strong> Chargée RH - Coordination Paie & Administration RH</p>
+                    <p class="text-texte-principal mb-2"><strong>Période :</strong> Juillet 2022 - Décembre 2022</p>
+                    <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Chargée RH - Coordination Paie & Administration RH</p>
                     <p class="text-texte-principal text-base">
                         <strong>Contexte & Objectifs :</strong> Gestion opérationnelle complète de la paie et de l'administration du personnel pour plusieurs entités, visant à assurer la conformité réglementaire et la fluidité des processus.
                         <br><br>
@@ -787,7 +792,7 @@
                             <li>Gestion complète du cycle de paie pour 4 entités et 350 collaborateurs (collecte EVP, bulletins, cotisations, DSN).</li>
                             <li>Gestion administrative : mise en œuvre de démarches pour améliorer l'efficacité des processus (DPAE, contrats, avenants, soldes de tout compte).</li>
                             <li>Encadrement d'équipe : transfert de compétences et mise en place de pratiques de mentorat pour le développement professionnel.</li>
-                            <li>Coordination des congés et des absences (maladie, maternité, AT/MP, congés payés, RTT) selon les politiques RH.</li>
+                            <li>Coordination des congés et des absences (maladie, maternité, AT/MP, congés payés, RTT) selon les politiques RH).</li>
                             <li>Interface avec les organismes sociaux (URSSAF, CPAM, MSA, Retraite, Prévoyance).</li>
                         </ul>
                         <br>
@@ -921,7 +926,7 @@
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="card-bg-subtle testimonial-card">
                     <h4 class="font-bold text-lg text-principal-fonce mb-2">Un accompagnement précieux et authentique</h4>
-                    <p class="text-lg text-texte-principal mb-4 text-justify leading-relaxed">"Je souhaite exprimer ma sincère gratitude à Mathilde PAISLEY pour l'aide **précieuse** qu'elle m'a apportée durant ma formation en gestionnaire de paie et en ressources humaines. Son **expertise** et sa **passion** pour le domaine se ressentent à chaque interaction. Elle a su me guider avec **bienveillance**, répondant à mes questions et m'encourageant à explorer des sujets complexes. Grâce à son soutien, j'ai non seulement renforcé mes compétences et j’ai pu en apprendre encore plus dans le domaine de la paie et ressources humaines. Mathilde PAISLEY a une **capacité unique à créer un environnement d'apprentissage positif**, ce qui a rendu ma formation encore plus enrichissante. Je recommande vivement ses services à quiconque cherche un **accompagnement authentique et efficace**. Merci encore pour tout ! ☺️"</p>
+                    <p class="text-lg text-texte-principal mb-4 text-justify leading-relaxed">"Je souhaite exprimer ma sincère gratitude à Mathilde PAISLEY pour l'aide **précieuse** qu'elle m'a apportée durant ma formation en gestionnaire de paie et en ressources humaines. Son **expertise** et sa **passion** pour le domaine se ressentent à chaque interaction. Elle a su me guider avec **bienveillance**, répondant à mes questions et m'encourageant à explorer des sujets complexes. Grâce à son soutien, j'ai non seulement renforcé mes compétences et j’ai pu en apprendre encore plus dans le domaine de la paie et ressources humaines. Mathilde PAISLEY a une **capacitée unique à créer un environnement d'apprentissage positif**, ce qui a rendu ma formation encore plus enrichissante. Je recommande vivement ses services à quiconque cherche un **accompagnement authentique et efficace**. Merci encore pour tout ! ☺️"</p>
                     <p class="font-semibold text-principal-fonce">- Dounia Assakkour</p>
                 </div>
                 <div class="card-bg-subtle testimonial-card">
@@ -1114,7 +1119,7 @@
             <button class="close-modal-button absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl font-bold">&times;</button>
             <h3 class="text-2xl font-semibold text-principal-fonce mb-4">Structuration d'un Référentiel Paie et mise en place d'un Centre de Services Partagés (CSP)</h3>
             <p class="text-texte-principal mb-2"><strong>Période :</strong> Novembre 2018 - Mars 2022</p>
-            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Paie SIRH</p>
+            <p class="text-texte-principal mb-4"><strong>Rôle :</strong> Consultante Fonctionnelle AMOA SIRH</p>
             <p class="text-texte-principal text-base">
                 <strong>Contexte & Objectifs :</strong> Participation à la création d'un Centre de Services Partagés pour un grand groupe, visant à centraliser et harmoniser les processus de paie et de gestion RH suite au départ progressif des gestionnaires.
                 <br><br>
