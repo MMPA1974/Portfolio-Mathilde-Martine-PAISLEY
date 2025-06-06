@@ -6,6 +6,7 @@
     --color-texte-principal: #36454F; /* Charcoal - Texte sombre, très lisible */
     --color-accent-secondaire: #F4B3C2; /* Rose doux et subtil pour les accents */
     --color-gris-subtil: #E0E0E0; /* Light Gray - Pour les bordures et fonds légers */
+    --color-gris-subtil-fonce: #6C757D; /* Gris plus foncé pour le texte secondaire ou disclaimer */
 
     /* Nuances de doré métallique pour le dégradé (ajusté pour être plus pétillant) */
     --gold-light: #FFD700;   /* Or classique, plus clair */

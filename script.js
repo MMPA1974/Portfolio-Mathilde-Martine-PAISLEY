@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOMContentLoaded fired: script.js is running.');
 
     // --- Gestion des onglets dans la section "Mes Offres" ---
-    // Ces onglets sont de retour dans la section "Mes Offres"
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -26,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileMenu = document.getElementById('mobile-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    const sections = document.querySelectorAll('main section'); // Sélectionne toutes les sections principales
-    const mainHeader = document.querySelector('header'); // Assurez-vous que c'est bien votre en-tête
+    const sections = document.querySelectorAll('main section');
+    const mainHeader = document.querySelector('header');
 
     // Toggle du menu mobile
     if (mobileMenuButton) {
@@ -45,7 +44,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
-                    const offsetTop = targetSection.offsetTop - mainHeader.offsetHeight; // Ajuste le défilement pour le header fixe
+                    // Calculer l'offset pour tenir compte du header fixe
+                    const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
+                    const offsetTop = targetSection.offsetTop - headerHeight;
+
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -64,9 +66,11 @@ document.addEventListener('DOMContentLoaded', function () {
     smoothScrollAndActiveClass(mobileNavLinks, mobileMenu);
 
     // Observer pour changer la classe 'active' des liens de navigation au défilement
+    // Utilise une hauteur de header dynamique pour le rootMargin
+    const headerHeightForObserver = mainHeader ? mainHeader.offsetHeight + 1 : 1; // +1 pour éviter les chevauchements
     const observerOptions = {
         root: null, // viewport
-        rootMargin: `-${mainHeader.offsetHeight + 1}px 0px 0px 0px`, // La section devient active quand elle touche le bas du header
+        rootMargin: `-${headerHeightForObserver}px 0px 0px 0px`, // La section devient active quand elle touche le bas du header
         threshold: 0.5 // Au moins 50% de la section est visible
     };
 
@@ -126,9 +130,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const quizResultsDiv = document.getElementById('quiz-results');
 
     function renderQuiz() {
-        if (!quizContainer) return; // S'assure que le conteneur existe
+        if (!quizContainer) return;
 
-        quizContainer.innerHTML = ''; // Nettoie le conteneur avant de rendre
+        quizContainer.innerHTML = '';
         quizQuestions.forEach((q, index) => {
             const questionDiv = document.createElement('div');
             questionDiv.classList.add('mb-4');
@@ -159,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const percentage = (score / quizQuestions.length) * 100;
         let resultText = `Vous avez obtenu ${score} sur ${quizQuestions.length} (${percentage.toFixed(0)}%).`;
 
-        // Réinitialise les classes de style avant d'en ajouter une nouvelle
         quizResultsDiv.classList.remove('success', 'fail');
 
         if (percentage >= 80) {
@@ -167,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             quizResultsDiv.classList.add('success');
         } else if (percentage >= 50) {
             resultText += " Bien ! Continuez à approfondir vos connaissances.";
-            quizResultsDiv.classList.add('fail'); // Peut utiliser un style neutre ici si désiré
+            quizResultsDiv.classList.add('fail');
         } else {
             resultText += " Vous pouvez encore vous améliorer. N'hésitez pas à consulter les ressources !";
             quizResultsDiv.classList.add('fail');
@@ -175,23 +178,21 @@ document.addEventListener('DOMContentLoaded', function () {
         quizResultsDiv.textContent = resultText;
     }
 
-    // Écouteur d'événement pour la soumission du quiz
     if (submitQuizButton) {
         submitQuizButton.addEventListener('click', submitQuiz);
     }
 
-    // Affiche le quiz lorsque la section quiz-rh devient active
     const quizRhSection = document.getElementById('quiz-rh');
     if (quizRhSection) {
         const quizObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && entry.target.id === 'quiz-rh') {
                     console.log('Quiz RH section is visible, rendering quiz.');
-                    renderQuiz(); // Affiche le quiz lorsque la section est visible
-                    quizObserver.unobserve(entry.target); // Arrête d'observer après le rendu initial
+                    renderQuiz();
+                    quizObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 }); // Se déclenche lorsque 10% de la section est visible
+        }, { threshold: 0.1 });
 
         quizObserver.observe(quizRhSection);
     }
