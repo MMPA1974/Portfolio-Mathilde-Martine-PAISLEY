@@ -3,18 +3,64 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOMContentLoaded fired: script.js is running.');
 
     // --- Gestion des onglets dans la section "Mes Offres" ---
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
+    const offerTabButtons = document.querySelectorAll('.tab-button');
+    const offerTabContents = document.querySelectorAll('.tab-content');
 
-    tabButtons.forEach(button => {
+    offerTabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const targetId = button.dataset.target;
 
-            // Masquer tous les contenus des onglets et désactiver tous les boutons d'onglets
-            tabContents.forEach(content => content.classList.add('hidden'));
-            tabButtons.forEach(btn => btn.classList.remove('active'));
+            offerTabContents.forEach(content => content.classList.add('hidden'));
+            offerTabButtons.forEach(btn => btn.classList.remove('active'));
 
-            // Afficher le contenu cible et activer le bouton cliqué
+            document.getElementById(targetId).classList.remove('hidden');
+            button.classList.add('active');
+        });
+    });
+
+    // --- Gestion des onglets dans la section "À Propos" ---
+    const aboutTabButtons = document.querySelectorAll('.tab-button-about');
+    const aboutTabContents = document.querySelectorAll('.tab-content-about');
+
+    aboutTabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.dataset.target;
+
+            aboutTabContents.forEach(content => content.classList.add('hidden'));
+            aboutTabButtons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(targetId).classList.remove('hidden');
+            button.classList.add('active');
+        });
+    });
+
+    // --- Gestion des onglets dans la section "Mes Réalisations" ---
+    const realTabButtons = document.querySelectorAll('.tab-button-real');
+    const realTabContents = document.querySelectorAll('.tab-content-real');
+
+    realTabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.dataset.target;
+
+            realTabContents.forEach(content => content.classList.add('hidden'));
+            realTabButtons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(targetId).classList.remove('hidden');
+            button.classList.add('active');
+        });
+    });
+
+    // --- Gestion des onglets dans la section "Actualités" ---
+    const actualTabButtons = document.querySelectorAll('.tab-button-actual');
+    const actualTabContents = document.querySelectorAll('.tab-content-actual');
+
+    actualTabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.dataset.target;
+
+            actualTabContents.forEach(content => content.classList.add('hidden'));
+            actualTabButtons.forEach(btn => btn.classList.remove('active'));
+
             document.getElementById(targetId).classList.remove('hidden');
             button.classList.add('active');
         });
@@ -44,7 +90,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
-                    // Calculer l'offset pour tenir compte du header fixe
                     const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
                     const offsetTop = targetSection.offsetTop - headerHeight;
 
@@ -53,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         behavior: 'smooth'
                     });
 
-                    // Ferme le menu mobile si ouvert
                     if (menuToClose) {
                         menuToClose.classList.add('hidden');
                     }
@@ -66,12 +110,11 @@ document.addEventListener('DOMContentLoaded', function () {
     smoothScrollAndActiveClass(mobileNavLinks, mobileMenu);
 
     // Observer pour changer la classe 'active' des liens de navigation au défilement
-    // Utilise une hauteur de header dynamique pour le rootMargin
-    const headerHeightForObserver = mainHeader ? mainHeader.offsetHeight + 1 : 1; // +1 pour éviter les chevauchements
+    const headerHeightForObserver = mainHeader ? mainHeader.offsetHeight + 1 : 1;
     const observerOptions = {
-        root: null, // viewport
-        rootMargin: `-${headerHeightForObserver}px 0px 0px 0px`, // La section devient active quand elle touche le bas du header
-        threshold: 0.5 // Au moins 50% de la section est visible
+        root: null,
+        rootMargin: `-${headerHeightForObserver}px 0px 0px 0px`,
+        threshold: 0.5
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -81,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (correspondingLink) {
                 if (entry.isIntersecting) {
-                    // Supprime active de tous les liens pour éviter les doublons si le seuil est atteint pour plusieurs sections
                     navLinks.forEach(link => link.classList.remove('active'));
                     mobileNavLinks.forEach(link => link.classList.remove('active'));
                     correspondingLink.classList.add('active');
@@ -96,38 +138,63 @@ document.addEventListener('DOMContentLoaded', function () {
         sectionObserver.observe(section);
     });
 
-    // --- Gestion du Quiz RH ---
+    // --- Gestion du Quiz RH (réintégré) ---
     const quizQuestions = [
         {
-            question: "Quelle est la durée légale du travail hebdomadaire en France (sauf accord d'entreprise ou de branche) ?",
-            options: ["35 heures", "39 heures", "40 heures"],
-            answer: "35 heures"
+            question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ?",
+            options: ["A) Simplifier le calcul des impôts sur le revenu.", "B) Remplacer toutes les déclarations sociales et fiscales.", "C) Transmettre les données sociales des salariés aux organismes de protection sociale.", "D) Gérer les plannings de travail des employés."],
+            answer: "C) Transmettre les données sociales des salariés aux organismes de protection sociale."
         },
         {
-            question: "Quel document obligatoire est remis au salarié à la fin de son contrat de travail ?",
-            options: ["Un contrat de travail", "Un certificat de travail", "Une lettre de motivation"],
-            answer: "Un certificat de travail"
+            question: "Qu'est-ce que le précompte professionnel ?",
+            options: ["A) Une avance sur salaire.", "B) L'impôt sur le revenu prélevé à la source sur le salaire.", "C) Une cotisation sociale patronale.", "D) Une prime de fin d'année."],
+            answer: "B) L'impôt sur le revenu prélevé à la source sur le salaire."
         },
         {
-            question: "Qu'est-ce que la DSN ?",
-            options: ["Déclaration Sociale Nominative", "Déclaration Simplifiée Nationale", "Données Sociales Numériques"],
-            answer: "Déclaration Sociale Nominative"
+            question: "Quelle est la durée légale du travail hebdomadaire en France pour un temps plein ?",
+            options: ["A) 39 heures.", "B) 35 heures.", "C) 40 heures.", "D) 45 heures."],
+            answer: "B) 35 heures."
         },
         {
-            question: "Quel est le rôle principal de la GTA (Gestion des Temps et Activités) ?",
-            options: ["Gérer les entretiens annuels", "Suivre les horaires de travail et les absences des salariés", "Calculer les salaires"],
-            answer: "Suivre les horaires de travail et les absences des salariés"
+            question: "Quel est le rôle principal d'un SIRH ?",
+            options: ["A) Gérer la comptabilité de l'entreprise.", "B) Optimiser la gestion des ressources humaines via des outils informatiques.", "C) Automatiser la production industrielle.", "D) Assurer la sécurité informatique."],
+            answer: "B) Optimiser la gestion des ressources humaines via des outils informatiques."
         },
         {
-            question: "Quel est le nom de l'organisme qui collecte les cotisations sociales en France ?",
-            options: ["Pôle Emploi", "URSSAF", "CAF"],
-            answer: "URSSAF"
+            question: "Qu'est-ce qu'une GPEC ?",
+            options: ["A) Gestion Prévisionnelle des Emplois et des Compétences.", "B) Grande Entreprise de Prestations Externalisées et de Conseil.", "C) Groupe d'Étude des Politiques Économiques et Commerciales.", "D) Garantie de Paiement des Employés Contractuels."],
+            answer: "A) Gestion Prévisionnelle des Emplois et des Compétences."
+        },
+        {
+            question: "En cas d'accident du travail, qui est le premier organisme à indemniser le salarié ?",
+            options: ["A) L'employeur.", "B) L'assurance chômage.", "C) La Sécurité Sociale (CPAM).", "D) La mutuelle complémentaire."],
+            answer: "C) La Sécurité Sociale (CPAM)."
+        },
+        {
+            question: "Qu'est-ce que la subrogation en matière de paie ?",
+            options: ["A) Le remplacement d'un salarié absent par un autre.", "B) Le maintien de salaire par l'employeur qui perçoit directement les IJSS.", "C) La délégation de pouvoir à un subordonné.", "D) La compensation des heures supplémentaires par des jours de repos."],
+            answer: "B) Le maintien de salaire par l'employeur qui perçoit directement les IJSS."
+        },
+        {
+            question: "Quel document est obligatoire pour tout salarié à la fin de chaque mois ?",
+            options: ["A) Le contrat de travail.", "B) Le règlement intérieur.", "C) Le bulletin de paie.", "D) L'attestation Pôle Emploi."],
+            answer: "C) Le bulletin de paie."
+        },
+        {
+            question: "Qu'est-ce que le solde de tout compte ?",
+            options: ["A) Le montant total des salaires versés sur une année.", "B) Un document récapitulant les sommes versées au salarié à la rupture de son contrat.", "C) Le solde du compte bancaire de l'entreprise.", "D) Le total des congés payés restants."],
+            answer: "B) Un document récapitulant les sommes versées au salarié à la rupture de son contrat."
+        },
+        {
+            question: "Quelle est la principale fonction du logiciel Chronotime ?",
+            options: ["A) La gestion de la paie.", "B) La gestion des temps et des activités (GTA).", "C) La gestion des recrutements.", "D) La gestion des carrières."],
+            answer: "B) La gestion des temps et des activités (GTA)."
         }
     ];
 
     const quizContainer = document.getElementById('quiz-container');
-    const submitQuizButton = document.getElementById('submit-quiz');
-    const quizResultsDiv = document.getElementById('quiz-results');
+    const submitQuizButton = document.getElementById('submit-quiz-actual'); // ID mis à jour
+    const quizResultsDiv = document.getElementById('quiz-results-actual'); // ID mis à jour
 
     function renderQuiz() {
         if (!quizContainer) return;
@@ -135,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
         quizContainer.innerHTML = '';
         quizQuestions.forEach((q, index) => {
             const questionDiv = document.createElement('div');
-            questionDiv.classList.add('mb-4');
+            questionDiv.classList.add('mb-4', 'text-left'); // Alignement à gauche
             questionDiv.innerHTML = `<p class="font-semibold mb-2">${index + 1}. ${q.question}</p>`;
 
             q.options.forEach(option => {
@@ -181,20 +248,38 @@ document.addEventListener('DOMContentLoaded', function () {
     if (submitQuizButton) {
         submitQuizButton.addEventListener('click', submitQuiz);
     }
+    
+    // Initialisation des onglets "Mes Offres" pour que le premier soit actif au chargement
+    if (offerTabButtons.length > 0 && offerTabContents.length > 0) {
+        offerTabButtons[0].click(); 
+    }
+    // Initialisation des onglets "À Propos" pour que le premier soit actif au chargement
+    if (aboutTabButtons.length > 0 && aboutTabContents.length > 0) {
+        aboutTabButtons[0].click(); 
+    }
+    // Initialisation des onglets "Mes Réalisations" pour que le premier soit actif au chargement
+    if (realTabButtons.length > 0 && realTabContents.length > 0) {
+        realTabButtons[0].click(); 
+    }
+    // Initialisation des onglets "Actualités" pour que le premier soit actif au chargement
+    // Et déclenchement du rendu du quiz si l'onglet quiz est le premier ou est activé
+    if (actualTabButtons.length > 0 && actualTabContents.length > 0) {
+        actualTabButtons[0].click(); 
+        // Si l'onglet "Quiz RH" est le premier onglet d'actualités, il faut le rendre
+        if (actualTabButtons[0].dataset.target === 'quiz-rh-content') {
+            renderQuiz();
+        }
+    }
 
-    const quizRhSection = document.getElementById('quiz-rh');
-    if (quizRhSection) {
-        const quizObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target.id === 'quiz-rh') {
-                    console.log('Quiz RH section is visible, rendering quiz.');
+    // Gestion du rendu du quiz lorsque l'onglet "Quiz RH" est activé (si ce n'est pas le premier par défaut)
+    actualTabButtons.forEach(button => {
+        if (button.dataset.target === 'quiz-rh-content') {
+            button.addEventListener('click', () => {
+                if (!quizContainer.hasChildNodes() || quizContainer.querySelector('p.text-gris-subtil-fonce')) {
                     renderQuiz();
-                    quizObserver.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.1 });
-
-        quizObserver.observe(quizRhSection);
-    }
+        }
+    });
 
 });
