@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathilde Martine PAISLEY | Actualités & Ressources</title>
+    <meta name="description" content="Restez informé(e) des dernières actualités RH, droit social et paie. Découvrez la veille sociale, les webinaires et la communauté d'échange de Mathilde Martine PAISLEY.">
+    <meta name="keywords" content="actualités RH, veille sociale, webinaires RH, conférences paie, communauté gestionnaire de paie, quiz RH, droit social, SMIC, DSN, congés payés, maladie au travail">
+    <meta name="author" content="Mathilde Martine PAISLEY">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='80%25' font-size='80' text-anchor='middle'%3E🌹%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-actualites-bg">
+
+    <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
+                <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
+                <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
+                <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
+            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
+            <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
+            <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
+            <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+        <section id="actualites" class="content-section bg-fond-texte-clair text-texte-principal py-16 px-4 md:px-8 lg:px-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-principal-fonce">Actualités & Ressources</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="flex justify-center space-x-4 mb-8 flex-wrap">
+                    <button class="tab-button-actual active btn-tab mb-2 md:mb-0" data-target="veille-sociale-content">Veille Sociale : Sujets Clés</button>
+                    <button class="tab-button-actual btn-tab mb-2 md:mb-0" data-target="webinaires-conferences-content">Webinaires & Conférences</button>
+                    <button class="tab-button-actual btn-tab mb-2 md:mb-0" data-target="communaute-echange-content">Ma Communauté d'Échange</button>
+                    <button class="tab-button-actual btn-tab mb-2 md:mb-0" data-target="quiz-rh-content">Quiz RH</button>
+                </div>
+
+                <div id="veille-sociale-content" class="tab-content-actual">
+                    <div class="max-w-4xl mx-auto bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-6 text-center">Veille Sociale : Sujets Clés du Moment</h3>
+                        <div class="space-y-8">
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Évolution du SMIC et Impact sur la Paie</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Date de publication : [Date de la dernière mise à jour du SMIC]</p>
+                                <p class="text-texte-principal">
+                                    Comprenez les dernières augmentations du Salaire Minimum Interprofessionnel de Croissance (SMIC) et leurs répercussions directes sur l'établissement des bulletins de paie, les cotisations sociales et la gestion des contrats de travail. Une veille essentielle pour assurer la conformité de vos pratiques salariales.
+                                </p>
+                                <a href="#" class="text-accent-unique hover:underline mt-2 inline-block">En savoir plus sur le SMIC</a>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">La DSN : Maîtrise et Conformité des Déclarations Sociales Nominatives</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Date de publication : [Date de la dernière évolution DSN]</p>
+                                <p class="text-texte-principal">
+                                    La Déclaration Sociale Nominative (DSN) est au cœur de la simplification des démarches sociales. Découvrez les points de vigilance, les dernières évolutions réglementaires et les bonnes pratiques pour garantir l'exactitude et la conformité de vos déclarations, évitant ainsi les redressements et optimisant vos relations avec les organismes sociaux.
+                                </p>
+                                <a href="#" class="text-accent-unique hover:underline mt-2 inline-block">Approfondir la DSN</a>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Congés Payés en France : Règles, Calculs et Gestion Optimale</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Date de publication : [Date de la dernière jurisprudence/loi sur les CP]</p>
+                                <p class="text-texte-principal">
+                                    La gestion des congés payés est un sujet complexe et source fréquente de litiges. Explorez les règles d'acquisition, de calcul, de prise et de report des congés payés en France. Restez informé(e) des dernières jurisprudences et des bonnes pratiques pour une gestion sereine et conforme au droit du travail.
+                                </p>
+                                <a href="#" class="text-accent-unique hover:underline mt-2 inline-block">Tout sur les Congés Payés</a>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Gestion de la Maladie en Entreprise : IJSS, Subrogation et Prévoyance</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Date de publication : [Date de la dernière évolution sur la maladie]</p>
+                                <p class="text-texte-principal">
+                                    La gestion des arrêts maladie, qu'ils soient ordinaires, professionnels ou liés à un accident du travail, est une de mes spécialités. Ce sujet couvre les Indemnités Journalières de Sécurité Sociale (IJSS), les mécanismes de subrogation, et l'articulation avec les régimes de prévoyance. Assurez une gestion rigoureuse pour la protection de vos salariés et l'optimisation de vos droits.
+                                </p>
+                                <a href="#" class="text-accent-unique hover:underline mt-2 inline-block">Comprendre la Maladie au travail</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="webinaires-conferences-content" class="tab-content-actual hidden">
+                    <div class="max-w-4xl mx-auto bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-6 text-center">Mes Webinaires & Conférences</h3>
+                        <p class="text-center text-lg mb-8">Retrouvez ici les enregistrements ou résumés de mes interventions sur des sujets clés des RH et de la paie.</p>
+                        <div class="space-y-6">
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Webinaire : "L'impact du prélèvement à la source sur la paie"</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Date : [Date]</p>
+                                <a href="#" class="text-accent-unique hover:underline mt-2 inline-block">Voir le replay</a>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Conférence : "SIRH et Transformation Digitale des RH"</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Date : [Date]</p>
+                                <a href="#" class="text-accent-unique hover:underline mt-2 inline-block">Lire le résumé</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="communaute-echange-content" class="tab-content-actual hidden">
+                    <div class="max-w-4xl mx-auto bg-fond-clair p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-6">Ma Communauté d'Échange & de Soutien</h3>
+                        <p class="text-lg mb-4">Mon groupe d'échange et d'entraide.</p>
+                        <p class="text-texte-principal mb-4 leading-relaxed">
+                            Au-delà de mon parcours professionnel, j'ai à cœur de partager ma passion et mon expertise. C'est pourquoi j'anime un groupe d'échange et d'entraide dédié aux personnes qui préparent leurs **titres professionnels ou certifications professionnelles de gestionnaire de paie**, notamment via la formation Studi.
+                        </p>
+                        <h4 class="text-xl font-semibold text-principal-fonce mb-2">Notre Concept : Un Espace de Croissance Collective</h4>
+                        <p class="text-texte-principal mb-4 leading-relaxed">
+                            Ce groupe est né de la conviction que faire une formation à distance peut être difficile. C'est un lieu d'échange dynamique où chacun peut poser ses questions, partager ses expériences et consolider ses acquis. Mon rôle est de guider, d'apporter des éclaircissements basés sur mes 20 ans d'expérience, et de stimuler les discussions pour favoriser une montée en compétences collective et bienveillante. Nous abordons des cas pratiques, des points de législation complexes et des astuces pour maîtriser les subtilités de la paie.
+                        </p>
+                        <p class="text-texte-principal mb-4 leading-relaxed">
+                            Cette communauté me permet également de rester connectée aux réalités de l'apprentissage actuel et aux évolutions du métier, grâce aux retours directs des apprenants. C'est un échange mutuellement enrichissant qui me permet de continuer à monter en compétence sur le métier que j'adore.
+                        </p>
+                        <p class="text-xl font-bold text-gradient-gold mb-6">
+                            Rejoignez le Payroll Boss Elite Club et faites partie d'une communauté engagée !
+                        </p>
+                        <a href="LIEN_VERS_GROUPE_WHATSAPP" target="_blank" class="btn-primary">Accéder au groupe WhatsApp</a>
+
+                        <div class="mt-8 pt-4 border-t border-gris-subtil">
+                            <h4 class="text-xl font-semibold text-principal-fonce mb-2">Rejoignez la Communauté ou Contribuez !</h4>
+                            <p class="text-texte-principal mb-4 leading-relaxed">
+                                Nous sommes toujours ouverts à accueillir de nouvelles personnes désireuses d'apprendre, mais aussi des **"sachants"** qui souhaitent partager leur expertise et aider les futurs professionnels à s'épanouir. Si vous êtes animé(e) par le partage et le transfert de connaissances, si vous souhaitez soutenir, accompagner ou même proposer des stages, votre place est parmi nous !
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-rh-content" class="tab-content-actual hidden">
+                    <div class="max-w-4xl mx-auto bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-center mb-6 text-principal-fonce">🧠 Quiz RH : Testez vos connaissances !</h3>
+                        <p class="text-center text-lg mb-8">Testez vos connaissances en Ressources Humaines, droit social et paie avec ce quiz interactif !</p>
+                        <div id="quiz-container">
+                            <p class="text-center text-lg text-gris-subtil-fonce">Chargement du quiz...</p>
+                        </div>
+                        <button id="submit-quiz-actual" class="btn-primary mt-8 w-full">Soumettre le Quiz</button>
+                        <div id="quiz-results-actual" class="mt-4 text-center text-xl font-semibold"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2024 MMPA Consulting. Tous droits réservés.</p>
+            <p class="mt-2">Mathilde Martine PAISLEY - SIRET [Votre numéro de SIRET]</p>
+            <p class="mt-2">Conçu avec expertise et dévouement.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/votre_kit_fontawesome.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

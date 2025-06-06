@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathilde Martine PAISLEY | Mes Offres de Conseil</title>
+    <meta name="description" content="Découvrez les offres de conseil de Mathilde Martine PAISLEY en Paie, GTA, RH et SIRH. Optimisation, conformité, gestion de projet et accompagnement.">
+    <meta name="keywords" content="offres RH, conseil paie, audit social, optimisation processus RH, SIRH, intégration SIRH, gestion de projet RH, conformité paie, consultant RH">
+    <meta name="author" content="Mathilde Martine PAISLEY">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='80%25' font-size='80' text-anchor='middle'%3E🌹%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-offres-bg">
+
+    <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
+                <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
+                <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
+                <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
+            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
+            <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
+            <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
+            <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+        <section id="mes-offres" class="content-section bg-fond-clair text-texte-principal py-16 px-4 md:px-8 lg:px-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-principal-fonce">Mes Offres de Conseil pour Entreprises</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="flex justify-center space-x-4 mb-8 flex-wrap">
+                    <button class="tab-button active btn-tab mb-2 md:mb-0" data-target="expertise-paie">Expertise Paie & GTA</button>
+                    <button class="tab-button btn-tab mb-2 md:mb-0" data-target="conseil-sirh">Conseil & Projets SIRH</button>
+                    <button class="tab-button btn-tab mb-2 md:mb-0" data-target="optimisation-rh">Optimisation RH & Opérationnelle</button>
+                </div>
+
+                <div id="expertise-paie" class="tab-content">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-accent-unique mb-4">Mise en conformité & Audit Social</h3>
+                            <p class="mb-4">
+                                Je garantis la conformité de votre paie et de vos pratiques RH aux évolutions législatives. Un audit social permet d'identifier les risques, d'optimiser votre gestion et d'éviter les redressements.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
+                                <li>Veille légale et conventionnelle.</li>
+                                <li>Audit complet des processus de paie et ADP.</li>
+                                <li>Analyse et conseil sur les risques sociaux et conformité (DSN, CVAE...).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-accent-unique mb-4">Optimisation des processus Paie & GTA</h3>
+                            <p class="mb-4">
+                                Je vous aide à fluidifier et automatiser vos processus de gestion de la paie et des temps, pour une efficacité accrue, une réduction des erreurs et un gain de temps précieux pour vos équipes.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
+                                <li>Analyse approfondie et refonte des workflows existants.</li>
+                                <li>Mise en place d'outils d'automatisation adaptés (logiciels de paie, GTA).</li>
+                                <li>Réduction significative des délais de traitement et amélioration de la fiabilité.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="conseil-sirh" class="tab-content hidden">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-accent-unique mb-4">Choix & Implémentation SIRH</h3>
+                            <p class="mb-4">
+                                De la sélection au déploiement, je vous accompagne dans l'acquisition et la configuration d'outils SIRH pertinents pour la paie, la GTA, l'administration du personnel, le recrutement ou la formation.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
+                                <li>Audit des besoins fonctionnels et rédaction de cahiers des charges.</li>
+                                <li>Comparatif des solutions du marché et aide à la décision.</li>
+                                <li>Paramétrage, intégration et migration de données.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-accent-unique mb-4">Conduite du changement & Formation</h3>
+                            <p class="mb-4">
+                                J'assure l'adoption réussie de vos nouveaux systèmes en accompagnant vos équipes. Formations personnalisées et support de proximité garantissent une transition fluide et une autonomie rapide.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
+                                <li>Élaboration et mise en œuvre de plans de communication interne ciblés.</li>
+                                <li>Conception et animation de sessions de formation sur mesure pour tous les niveaux.</li>
+                                <li>Assistance post-implémentation pour une prise en main sereine.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="optimisation-rh" class="tab-content hidden">
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-accent-unique mb-4">Diagnostic RH & Recommandations Stratégiques</h3>
+                            <p class="mb-4">
+                                Analyse approfondie de votre organisation RH, identification des axes d'amélioration et élaboration de stratégies ciblées pour renforcer votre capital humain et votre performance globale.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
+                                <li>Cartographie détaillée des processus RH actuels.</li>
+                                <li>Benchmarking des bonnes pratiques du secteur.</li>
+                                <li>Établissement d'une feuille de route stratégique et opérationnelle.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <h3 class="text-2xl font-semibold text-accent-unique mb-4">Mise en place de tableaux de bord RH & Reporting</h3>
+                            <p class="mb-4">
+                                Création d'indicateurs clés de performance (KPI) et d'outils de reporting personnalisés pour un pilotage éclairé de vos effectifs, de vos coûts et de vos performances RH.
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
+                                <li>Définition des KPI pertinents pour vos objectifs.</li>
+                                <li>Conception et développement de dashboards RH interactifs.</li>
+                                <li>Automatisation des rapports pour un suivi en temps réel.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2024 MMPA Consulting. Tous droits réservés.</p>
+            <p class="mt-2">Mathilde Martine PAISLEY - SIRET [Votre numéro de SIRET]</p>
+            <p class="mt-2">Conçu avec expertise et dévouement.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/votre_kit_fontawesome.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

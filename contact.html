@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathilde Martine PAISLEY | Contact</title>
+    <meta name="description" content="Contactez Mathilde Martine PAISLEY pour vos besoins en conseil RH, paie et SIRH.">
+    <meta name="keywords" content="contact RH, contact paie, demander devis, consultant RH, service RH, prise de rendez-vous, email RH, téléphone RH">
+    <meta name="author" content="Mathilde Martine PAISLEY">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='80%25' font-size='80' text-anchor='middle'%3E🌹%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-contact-bg">
+
+    <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
+                <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
+                <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
+                <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
+            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
+            <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
+            <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
+            <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
+        </nav>
+    </header>
+
+    <main class="pt-16">
+        <section id="contact" class="content-section bg-principal-fonce text-fond-clair py-16 px-4 md:px-8 lg:px-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-fond-clair">Contactez-moi</h2>
+            <div class="max-w-xl mx-auto bg-fond-clair text-texte-principal p-8 rounded-lg shadow-lg">
+                <p class="text-center text-lg mb-6">N'hésitez pas à me contacter pour toute opportunité ou question. Je serais ravie d'échanger avec vous.</p>
+                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-texte-principal mb-1">Nom</label>
+                        <input type="text" id="name" name="Nom" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                    </div>
+                    <div>
+                        <label for="firstname" class="block text-sm font-medium text-texte-principal mb-1">Prénom</label>
+                        <input type="text" id="firstname" name="Prénom" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-texte-principal mb-1">Email</label>
+                        <input type="email" id="email" name="Email" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-texte-principal mb-1">Téléphone</label>
+                        <input type="tel" id="phone" name="Téléphone" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                    </div>
+                    <div>
+                        <label for="function" class="block text-sm font-medium text-texte-principal mb-1">Fonction</label>
+                        <input type="text" id="function" name="Fonction" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                    </div>
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-texte-principal mb-1">Nom de la Société</label>
+                        <input type="text" id="company" name="Nom de la Société" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                    </div>
+                    <div>
+                        <label for="siret" class="block text-sm font-medium text-texte-principal mb-1">Numéro SIRET (facultatif)</label>
+                        <input type="text" id="siret" name="Numéro SIRET" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                    </div>
+                    <div>
+                        <label for="interest" class="block text-sm font-medium text-texte-principal mb-1">Offre(s) d'intérêt (Sujet) :</label>
+                        <select id="interest" name="Offre(s) d'intérêt" multiple class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique h-32">
+                            <option value="">Sélectionnez une ou plusieurs options</option>
+                            <option value="Conseil & AMOA SIRH">Conseil & AMOA SIRH</option>
+                            <option value="Optimisation Processus Paie">Optimisation Processus Paie</option>
+                            <option value="Gestion des Temps & Activités (GTA)">Gestion des Temps & Activités (GTA)</option>
+                            <option value="Formation & Accompagnement">Formation & Accompagnement</option>
+                            <option value="Veille Sociale & Juridique">Veille Sociale & Juridique</option>
+                            <option value="Support Fonctionnel SIRH">Support Fonctionnel SIRH</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-texte-principal mb-1">Votre Message (facultatif)</label>
+                        <textarea id="message" name="Votre Message" rows="5" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary w-full">Envoyer le message</button>
+                </form>
+                <div class="text-center mt-8">
+                    <p class="mb-4">Vous pouvez me contacter directement par email ou téléphone :</p>
+                    <a href="mailto:contact@mmpaisley-paie-sirh.com" class="text-xl text-principal-fonce hover:text-accent-secondaire transition-colors duration-300 block mb-2">
+                        contact@mmpaisley-paie-sirh.com
+                    </a>
+                    <p class="text-xl text-principal-fonce">06 85 90 08 87</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2024 MMPA Consulting. Tous droits réservés.</p>
+            <p class="mt-2">Mathilde Martine PAISLEY - SIRET [Votre numéro de SIRET]</p>
+            <p class="mt-2">Conçu avec expertise et dévouement.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/votre_kit_fontawesome.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

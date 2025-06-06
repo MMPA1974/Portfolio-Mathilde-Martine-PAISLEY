@@ -25,6 +25,36 @@ body {
     line-height: 1.6;
     color: var(--color-texte-principal);
     background-color: var(--color-fond-clair);
+    /* Padding pour compenser la hauteur du header fixe */
+    padding-top: 64px; /* Hauteur de votre header (p-4 équivaut à 16px de chaque côté, la hauteur réelle dépend du contenu, 64px est une estimation courante pour un header de cette taille) */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Styles pour les images de fond spécifiques à chaque page */
+.bg-accueil-bg {
+    background-image: url('assets/background-accueil.jpg'); /* À remplacer par le chemin de ton image */
+}
+
+.bg-offres-bg {
+    background-image: url('assets/background-offres.jpg'); /* À remplacer par le chemin de ton image */
+}
+
+.bg-apropos-bg {
+    background-image: url('assets/background-apropos.jpg'); /* À remplacer par le chemin de ton image */
+}
+
+.bg-realisations-bg {
+    background-image: url('assets/background-realisations.jpg'); /* À remplacer par le chemin de ton image */
+}
+
+.bg-actualites-bg {
+    background-image: url('assets/background-actualites.jpg'); /* À remplacer par le chemin de ton image */
+}
+
+.bg-contact-bg {
+    background-image: url('assets/background-contact.jpg'); /* À remplacer par le chemin de ton image */
 }
 
 .container {

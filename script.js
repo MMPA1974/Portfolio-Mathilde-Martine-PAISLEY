@@ -1,144 +1,96 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Log pour s'assurer que le script se charge
     console.log('DOMContentLoaded fired: script.js is running.');
 
-    // --- Gestion des onglets dans la section "Mes Offres" ---
-    const offerTabButtons = document.querySelectorAll('.tab-button');
-    const offerTabContents = document.querySelectorAll('.tab-content');
+    const mainHeader = document.querySelector('header');
+    const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
 
-    offerTabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.dataset.target;
+    // Ajuste le padding-top du body pour compenser le header fixe
+    // document.body.style.paddingTop = `${headerHeight}px`; // Déplacé dans le CSS pour plus de simplicité
 
-            offerTabContents.forEach(content => content.classList.add('hidden'));
-            offerTabButtons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(targetId).classList.remove('hidden');
-            button.classList.add('active');
-        });
-    });
-
-    // --- Gestion des onglets dans la section "À Propos" ---
-    const aboutTabButtons = document.querySelectorAll('.tab-button-about');
-    const aboutTabContents = document.querySelectorAll('.tab-content-about');
-
-    aboutTabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.dataset.target;
-
-            aboutTabContents.forEach(content => content.classList.add('hidden'));
-            aboutTabButtons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(targetId).classList.remove('hidden');
-            button.classList.add('active');
-        });
-    });
-
-    // --- Gestion des onglets dans la section "Mes Réalisations" ---
-    const realTabButtons = document.querySelectorAll('.tab-button-real');
-    const realTabContents = document.querySelectorAll('.tab-content-real');
-
-    realTabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.dataset.target;
-
-            realTabContents.forEach(content => content.classList.add('hidden'));
-            realTabButtons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(targetId).classList.remove('hidden');
-            button.classList.add('active');
-        });
-    });
-
-    // --- Gestion des onglets dans la section "Actualités" ---
-    const actualTabButtons = document.querySelectorAll('.tab-button-actual');
-    const actualTabContents = document.querySelectorAll('.tab-content-actual');
-
-    actualTabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.dataset.target;
-
-            actualTabContents.forEach(content => content.classList.add('hidden'));
-            actualTabButtons.forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(targetId).classList.remove('hidden');
-            button.classList.add('active');
-        });
-    });
-
-    // --- Gestion du menu mobile et de la navigation par section ---
+    // --- Gestion du menu mobile ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-    const sections = document.querySelectorAll('main section');
-    const mainHeader = document.querySelector('header');
-
-    // Toggle du menu mobile
     if (mobileMenuButton) {
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
     }
 
-    // Gestion du défilement fluide et de l'activation des liens de navigation
-    function smoothScrollAndActiveClass(links, menuToClose = null) {
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
+    // --- Gestion des onglets pour "Mes Offres" (sur mes-offres.html) ---
+    const offerTabButtons = document.querySelectorAll('.tab-button');
+    const offerTabContents = document.querySelectorAll('.tab-content');
+    if (offerTabButtons.length > 0 && offerTabContents.length > 0) {
+        offerTabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.dataset.target;
+                offerTabContents.forEach(content => content.classList.add('hidden'));
+                offerTabButtons.forEach(btn => btn.classList.remove('active'));
+                document.getElementById(targetId).classList.remove('hidden');
+                button.classList.add('active');
+            });
+        });
+        offerTabButtons[0].click(); // Active le premier onglet au chargement de la page
+    }
 
-                if (targetSection) {
-                    const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
-                    const offsetTop = targetSection.offsetTop - headerHeight;
+    // --- Gestion des onglets pour "À Propos" (sur a-propos.html) ---
+    const aboutTabButtons = document.querySelectorAll('.tab-button-about');
+    const aboutTabContents = document.querySelectorAll('.tab-content-about');
+    if (aboutTabButtons.length > 0 && aboutTabContents.length > 0) {
+        aboutTabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.dataset.target;
+                aboutTabContents.forEach(content => content.classList.add('hidden'));
+                aboutTabButtons.forEach(btn => btn.classList.remove('active'));
+                document.getElementById(targetId).classList.remove('hidden');
+                button.classList.add('active');
+            });
+        });
+        aboutTabButtons[0].click(); // Active le premier onglet au chargement de la page
+    }
 
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+    // --- Gestion des onglets pour "Mes Réalisations" (sur realisations.html) ---
+    const realTabButtons = document.querySelectorAll('.tab-button-real');
+    const realTabContents = document.querySelectorAll('.tab-content-real');
+    if (realTabButtons.length > 0 && realTabContents.length > 0) {
+        realTabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.dataset.target;
+                realTabContents.forEach(content => content.classList.add('hidden'));
+                realTabButtons.forEach(btn => btn.classList.remove('active'));
+                document.getElementById(targetId).classList.remove('hidden');
+                button.classList.add('active');
+            });
+        });
+        realTabButtons[0].click(); // Active le premier onglet au chargement de la page
+    }
 
-                    if (menuToClose) {
-                        menuToClose.classList.add('hidden');
-                    }
+    // --- Gestion des onglets pour "Actualités" (sur actualites.html) ---
+    const actualTabButtons = document.querySelectorAll('.tab-button-actual');
+    const actualTabContents = document.querySelectorAll('.tab-content-actual');
+    if (actualTabButtons.length > 0 && actualTabContents.length > 0) {
+        actualTabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.dataset.target;
+                actualTabContents.forEach(content => content.classList.add('hidden'));
+                actualTabButtons.forEach(btn => btn.classList.remove('active'));
+                document.getElementById(targetId).classList.remove('hidden');
+                button.classList.add('active');
+
+                // Si l'onglet activé est le quiz, le rendre
+                if (targetId === 'quiz-rh-content') {
+                    renderQuiz();
                 }
             });
         });
+        actualTabButtons[0].click(); // Active le premier onglet au chargement de la page
+        // Si le premier onglet est le quiz, le rendre
+        if (actualTabButtons[0].dataset.target === 'quiz-rh-content') {
+            renderQuiz();
+        }
     }
 
-    smoothScrollAndActiveClass(navLinks);
-    smoothScrollAndActiveClass(mobileNavLinks, mobileMenu);
 
-    // Observer pour changer la classe 'active' des liens de navigation au défilement
-    const headerHeightForObserver = mainHeader ? mainHeader.offsetHeight + 1 : 1;
-    const observerOptions = {
-        root: null,
-        rootMargin: `-${headerHeightForObserver}px 0px 0px 0px`,
-        threshold: 0.5
-    };
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const id = entry.target.getAttribute('id');
-            const correspondingLink = document.querySelector(`.nav-link[href="#${id}"], .mobile-nav-link[href="#${id}"]`);
-
-            if (correspondingLink) {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    mobileNavLinks.forEach(link => link.classList.remove('active'));
-                    correspondingLink.classList.add('active');
-                } else {
-                    correspondingLink.classList.remove('active');
-                }
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
-
-    // --- Gestion du Quiz RH (réintégré) ---
+    // --- Gestion du Quiz RH (uniquement sur actualites.html) ---
     const quizQuestions = [
         {
             question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ?",
@@ -193,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const quizContainer = document.getElementById('quiz-container');
-    const submitQuizButton = document.getElementById('submit-quiz-actual'); // ID mis à jour
-    const quizResultsDiv = document.getElementById('quiz-results-actual'); // ID mis à jour
+    const submitQuizButton = document.getElementById('submit-quiz-actual');
+    const quizResultsDiv = document.getElementById('quiz-results-actual');
 
     function renderQuiz() {
         if (!quizContainer) return;
@@ -202,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
         quizContainer.innerHTML = '';
         quizQuestions.forEach((q, index) => {
             const questionDiv = document.createElement('div');
-            questionDiv.classList.add('mb-4', 'text-left'); // Alignement à gauche
+            questionDiv.classList.add('mb-4', 'text-left');
             questionDiv.innerHTML = `<p class="font-semibold mb-2">${index + 1}. ${q.question}</p>`;
 
             q.options.forEach(option => {
@@ -248,38 +200,4 @@ document.addEventListener('DOMContentLoaded', function () {
     if (submitQuizButton) {
         submitQuizButton.addEventListener('click', submitQuiz);
     }
-    
-    // Initialisation des onglets "Mes Offres" pour que le premier soit actif au chargement
-    if (offerTabButtons.length > 0 && offerTabContents.length > 0) {
-        offerTabButtons[0].click(); 
-    }
-    // Initialisation des onglets "À Propos" pour que le premier soit actif au chargement
-    if (aboutTabButtons.length > 0 && aboutTabContents.length > 0) {
-        aboutTabButtons[0].click(); 
-    }
-    // Initialisation des onglets "Mes Réalisations" pour que le premier soit actif au chargement
-    if (realTabButtons.length > 0 && realTabContents.length > 0) {
-        realTabButtons[0].click(); 
-    }
-    // Initialisation des onglets "Actualités" pour que le premier soit actif au chargement
-    // Et déclenchement du rendu du quiz si l'onglet quiz est le premier ou est activé
-    if (actualTabButtons.length > 0 && actualTabContents.length > 0) {
-        actualTabButtons[0].click(); 
-        // Si l'onglet "Quiz RH" est le premier onglet d'actualités, il faut le rendre
-        if (actualTabButtons[0].dataset.target === 'quiz-rh-content') {
-            renderQuiz();
-        }
-    }
-
-    // Gestion du rendu du quiz lorsque l'onglet "Quiz RH" est activé (si ce n'est pas le premier par défaut)
-    actualTabButtons.forEach(button => {
-        if (button.dataset.target === 'quiz-rh-content') {
-            button.addEventListener('click', () => {
-                if (!quizContainer.hasChildNodes() || quizContainer.querySelector('p.text-gris-subtil-fonce')) {
-                    renderQuiz();
-                }
-            });
-        }
-    });
-
 });
