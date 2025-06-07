@@ -53,6 +53,10 @@ body {
     background-image: url('assets/background-actualites.jpg'); /* À remplacer par le chemin de ton image */
 }
 
+.bg-essentiels-bg { /* Nouvelle classe pour la page essentiels */
+    background-image: url('assets/background-essentiels.jpg'); /* À remplacer par le chemin de ton image */
+}
+
 .bg-planning-bg { /* Nouvelle classe pour la page planning */
     background-image: url('assets/background-planning.jpg'); /* À remplacer par le chemin de ton image */
 }
@@ -60,6 +64,37 @@ body {
 .bg-contact-bg {
     background-image: url('assets/background-contact.jpg'); /* À remplacer par le chemin de ton image */
 }
+
+/* Style pour le contenu principal des pages pour que l'image de fond soit visible sur les côtés */
+main .content-section {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc semi-transparent */
+    max-width: 1200px; /* Largeur du contenu principal */
+    margin: 0 auto; /* Centrer le contenu */
+    padding: 2rem; /* Espacement interne */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Ombre légère pour le détacher */
+    border-radius: 0.5rem; /* Coins arrondis */
+}
+
+/* Ajustements pour les sections qui ont déjà des couleurs de fond claires */
+#accueil.bg-fond-texte-clair,
+#mes-offres.bg-fond-clair,
+#a-propos.bg-fond-texte-clair,
+#realisations.bg-fond-clair,
+#actualites.bg-fond-texte-clair,
+#essentiels.bg-fond-texte-clair, /* Nouvelle section essentiels */
+#planning.bg-fond-texte-clair {
+    background-color: rgba(255, 255, 255, 0.9); /* Un fond blanc semi-transparent pour ces sections également */
+}
+/* Exception pour contact si tu veux garder le fond principal-fonce */
+#contact.bg-principal-fonce {
+    background-color: var(--color-principal-fonce); /* Reste opaque pour le contact */
+}
+
+/* Styles pour le bandeau d'accueil plus spécifique pour son fond */
+#accueil {
+    background-color: var(--color-fond-texte-clair); /* Reste opaque par défaut pour le bandeau d'accueil */
+}
+
 
 .container {
     max-width: 1200px;
@@ -258,60 +293,74 @@ footer a:hover {
 }
 
 /* Styles pour le footer étendu */
+footer {
+    background-color: var(--color-principal-fonce); /* Assure le fond bleu premium */
+    color: var(--color-fond-clair); /* Texte clair dans le footer */
+}
+
 .footer-links-section {
     color: var(--color-fond-clair); /* Texte des liens en blanc */
 }
 
-.footer-links-row {
-    display: flex;
-    flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne */
-    justify-content: center; /* Centre les colonnes */
-    gap: 1rem; /* Espace entre les colonnes */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px minimum par colonne */
+    gap: 1rem;
     margin-top: 1rem;
+    text-align: left; /* Alignement du texte à gauche par défaut dans les colonnes */
 }
 
 .footer-links-col {
-    flex: 1 1 auto; /* Permet aux colonnes de s'adapter et de grandir */
-    min-width: 280px; /* Largeur minimale pour les colonnes */
-    max-width: 350px; /* Largeur maximale pour les colonnes */
     padding: 0.5rem;
-    box-sizing: border-box; /* Inclut le padding dans la largeur */
 }
 
 .footer-links-col p {
     margin-bottom: 0.5rem;
     font-size: 0.9rem; /* Taille de police pour les titres de catégorie */
+    text-align: center; /* Centre les titres de catégorie */
 }
 
 .links-list {
     display: flex;
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne dans une colonne */
-    justify-content: center;
-    line-height: 1.8; /* Espacement entre les liens */
+    flex-wrap: wrap;
+    justify-content: center; /* Centre les liens dans la liste */
+    line-height: 1.8;
+    list-style: none; /* Supprime les puces par défaut */
+    padding: 0;
+    margin: 0;
 }
 
 .links-list a {
-    white-space: nowrap; /* Garde les liens sur une seule ligne */
-    margin: 0 0.25rem; /* Petit espace entre les liens */
-    font-size: 0.8rem; /* Taille de police pour les liens individuels */
+    white-space: nowrap;
+    margin: 0 0.4rem; /* Plus d'espace entre les liens pour le "•" */
+    font-size: 0.8rem;
+    text-decoration: none; /* Enlève le soulignement par défaut */
+    color: var(--color-fond-clair); /* Couleur des liens */
 }
 
-.links-list span { /* Pour le séparateur • */
-    display: inline-block;
-    margin: 0 0.1rem;
+.links-list a:hover {
+    color: var(--color-accent-secondaire); /* Couleur au survol */
+}
+
+/* Séparateur pour les liens */
+.links-list a + a:before {
+    content: "•";
+    color: var(--color-accent-unique); /* Couleur dorée pour les puces */
+    margin-right: 0.4rem;
 }
 
 /* Ajustements pour petits écrans */
 @media (max-width: 768px) {
-    .footer-links-row {
-        flex-direction: column;
-        align-items: center;
+    .footer-links-grid {
+        grid-template-columns: 1fr; /* Une seule colonne */
     }
     .footer-links-col {
-        min-width: 100%;
-        text-align: center;
+        text-align: center; /* Centrer le contenu des colonnes sur mobile */
     }
     .links-list {
-        justify-content: center;
+        justify-content: center; /* Centre les liens sur mobile */
+    }
+    .links-list a {
+        margin: 0 0.5rem; /* Plus d'espace pour la lisibilité sur mobile */
     }
 }

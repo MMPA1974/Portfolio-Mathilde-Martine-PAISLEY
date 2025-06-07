@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeTabs('.tab-button-about', '.tab-content-about'); // À Propos (sur a-propos.html)
     initializeTabs('.tab-button-real', '.tab-content-real'); // Mes Réalisations (sur realisations.html)
     initializeTabs('.tab-button-actual', '.tab-content-actual'); // Actualités (sur actualites.html)
+    initializeTabs('.tab-button-essentials', '.tab-content-essentials'); // Essentiels (sur essentiels.html)
+
 
     // --- Gestion du Quiz RH (uniquement sur actualites.html, si l'onglet est présent) ---
     const quizQuestions = [
