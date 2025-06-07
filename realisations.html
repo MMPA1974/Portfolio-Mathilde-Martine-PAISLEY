@@ -14,13 +14,17 @@
 <body class="bg-realisations-bg">
 
     <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</a>
+        <div class="container mx-auto flex justify-between items-center header-content-wrapper">
+            <a href="index.html" class="header-logo-link">
+                <img src="assets/logo-header.jpeg" alt="Logo MMPA" class="header-logo">
+                <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
+            </a>
             <nav class="hidden md:flex space-x-6">
                 <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
                 <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
                 <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="planning.html" class="nav-link hover:text-accent-secondaire">Planning</a>
                 <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
@@ -34,22 +38,76 @@
             <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
             <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
             <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="planning.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Planning</a>
             <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
         </nav>
     </header>
 
-    <main class="pt-16">
+    <main>
         <section id="realisations" class="content-section bg-fond-clair text-texte-principal py-16 px-4 md:px-8 lg:px-16">
             <h2 class="text-3xl font-bold text-center mb-12 text-principal-fonce">Mes Réalisations : Projets & Expertise</h2>
             <div class="max-w-5xl mx-auto">
                 <div class="flex justify-center space-x-4 mb-8 flex-wrap">
-                    <button class="tab-button-real active btn-tab mb-2 md:mb-0" data-target="projets-phares-content">Projets Phares</button>
-                    <button class="tab-button-real btn-tab mb-2 md:mb-0" data-target="retours-professionnels-content">Retours Professionnels</button>
-                    <button class="tab-button-real btn-tab mb-2 md:mb-0" data-target="mon-expertise-content">Mon Expertise</button>
+                    <button class="tab-button-real active btn-tab mb-2 md:mb-0" data-target="mon-expertise-content">Mon Expertise</button>
+                    <button class="tab-button-real btn-tab mb-2 md:mb-0" data-target="projets-phares-content">Projets Phares</button>
+                    <button class="tab-button-real btn-tab mb-2 md:mb-0" data-target="retours-professionnels-content">Témoignages</button>
                     <button class="tab-button-real btn-tab mb-2 md:mb-0" data-target="mes-outils-methodes-content">Mes Outils & Méthodes</button>
                 </div>
 
-                <div id="projets-phares-content" class="tab-content-real">
+                <div id="mon-expertise-content" class="tab-content-real">
+                    <div class="bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">Mon Expertise : Mes compétences clés en RH et SIRH.</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Pilotage RH & Coordination Fonctionnelle</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Gestion Stratégique des Ressources Humaines : Capacité à aligner les stratégies RH avec les objectifs globaux de l'entreprise.</li>
+                                    <li>Management d'Équipe : Expertise dans l'encadrement, la motivation et le développement des équipes.</li>
+                                    <li>Conduite du Changement : Aptitude à accompagner les organisations à travers les transformations majeures.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">SIRH & AMOA (Assistance à Maîtrise d'Ouvrage)</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Analyse Fonctionnelle : Compétence approfondie dans l'analyse des besoins métiers pour les traduire en spécifications.</li>
+                                    <li>Conception & Déploiement de Solutions SIRH : Maîtrise du cycle de vie complet des projets SIRH.</li>
+                                    <li>Optimisation des Processus RH via SIRH : Capacité à identifier les opportunités d'amélioration et les optimiser.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Coordination & Pilotage de la Paie</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Gestion Complète de la Paie : Maîtrise de l'ensemble du processus de paie (collecte EVP, bulletins, cotisations, DSN).</li>
+                                    <li>Conformité Légale & Réglementaire : Veille constante et application rigoureuse de la législation sociale.</li>
+                                    <li>Contrôle de Paie : Mise en place et exécution de procédures de contrôle robustes.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Spécialiste Gestion des Arrêts Maladie & Accidents</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Maîtrise des IJSS : Calcul, suivi et gestion des Indemnités Journalières de Sécurité Sociale.</li>
+                                    <li>Gestion des Dossiers AT/MP : Prise en charge des dossiers d'accidents du travail et maladies professionnelles.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Gestion de la Prévoyance et Maintien de Salaire</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Compréhension des Contrats de Prévoyance : Capacité à analyser et appliquer les clauses des contrats collectifs.</li>
+                                    <li>Suivi des Mises en Place : Gestion des affiliations et radiations, coordination des flux d'information avec les assureurs.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Veille Sociale & Juridique</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Analyse Réglementaire : Surveillance proactive des évolutions législatives et réglementaires.</li>
+                                    <li>Conseil Opérationnel : Capacité à fournir des conseils éclairés aux équipes RH et aux managers.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="projets-phares-content" class="tab-content-real hidden">
                     <div class="max-w-4xl mx-auto bg-fond-texte-clair p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mb-10">
                         <h3 class="text-2xl font-semibold text-accent-unique mb-4">Déploiement SIRH Octave pour la gestion de la paie des personnes détenues</h3>
                         <p class="text-lg text-gris-subtil mb-4">Période : Janvier 2023 - Juin 2024 | Rôle : Consultante Fonctionnelle AMOA SIRH</p>
@@ -150,83 +208,36 @@
 
                 <div id="retours-professionnels-content" class="tab-content-real hidden">
                     <div class="max-w-4xl mx-auto bg-fond-clair p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-bold text-center text-principal-fonce mb-8">Retours Professionnels</h3>
+                        <h3 class="text-2xl font-bold text-center text-principal-fonce mb-8">Témoignages</h3>
                         <p class="text-center text-lg mb-8">Les retours d'expérience de mes clients et partenaires.</p>
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
-                                <p class="italic text-texte-principal mb-4">
+                                <p class="italic text-texte-principal mb-4 text-justify">
                                     "Je souhaite exprimer ma sincère gratitude à Mathilde PAISLEY pour l'aide **précieuse** qu'elle m'a apportée durant ma formation en gestionnaire de paie et en ressources humaines. Son **expertise** et sa **passion** pour le domaine se ressentent à chaque interaction. Elle a su me guider avec **bienveillance**, répondant à mes questions et m'encourageant à explorer des sujets complexes. Grâce à son soutien, j'ai non seulement renforcé mes compétences et j’ai pu en apprendre encore plus dans le domaine de la paie et ressources humaines. Mathilde PAISLEY a une **capacité unique à créer un environnement d'apprentissage positif**, ce qui a rendu ma formation encore plus enrichissante. Je recommande vivement ses services à quiconque cherche un **accompagnement authentique et efficace**. Merci encore pour tout ! ☺️"
                                 </p>
                                 <p class="font-semibold text-accent-unique">- Dounia Assakkour</p>
                             </div>
                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
-                                <p class="italic text-texte-principal mb-4">
+                                <p class="italic text-texte-principal mb-4 text-justify">
                                     "Je tiens à partager mon expérience avec Mathilde qui a été une source d'**inspiration et de motivation** tout au long de mon parcours professionnel. Grâce à son soutien et à son engagement, j'ai pu réussir ma formation MBA CDO, et je ne pourrais être plus ravi des résultats. Mathilde est une personne très **professionnelle** qui pousse les autres à aller de l'avant. Elle a une **personnalité fascinante** et apporte une aide précieuse à ceux qui l'entourent. Elle est toujours attentive au respect des normes de travail et donne le meilleur d'elle-même dans tout ce qu'elle entreprend. Sa **passion et son dévouement sont contagieux**, et j'apprécie énormément son approche dynamique et bienveillante. Je suis reconnaissant d'avoir croisé son chemin, et je suis sûr que son influence continuera à faire une différence positive dans la vie de nombreux autres."
                                 </p>
                                 <p class="font-semibold text-accent-unique">- Sébia PREIRA</p>
                             </div>
+                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
+                                <p class="italic text-texte-principal mb-4 text-justify">
+                                    "Mathilde a créé et animé un groupe WhatsApp pour le MBA expert en stratégie digitale / CDO pour lequel nous étudions. Ses messages de soutien, d’écoute, et de mobilisation et motivation ont été très apprécié par tous les étudiants, face à une formation ou nous étions seuls devant notre écran. Elle a su redonner confiance à certains, et échanger avec les uns et les autres pour que nous puissions tous échanger et collaborer. Ses messages clairs, percutants, désigné avec des icones, ont permis d’aller à l’essentiel. Elle a aussi partagé des documents qu’elle avait créé afin de travailler en collaboration."
+                                </p>
+                                <p class="font-semibold text-accent-unique">- Anne ROHMER (Apprenante Study)</p>
+                            </div>
                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
-                                <p class="italic text-texte-principal mb-4">
+                                <p class="italic text-texte-principal mb-4 text-justify">
                                     "J’ai eu la chance de pouvoir compter sur Mathilde Paisley à plusieurs reprises pour l’organisation d’anniversaires et de fêtes de famille. Même en dehors de tout cadre professionnel, elle s’est toujours investie avec **sérieux, enthousiasme et générosité**. Sans jamais compter son temps ni son énergie, Mathilde a su tout **coordonner** : idées de thème, décoration, organisation logistique, accueil des invités, gestion du déroulement de la journée… Elle **pense à tout, anticipe les besoins** et apporte une vraie **touche personnelle** à chaque moment. Grâce à elle, ces événements ont été non seulement réussis, mais aussi profondément **chaleureux et mémorable**. C’est une personne de **confiance**, sur qui l’on peut vraiment s’appuyer. Merci encore Mathilde pour tout ce que tu fais, avec tant de cœur."
                                 </p>
                                 <p class="font-semibold text-accent-unique">- Nadège GAMAIN</p>
                             </div>
                         </div>
                         <div class="text-center mt-8">
-                            <p class="text-texte-principal italic">Témoignages Vidéo/Audio (À venir) : Cette section sera bientôt enrichie de témoignages en format vidéo ou audio, pour une expérience encore plus immersive et authentique.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="mon-expertise-content" class="tab-content-real hidden">
-                    <div class="bg-fond-clair p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">Mon Expertise : Mes compétences clés en RH et SIRH.</h3>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
-                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Pilotage RH & Coordination Fonctionnelle</h4>
-                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
-                                    <li>Gestion Stratégique des Ressources Humaines : Capacité à aligner les stratégies RH avec les objectifs globaux de l'entreprise.</li>
-                                    <li>Management d'Équipe : Expertise dans l'encadrement, la motivation et le développement des équipes.</li>
-                                    <li>Conduite du Changement : Aptitude à accompagner les organisations à travers les transformations majeures.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
-                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">SIRH & AMOA (Assistance à Maîtrise d'Ouvrage)</h4>
-                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
-                                    <li>Analyse Fonctionnelle : Compétence approfondie dans l'analyse des besoins métiers pour les traduire en spécifications.</li>
-                                    <li>Conception & Déploiement de Solutions SIRH : Maîtrise du cycle de vie complet des projets SIRH.</li>
-                                    <li>Optimisation des Processus RH via SIRH : Capacité à identifier les opportunités d'amélioration et les optimiser.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
-                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Coordination & Pilotage de la Paie</h4>
-                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
-                                    <li>Gestion Complète de la Paie : Maîtrise de l'ensemble du processus de paie (collecte EVP, bulletins, cotisations, DSN).</li>
-                                    <li>Conformité Légale & Réglementaire : Veille constante et application rigoureuse de la législation sociale.</li>
-                                    <li>Contrôle de Paie : Mise en place et exécution de procédures de contrôle robustes.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
-                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Spécialiste Gestion des Arrêts Maladie & Accidents</h4>
-                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
-                                    <li>Maîtrise des IJSS : Calcul, suivi et gestion des Indemnités Journalières de Sécurité Sociale.</li>
-                                    <li>Gestion des Dossiers AT/MP : Prise en charge des dossiers d'accidents du travail et maladies professionnelles.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
-                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Gestion de la Prévoyance et Maintien de Salaire</h4>
-                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
-                                    <li>Compréhension des Contrats de Prévoyance : Capacité à analyser et appliquer les clauses des contrats collectifs.</li>
-                                    <li>Suivi des Mises en Place : Gestion des affiliations et radiations, coordination des flux d'information avec les assureurs.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
-                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Veille Sociale & Juridique</h4>
-                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
-                                    <li>Analyse Réglementaire : Surveillance proactive des évolutions législatives et réglementaires.</li>
-                                    <li>Conseil Opérationnel : Capacité à fournir des conseils éclairés aux équipes RH et aux managers.</li>
-                                </ul>
-                            </div>
+                            <p class="text-texte-principal italic">Témoignages Vidéo/Audio (À venir) : Cette section sera bientôt enrichie de témoignages en format vidéo ou audio, pour une expérience encore plus immersive et plus authentique.</p>
                         </div>
                     </div>
                 </div>
@@ -279,8 +290,8 @@
 
     <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
         <div class="container mx-auto">
-            <p>&copy; 2024 MMPA Consulting. Tous droits réservés.</p>
-            <p class="mt-2">Mathilde Martine PAISLEY - SIRET [Votre numéro de SIRET]</p>
+            <p>&copy; 2024 **Mathilde Mathilde PAISLEY (MMPA)**. Tous droits réservés.</p>
+            <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
             <p class="mt-2">Conçu avec expertise et dévouement.</p>
         </div>
     </footer>

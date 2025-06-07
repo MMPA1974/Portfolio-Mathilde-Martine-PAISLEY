@@ -50,7 +50,11 @@ body {
 }
 
 .bg-actualites-bg {
-    background-image: url('assets/background-actualites.jpg'); /* À remplacer par le chemin de ton image */
+    background-image: url('('assets/background-actualites.jpg')'); /* À remplacer par le chemin de ton image */
+}
+
+.bg-planning-bg { /* Nouvelle classe pour la page planning */
+    background-image: url('assets/background-planning.jpg'); /* À remplacer par le chemin de ton image */
 }
 
 .bg-contact-bg {
@@ -87,6 +91,25 @@ footer a:hover {
     background-clip: text;
     color: transparent; /* Fallback pour les navigateurs non supportés */
 }
+
+/* Styles pour le logo dans l'en-tête */
+.header-content-wrapper {
+    display: flex;
+    align-items: center; /* Alignement vertical */
+}
+
+.header-logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Supprime le soulignement du lien */
+    color: inherit; /* Hérite la couleur du texte du parent */
+}
+
+.header-logo {
+    height: 40px; /* Taille du logo dans l'en-tête */
+    margin-right: 10px; /* Espace entre le logo et le texte */
+}
+
 
 /* --- Boutons --- */
 .btn-primary {

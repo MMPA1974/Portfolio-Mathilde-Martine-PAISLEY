@@ -14,13 +14,17 @@
 <body class="bg-offres-bg">
 
     <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</a>
+        <div class="container mx-auto flex justify-between items-center header-content-wrapper">
+            <a href="index.html" class="header-logo-link">
+                <img src="assets/logo-header.jpeg" alt="Logo MMPA" class="header-logo">
+                <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
+            </a>
             <nav class="hidden md:flex space-x-6">
                 <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
                 <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
                 <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="planning.html" class="nav-link hover:text-accent-secondaire">Planning</a>
                 <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
@@ -34,11 +38,12 @@
             <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
             <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
             <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="planning.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Planning</a>
             <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
         </nav>
     </header>
 
-    <main class="pt-16">
+    <main>
         <section id="mes-offres" class="content-section bg-fond-clair text-texte-principal py-16 px-4 md:px-8 lg:px-16">
             <h2 class="text-3xl font-bold text-center mb-12 text-principal-fonce">Mes Offres de Conseil pour Entreprises</h2>
             <div class="max-w-5xl mx-auto">
@@ -52,7 +57,7 @@
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <h3 class="text-2xl font-semibold text-accent-unique mb-4">Mise en conformité & Audit Social</h3>
-                            <p class="mb-4">
+                            <p class="mb-4 text-justify">
                                 Je garantis la conformité de votre paie et de vos pratiques RH aux évolutions législatives. Un audit social permet d'identifier les risques, d'optimiser votre gestion et d'éviter les redressements.
                             </p>
                             <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
@@ -63,7 +68,7 @@
                         </div>
                         <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <h3 class="text-2xl font-semibold text-accent-unique mb-4">Optimisation des processus Paie & GTA</h3>
-                            <p class="mb-4">
+                            <p class="mb-4 text-justify">
                                 Je vous aide à fluidifier et automatiser vos processus de gestion de la paie et des temps, pour une efficacité accrue, une réduction des erreurs et un gain de temps précieux pour vos équipes.
                             </p>
                             <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
@@ -79,7 +84,7 @@
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <h3 class="text-2xl font-semibold text-accent-unique mb-4">Choix & Implémentation SIRH</h3>
-                            <p class="mb-4">
+                            <p class="mb-4 text-justify">
                                 De la sélection au déploiement, je vous accompagne dans l'acquisition et la configuration d'outils SIRH pertinents pour la paie, la GTA, l'administration du personnel, le recrutement ou la formation.
                             </p>
                             <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
@@ -90,7 +95,7 @@
                         </div>
                         <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <h3 class="text-2xl font-semibold text-accent-unique mb-4">Conduite du changement & Formation</h3>
-                            <p class="mb-4">
+                            <p class="mb-4 text-justify">
                                 J'assure l'adoption réussie de vos nouveaux systèmes en accompagnant vos équipes. Formations personnalisées et support de proximité garantissent une transition fluide et une autonomie rapide.
                             </p>
                             <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
@@ -106,7 +111,7 @@
                     <div class="grid md:grid-cols-2 gap-8">
                         <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <h3 class="text-2xl font-semibold text-accent-unique mb-4">Diagnostic RH & Recommandations Stratégiques</h3>
-                            <p class="mb-4">
+                            <p class="mb-4 text-justify">
                                 Analyse approfondie de votre organisation RH, identification des axes d'amélioration et élaboration de stratégies ciblées pour renforcer votre capital humain et votre performance globale.
                             </p>
                             <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
@@ -117,7 +122,7 @@
                         </div>
                         <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
                             <h3 class="text-2xl font-semibold text-accent-unique mb-4">Mise en place de tableaux de bord RH & Reporting</h3>
-                            <p class="mb-4">
+                            <p class="mb-4 text-justify">
                                 Création d'indicateurs clés de performance (KPI) et d'outils de reporting personnalisés pour un pilotage éclairé de vos effectifs, de vos coûts et de vos performances RH.
                             </p>
                             <ul class="list-disc list-inside text-sm text-gris-subtil-fonce space-y-1">
@@ -134,8 +139,8 @@
 
     <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
         <div class="container mx-auto">
-            <p>&copy; 2024 MMPA Consulting. Tous droits réservés.</p>
-            <p class="mt-2">Mathilde Martine PAISLEY - SIRET [Votre numéro de SIRET]</p>
+            <p>&copy; 2024 **Mathilde Mathilde PAISLEY (MMPA)**. Tous droits réservés.</p>
+            <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
             <p class="mt-2">Conçu avec expertise et dévouement.</p>
         </div>
     </footer>

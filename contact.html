@@ -14,13 +14,17 @@
 <body class="bg-contact-bg">
 
     <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</a>
+        <div class="container mx-auto flex justify-between items-center header-content-wrapper">
+            <a href="index.html" class="header-logo-link">
+                <img src="assets/logo-header.jpeg" alt="Logo MMPA" class="header-logo">
+                <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
+            </a>
             <nav class="hidden md:flex space-x-6">
                 <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
                 <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
                 <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="planning.html" class="nav-link hover:text-accent-secondaire">Planning</a>
                 <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
@@ -34,15 +38,16 @@
             <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
             <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
             <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="planning.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Planning</a>
             <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
         </nav>
     </header>
 
-    <main class="pt-16">
+    <main>
         <section id="contact" class="content-section bg-principal-fonce text-fond-clair py-16 px-4 md:px-8 lg:px-16">
             <h2 class="text-3xl font-bold text-center mb-12 text-fond-clair">Contactez-moi</h2>
             <div class="max-w-xl mx-auto bg-fond-clair text-texte-principal p-8 rounded-lg shadow-lg">
-                <p class="text-center text-lg mb-6">N'hésitez pas à me contacter pour toute opportunité ou question. Je serais ravie d'échanger avec vous.</p>
+                <p class="text-center text-lg mb-6 text-justify">N'hésitez pas à me contacter pour toute opportunité ou question. Je serais ravie d'échanger avec vous.</p>
                 <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
                     <div>
                         <label for="name" class="block text-sm font-medium text-texte-principal mb-1">Nom</label>
@@ -92,7 +97,18 @@
                     <button type="submit" class="btn-primary w-full">Envoyer le message</button>
                 </form>
                 <div class="text-center mt-8">
-                    <p class="mb-4">Vous pouvez me contacter directement par email ou téléphone :</p>
+                    <h3 class="text-2xl font-bold text-fond-clair mb-4">Opportunités de Collaboration</h3>
+                    <p class="text-lg text-fond-clair mb-6 text-justify">
+                        Je suis toujours ouverte à de nouvelles opportunités de collaboration, que ce soit pour des partenariats stratégiques, des missions complémentaires ou le développement de projets innovants. Si votre vision s'aligne avec la mine, discutons-en !
+                    </p>
+                    <button class="gcal-btn"
+                        data-label="Réserver un rendez-vous"
+                        data-url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0aBkNrLzZ4Um1SMwtV8NGzIIka-vMLQiuHJBt66yQ0OMmjg7bn4doS8A0c9tjVSS_MNH9pb82x?gv=true"
+                        data-color="#F6BF26"
+                        data-mode="BOOK_APP_BUTTON"
+                        >Réserver un rendez-vous</button>
+                    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                    <p class="mb-4 text-fond-clair mt-8">Ou contactez-moi directement :</p>
                     <a href="mailto:contact@mmpaisley-paie-sirh.com" class="text-xl text-principal-fonce hover:text-accent-secondaire transition-colors duration-300 block mb-2">
                         contact@mmpaisley-paie-sirh.com
                     </a>
@@ -104,8 +120,8 @@
 
     <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
         <div class="container mx-auto">
-            <p>&copy; 2024 MMPA Consulting. Tous droits réservés.</p>
-            <p class="mt-2">Mathilde Martine PAISLEY - SIRET [Votre numéro de SIRET]</p>
+            <p>&copy; 2024 **Mathilde Mathilde PAISLEY (MMPA)**. Tous droits réservés.</p>
+            <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
             <p class="mt-2">Conçu avec expertise et dévouement.</p>
         </div>
     </footer>
