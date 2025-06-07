@@ -50,7 +50,7 @@ body {
 }
 
 .bg-actualites-bg {
-    background-image: url('('assets/background-actualites.jpg')'); /* À remplacer par le chemin de ton image */
+    background-image: url('assets/background-actualites.jpg'); /* À remplacer par le chemin de ton image */
 }
 
 .bg-planning-bg { /* Nouvelle classe pour la page planning */
@@ -255,4 +255,63 @@ footer a:hover {
 
 #quiz-results-actual.fail {
     color: #dc3545; /* Rouge pour l'échec */
+}
+
+/* Styles pour le footer étendu */
+.footer-links-section {
+    color: var(--color-fond-clair); /* Texte des liens en blanc */
+}
+
+.footer-links-row {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux colonnes de passer à la ligne */
+    justify-content: center; /* Centre les colonnes */
+    gap: 1rem; /* Espace entre les colonnes */
+    margin-top: 1rem;
+}
+
+.footer-links-col {
+    flex: 1 1 auto; /* Permet aux colonnes de s'adapter et de grandir */
+    min-width: 280px; /* Largeur minimale pour les colonnes */
+    max-width: 350px; /* Largeur maximale pour les colonnes */
+    padding: 0.5rem;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+.footer-links-col p {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem; /* Taille de police pour les titres de catégorie */
+}
+
+.links-list {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne dans une colonne */
+    justify-content: center;
+    line-height: 1.8; /* Espacement entre les liens */
+}
+
+.links-list a {
+    white-space: nowrap; /* Garde les liens sur une seule ligne */
+    margin: 0 0.25rem; /* Petit espace entre les liens */
+    font-size: 0.8rem; /* Taille de police pour les liens individuels */
+}
+
+.links-list span { /* Pour le séparateur • */
+    display: inline-block;
+    margin: 0 0.1rem;
+}
+
+/* Ajustements pour petits écrans */
+@media (max-width: 768px) {
+    .footer-links-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-links-col {
+        min-width: 100%;
+        text-align: center;
+    }
+    .links-list {
+        justify-content: center;
+    }
 }

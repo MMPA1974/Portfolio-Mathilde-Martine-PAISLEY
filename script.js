@@ -42,9 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeTabs('.tab-button-real', '.tab-content-real'); // Mes Réalisations (sur realisations.html)
     initializeTabs('.tab-button-actual', '.tab-content-actual'); // Actualités (sur actualites.html)
 
-    // --- Gestion du Quiz RH (uniquement sur actualites.html) ---
-    // Les définitions de quizQuestions, renderQuiz, submitQuiz restent ici
-    // car le quiz est une fonctionnalité spécifique à cet onglet.
+    // --- Gestion du Quiz RH (uniquement sur actualites.html, si l'onglet est présent) ---
     const quizQuestions = [
         {
             question: "Quel est l'objectif principal de la DSN (Déclaration Sociale Nominative) ?",
