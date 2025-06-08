@@ -375,3 +375,72 @@ footer {
 .testimonial-title {
     color: var(--color-accent-unique); /* Utilise le jaune habituel pour les titres de témoignages */
 }
+
+/* Styles pour les "pavés" de témoignages */
+.testimonial-card {
+    background-color: var(--color-accent-unique); /* Fond jaune */
+    border-radius: 0.75rem; /* Coins arrondis */
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden; /* Important pour cacher le contenu non survolé */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: 200px; /* Hauteur minimale pour les pavés */
+    transition: all 0.3s ease;
+    color: var(--color-principal-fonce); /* Texte foncé sur fond jaune */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card .testimonial-header {
+    width: 100%;
+    /* display: flex; /* Active si tu veux aligner logo/titre/nom */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    z-index: 2; /* S'assure que le header reste visible sur le contenu */
+}
+
+.testimonial-card .testimonial-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(253, 245, 230, 0.95); /* Fond du message, semi-transparent */
+    color: var(--color-texte-principal); /* Couleur du texte du message */
+    padding: 1.5rem;
+    box-sizing: border-box;
+    text-align: justify;
+    opacity: 0;
+    transform: translateY(100%); /* Commence en bas */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex; /* Utilise flex pour centrer le contenu verticalement si désiré */
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-card:hover .testimonial-body {
+    opacity: 1;
+    transform: translateY(0); /* Remonte pour être visible */
+}
+
+/* Masque le contenu du body lorsqu'il n'est pas survolé */
+.testimonial-card .testimonial-body p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    /* Styles pour le texte du message */
+}
+
+/* Assure que les noms dans les témoignages sont en bleu dans le body */
+.testimonial-body .text-testimonial-name {
+    color: var(--color-testimonial-name); /* Bleu des noms dans le body */
+}
