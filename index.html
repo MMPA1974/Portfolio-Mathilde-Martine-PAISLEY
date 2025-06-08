@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-full overflow-y-auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-accueil-bg">
+<body class="flex flex-col min-h-screen bg-accueil-bg">
 
     <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center header-content-wrapper">
@@ -20,8 +20,8 @@
                 <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
             </a>
             <nav class="hidden md:flex space-x-6">
-                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
+                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
                 <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
                 <a href="essentiels.html" class="nav-link hover:text-accent-secondaire">Essentiels</a>
@@ -35,8 +35,8 @@
             </button>
         </div>
         <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
-            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
             <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
+            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
             <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
             <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
             <a href="essentiels.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Essentiels</a>
@@ -45,16 +45,16 @@
         </nav>
     </header>
 
-    <main class="page-content-wrapper">
+    <main class="flex-grow page-content-wrapper">
         <section id="accueil" class="bg-fond-texte-clair text-center py-20 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-center min-h-screen-75">
             <div class="max-w-3xl mx-auto">
-                <!-- Logo ici -->
-                <img src="assets/logo.jpeg" alt="Logo MMPA Consulting" class="mx-auto mb-6 w-48 h-auto animate-fadeInUp">
+                <!-- Logo ici : La classe logo-accueil-main lui donnera une largeur relative à son parent -->
+                <img src="assets/logo.jpeg" alt="Logo MMPA Consulting" class="logo-accueil-main mx-auto mb-6 h-auto animate-fadeInUp">
                 
                 <h1 class="text-5xl md:text-6xl font-extrabold text-principal-fonce leading-tight mb-4 animate-fadeInUp">
                     Votre Conformité Sociale, <span class="text-gradient-gold block md:inline">Ma Stratégie Digitale RH.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-texte-principal mb-8 animate-fadeInUp delay-200 text-justify">
+                <p class="accueil-intro-paragraph text-texte-principal mb-8 animate-fadeInUp delay-200 text-justify">
                     En qualité de consultante, je mets à votre disposition deux décennies d'expertise forgées aux avant-postes de la Paie, des RH et des Systèmes d'Information (SIRH). Mon objectif est clair : garantir la conformité sociale de votre entreprise grâce à ma maîtrise de la coordination & pilotage de la paie et de l'administration & gestion des temps. Apte à piloter des projets SIRH, de l'analyse des besoins à l'accompagnement au changement, je suis votre partenaire pour transformer les défis réglementaires et opérationnels en opportunités d'optimisation et de croissance.
                 </p>
                 <div class="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center animate-fadeInUp delay-400">
@@ -70,49 +70,9 @@
 
     <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
         <div class="container mx-auto">
-            <p>&copy; 2024 **Mathilde Mathilde PAISLEY (MMPA)**. Tous droits réservés.</p>
+            <p>&copy; 2024 <strong>Mathilde Mathilde PAISLEY (MMPA)</strong>. Tous droits réservés.</p>
             <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
             <p class="mt-2">Conçu avec expertise et dévouement.</p>
-            
-            <div class="footer-links-section mt-4 pt-4 border-t border-principal-fonce/50">
-                <h3 class="font-bold mb-2 text-md">Essentiels : Liens utiles et ressources clés</h3>
-                <div class="footer-links-grid">
-                    <div class="footer-links-col">
-                        <p class="font-semibold text-accent-unique">Administrations & Organismes Publics :</p>
-                        <span class="links-list">
-                            <a href="https://www.urssaf.fr/" target="_blank">URSSAF</a> • 
-                            <a href="https://www.net-entreprises.fr/" target="_blank">Net-Entreprises</a> • 
-                            <a href="https://www.service-public.fr/" target="_blank">Service-Public.fr</a> • 
-                            <a href="https://www.legifrance.gouv.fr/" target="_blank">Légifrance</a> • 
-                            <a href="https://travail-emploi.gouv.fr/" target="_blank">Ministère du Travail</a> • 
-                            <a href="https://www.ameli.fr/" target="_blank">Ameli</a> • 
-                            <a href="https://www.agirc-arrco.fr/" target="_blank">Agirc-Arrco</a> • 
-                            <a href="https://www.ctip.asso.fr/" target="_blank">CTIP</a> • 
-                            <a href="https://www.gip-mds.fr/" target="_blank">GIP-MDS</a> • 
-                            <a href="https://www.insee.fr/" target="_blank">INSEE</a> • 
-                            <a href="https://www.pole-emploi.fr/" target="_blank">France Travail</a>
-                        </span>
-                    </div>
-                    <div class="footer-links-col">
-                        <p class="font-semibold text-accent-unique">Ressources & Veille :</p>
-                        <span class="links-list">
-                            <a href="https://www.editions-legislatives.fr/" target="_blank">Editions Législatives</a> • 
-                            <a href="https://www.wolterskluwer.com/fr-fr/solutions/rh" target="_blank">Wolters Kluwer RH</a> • 
-                            <a href="https://www.grouperf.com/rfpaye/" target="_blank">RF Paye</a> • 
-                            <a href="https://www.wk-rh.fr/" target="_blank">WK RH</a> • 
-                            <a href="https://www.actu-juridique.fr/" target="_blank">Actu-Juridique</a> • 
-                            <a href="https://www.journal-officiel.gouv.fr/" target="_blank">Journal Officiel</a> • 
-                            <a href="https://www.service-public.fr/professionnels-entreprises/" target="_blank">Service-Public Pro</a> • 
-                            <a href="https://www.ccifrance.fr/" target="_blank">CCI France</a> • 
-                            <a href="https://www.medef.com/" target="_blank">MEDEF</a> • 
-                            <a href="https://www.cpmepme.fr/" target="_blank">CPME</a> • 
-                            <a href="https://www.apec.fr/" target="_blank">APEC</a> • 
-                            <a href="https://www.cadremploi.fr/actualites-emploi" target="_blank">Cadremploi - RH</a> • 
-                            <a href="https://www.lesechos.fr/thema/rh" target="_blank">Les Echos - RH</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
         </div>
     </footer>
 

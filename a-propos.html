@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-full overflow-y-auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-apropos-bg">
+<body class="flex flex-col min-h-screen bg-apropos-bg">
 
     <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center header-content-wrapper">
@@ -20,8 +20,8 @@
                 <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
             </a>
             <nav class="hidden md:flex space-x-6">
-                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
+                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
                 <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
                 <a href="essentiels.html" class="nav-link hover:text-accent-secondaire">Essentiels</a>
@@ -35,8 +35,8 @@
             </button>
         </div>
         <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
-            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
             <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
+            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
             <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
             <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
             <a href="essentiels.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Essentiels</a>
@@ -45,13 +45,13 @@
         </nav>
     </header>
 
-    <main>
+    <main class="flex-grow">
         <section id="a-propos" class="content-section bg-fond-texte-clair text-texte-principal py-16 px-4 md:px-8 lg:px-16">
             <h2 class="text-3xl font-bold text-center mb-12 text-principal-fonce">À Propos : Votre Partenaire sous toutes ses Facettes</h2>
             <div class="max-w-5xl mx-auto">
                 <div class="flex justify-center space-x-4 mb-8 flex-wrap">
                     <button class="tab-button-about active btn-tab mb-2 md:mb-0" data-target="qui-suis-je-content">Qui suis-je ?</button>
-                    <button class="tab-button-about btn-tab mb-2 md:mb-0" data-target="ma-vision-valeurs-content">Ma Vision & Valeurs</button>
+                    <button class="tab-button-about btn-tab mb-2 md:mb-0" data-target="ma-vision-content">Ma Vision</button>
                     <button class="tab-button-about btn-tab mb-2 md:mb-0" data-target="ma-valeur-ajoutee-content">Ma Valeur Ajoutée</button>
                 </div>
 
@@ -67,23 +67,23 @@
                             <p class="text-texte-principal mt-4">*(Insérer ici une vidéo de présentation pour mettre en valeur votre savoir-être)*</p>
                         </div>
                         <p class="text-lg mb-4 leading-relaxed text-justify">
-                            Je suis **Mathilde Martine PAISLEY**, née le 26 février 1974 à Paris 13e. Mes racines plongent au cœur de la Guadeloupe, terre de mes parents. Ma mère est issue d'une lignée où se mêlent origines afro-caribéennes et européennes (métropolitaines), tandis que mon père, également guadeloupéen, porte en lui un héritage indien. Ce métissage profond est une richesse qui coule dans mes veines et façonne ma vision du monde. Troisième d'une fratrie de sept enfants et première fille, cette **éducation familiale ancrée dans la résilience et la richesse culturelle de mes origines** m'a forgé un sens aigu des réalités, une détermination à toute épreuve et un grand cœur.
+                            Je suis <strong>Mathilde Martine PAISLEY</strong>, née le 26 février 1974 à Paris 13e. Mes racines plongent au cœur de la Guadeloupe, terre de mes parents. Ma mère est issue d'une lignée où se mêlent origines afro-caribéennes et européennes (métropolitaines), tandis que mon père, également guadeloupéen, porte en lui un héritage indien. Ce métissage profond est une richesse qui coule dans mes veines et façonne ma vision du monde. Troisième d'une fratrie de sept enfants et première fille, cette <strong>éducation familiale ancrée dans la résilience et la richesse culturelle de mes origines</strong> m'a forgé un sens aigu des réalités, une détermination à toute épreuve et un grand cœur.
                         </p>
                         <p class="text-lg mb-4 leading-relaxed text-justify">
-                            La vie m'a aussi appris la **résilience** et l'adaptation. En tant que personne **handicapée**, cette expérience a renforcé en moi une force intérieure inébranlable et une capacité unique à surmonter les obstacles. Pour moi, le handicap n'est pas une limite, mais une opportunité de développer des solutions innovantes et de faire preuve d'une créativité sans égale.
+                            La vie m'a aussi appris la <strong>résilience</strong> et l'adaptation. En tant que personne <strong>handicapée</strong>, cette expérience a renforcé en moi une force intérieure inébranlable et une capacité unique à surmonter les obstacles. Pour moi, le handicap n'est pas une limite, mais une opportunité de développer des solutions innovantes et de faire preuve d'une créativité sans égale.
                         </p>
                         <p class="text-lg mb-4 leading-relaxed text-justify">
-                            Avec mes **cheveux crépus** que j'arbore avec fierté et ma **corpulence généreuse**, je suis le reflet d'une beauté plurielle et authentique. J'embrasse toutes les facettes de mon identité, et c'est cette acceptation de soi qui me pousse à agir avec conviction et à inspirer ceux qui m'entourent.
+                            Avec mes <strong>cheveux crépus</strong> que j'arbore avec fierté et ma <strong>corpulence généreuse</strong>, je suis le reflet d'une beauté plurielle et authentique. J'embrasse toutes les facettes de mon identité, et c'est cette acceptation de soi qui me pousse à agir avec conviction et à inspirer ceux qui m'entourent.
                         </p>
                         <p class="text-lg leading-relaxed text-justify">
-                            Au-delà des titres et des compétences, je suis une femme de passion et de partage. **J'aime la vie, le rire, la musique qui fait vibrer, danser et m'éclater.** Je suis connue pour mon franc-parler, ma transparence et mon naturel. J'aime ce qui est vrai et simple, et je suis profondément attachée aux relations humaines chaleureuses.
+                            Au-delà des titres et des compétences, je suis une femme de passion et de partage. <strong>J'aime la vie, le rire, la musique qui fait vibrer, danser et m'éclater.</strong> Je suis connue pour mon franc-parler, ma transparence et mon naturel. J'aime ce qui est vrai et simple, et je suis profondément attachée aux relations humaines chaleureuses.
                         </p>
                     </div>
                 </div>
 
-                <div id="ma-vision-valeurs-content" class="tab-content-about hidden">
+                <div id="ma-vision-content" class="tab-content-about hidden">
                     <div class="bg-fond-clair p-8 rounded-lg shadow-lg">
-                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">L'Humain au Cœur de la Performance</h3>
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">Ma Vision & Valeurs : L'Humain au Cœur de la Performance</h3>
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
                                 <h4 class="text-xl font-semibold text-principal-fonce mb-2">L'Approche Humaine</h4>
@@ -150,49 +150,9 @@
 
     <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
         <div class="container mx-auto">
-            <p>&copy; 2024 **Mathilde Mathilde PAISLEY (MMPA)**. Tous droits réservés.</p>
+            <p>&copy; 2024 <strong>Mathilde Mathilde PAISLEY (MMPA)</strong>. Tous droits réservés.</p>
             <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
             <p class="mt-2">Conçu avec expertise et dévouement.</p>
-            
-            <div class="footer-links-section mt-4 pt-4 border-t border-principal-fonce/50">
-                <h3 class="font-bold mb-2 text-md">Essentiels : Liens utiles et ressources clés</h3>
-                <div class="footer-links-grid">
-                    <div class="footer-links-col">
-                        <p class="font-semibold text-accent-unique">Administrations & Organismes Publics :</p>
-                        <span class="links-list">
-                            <a href="https://www.urssaf.fr/" target="_blank">URSSAF</a> • 
-                            <a href="https://www.net-entreprises.fr/" target="_blank">Net-Entreprises</a> • 
-                            <a href="https://www.service-public.fr/" target="_blank">Service-Public.fr</a> • 
-                            <a href="https://www.legifrance.gouv.fr/" target="_blank">Légifrance</a> • 
-                            <a href="https://travail-emploi.gouv.fr/" target="_blank">Ministère du Travail</a> • 
-                            <a href="https://www.ameli.fr/" target="_blank">Ameli</a> • 
-                            <a href="https://www.agirc-arrco.fr/" target="_blank">Agirc-Arrco</a> • 
-                            <a href="https://www.ctip.asso.fr/" target="_blank">CTIP</a> • 
-                            <a href="https://www.gip-mds.fr/" target="_blank">GIP-MDS</a> • 
-                            <a href="https://www.insee.fr/" target="_blank">INSEE</a> • 
-                            <a href="https://www.pole-emploi.fr/" target="_blank">France Travail</a>
-                        </span>
-                    </div>
-                    <div class="footer-links-col">
-                        <p class="font-semibold text-accent-unique">Ressources & Veille :</p>
-                        <span class="links-list">
-                            <a href="https://www.editions-legislatives.fr/" target="_blank">Editions Législatives</a> • 
-                            <a href="https://www.wolterskluwer.com/fr-fr/solutions/rh" target="_blank">Wolters Kluwer RH</a> • 
-                            <a href="https://www.grouperf.com/rfpaye/" target="_blank">RF Paye</a> • 
-                            <a href="https://www.wk-rh.fr/" target="_blank">WK RH</a> • 
-                            <a href="https://www.actu-juridique.fr/" target="_blank">Actu-Juridique</a> • 
-                            <a href="https://www.journal-officiel.gouv.fr/" target="_blank">Journal Officiel</a> • 
-                            <a href="https://www.service-public.fr/professionnels-entreprises/" target="_blank">Service-Public Pro</a> • 
-                            <a href="https://www.ccifrance.fr/" target="_blank">CCI France</a> • 
-                            <a href="https://www.medef.com/" target="_blank">MEDEF</a> • 
-                            <a href="https://www.cpmepme.fr/" target="_blank">CPME</a> • 
-                            <a href="https://www.apec.fr/" target="_blank">APEC</a> • 
-                            <a href="https://www.cadremploi.fr/actualites-emploi" target="_blank">Cadremploi - RH</a> • 
-                            <a href="https://www.lesechos.fr/thema/rh" target="_blank">Les Echos - RH</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
         </div>
     </footer>
 

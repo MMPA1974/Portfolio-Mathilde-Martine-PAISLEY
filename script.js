@@ -36,12 +36,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Initialisation des onglets pour chaque page si elles existent
-    // Ces appels ne s'exécuteront que sur les pages où les sélecteurs existent
-    initializeTabs('.tab-button', '.tab-content'); // Mes Offres (sur mes-offres.html)
-    initializeTabs('.tab-button-about', '.tab-content-about'); // À Propos (sur a-propos.html)
-    initializeTabs('.tab-button-real', '.tab-content-real'); // Mes Réalisations (sur realisations.html)
-    initializeTabs('.tab-button-actual', '.tab-content-actual'); // Actualités (sur actualites.html)
-    initializeTabs('.tab-button-essentials', '.tab-content-essentials'); // Essentiels (sur essentiels.html)
+    initializeTabs('.tab-button', '.tab-content'); // Mes Offres
+    initializeTabs('.tab-button-about', '.tab-content-about'); // À Propos
+    initializeTabs('.tab-button-real', '.tab-content-real'); // Mes Réalisations
+    initializeTabs('.tab-button-actual', '.tab-content-actual'); // Actualités
+    initializeTabs('.tab-button-essentials', '.tab-content-essentials'); // Essentiels
+    initializeTabs('.tab-button-contact-group', '.tab-content-contact-group'); // Nouveau groupe d'onglets sur contact.html
 
 
     // --- Gestion du Quiz RH (uniquement sur actualites.html, si l'onglet est présent) ---
@@ -111,12 +111,20 @@ document.addEventListener('DOMContentLoaded', function () {
             questionDiv.classList.add('mb-4', 'text-left');
             questionDiv.innerHTML = `<p class="font-semibold mb-2">${index + 1}. ${q.question}</p>`;
 
-            q.options.forEach(option => {
+            q.options.forEach((option, optionIndex) => {
                 const label = document.createElement('label');
                 label.classList.add('block', 'mb-1');
+                
+                // Add color class based on option index
+                let colorClass = '';
+                if (optionIndex === 0) colorClass = 'quiz-option-A';
+                else if (optionIndex === 1) colorClass = 'quiz-option-B';
+                else if (optionIndex === 2) colorClass = 'quiz-option-C';
+                else if (optionIndex === 3) colorClass = 'quiz-option-D';
+
                 label.innerHTML = `
                     <input type="radio" name="question${index}" value="${option}" class="mr-2">
-                    ${option}
+                    <span class="${colorClass}">${option}</span>
                 `;
                 questionDiv.appendChild(label);
             });

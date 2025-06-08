@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="h-full overflow-y-auto">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-contact-bg">
+<body class="flex flex-col min-h-screen bg-contact-bg">
 
     <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center header-content-wrapper">
@@ -20,10 +20,11 @@
                 <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
             </a>
             <nav class="hidden md:flex space-x-6">
-                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
+                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
                 <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
                 <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="essentiels.html" class="nav-link hover:text-accent-secondaire">Essentiels</a>
                 <a href="planning.html" class="nav-link hover:text-accent-secondaire">Planning</a>
                 <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
             </nav>
@@ -34,85 +35,239 @@
             </button>
         </div>
         <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
-            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
             <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
+            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
             <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
             <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="essentiels.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Essentiels</a>
             <a href="planning.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Planning</a>
             <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
         </nav>
     </header>
 
-    <main>
-        <section id="contact" class="content-section bg-principal-fonce text-fond-clair py-16 px-4 md:px-8 lg:px-16">
-            <h2 class="text-3xl font-bold text-center mb-12 text-fond-clair">Contactez-moi</h2>
-            <div class="max-w-xl mx-auto bg-fond-clair text-texte-principal p-8 rounded-lg shadow-lg">
-                <p class="text-center text-lg mb-6 text-justify">N'hésitez pas à me contacter pour toute opportunité ou question. Je serais ravie d'échanger avec vous.</p>
-                <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-texte-principal mb-1">Nom</label>
-                        <input type="text" id="name" name="Nom" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+    <main class="flex-grow">
+        <section id="contact-group" class="content-section bg-principal-fonce text-fond-clair py-16 px-4 md:px-8 lg:px-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-fond-clair">Contactez-moi & Collaborons</h2>
+            <div class="max-w-5xl mx-auto bg-fond-clair text-texte-principal p-8 rounded-lg shadow-lg">
+                <div class="flex justify-center space-x-4 mb-8 flex-wrap">
+                    <button class="tab-button-contact-group active btn-tab mb-2 md:mb-0" data-target="temoignages-content">Témoignages</button>
+                    <button class="tab-button-contact-group btn-tab mb-2 md:mb-0" data-target="prise-rendezvous-content">Prise de Rendez-vous</button>
+                    <button class="tab-button-contact-group btn-tab mb-2 md:mb-0" data-target="contact-direct-content">Contact Direct</button>
+                    <button class="tab-button-contact-group btn-tab mb-2 md:mb-0" data-target="opportunites-partenariat-content">Opportunités & Partenariat</button>
+                </div>
+
+                <div id="temoignages-content" class="tab-content-contact-group">
+                    <div class="max-w-4xl mx-auto p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold text-center text-principal-fonce mb-8">Témoignages</h3>
+                        <p class="text-center text-lg mb-8">Les retours d'expérience de mes clients et partenaires.</p>
+                        <div class="space-y-8">
+                            <!-- Témoignage 1 - Dounia Assakkour -->
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md testimonial-block">
+                                <h4 class="font-semibold text-accent-unique mb-2">Un accompagnement précieux et authentique</h4>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Je souhaite exprimer ma sincère gratitude à Mathilde PAISLEY pour l'aide **précieuse** qu'elle m'a apportée durant ma formation en gestionnaire de paie et en ressources humaines.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Son **expertise** et sa **passion** pour le domaine se ressentent à chaque interaction. Elle a su me guider avec **bienveillance**, répondant à mes questions et m'encourageant à explorer des sujets complexes.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Grâce à son soutien, j'ai non seulement renforcé mes compétences, mais j’ai aussi pu approfondir mes connaissances en paie et ressources humaines.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Mathilde PAISLEY a une **capacité unique à créer un environnement d'apprentissage positif**, ce qui a rendu ma formation encore plus enrichissante.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Je recommande vivement ses services à quiconque cherche un **accompagnement authentique et efficace**. Merci encore pour tout ! ☺️
+                                </p>
+                                <p class="text-testimonial-name font-bold">Dounia ASSAKKOUR</p>
+                            </div>
+                            <!-- Témoignage 2 - Sébia PREIRA -->
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md testimonial-block">
+                                <h4 class="font-semibold text-accent-unique mb-2">Une source d'inspiration et de motivation</h4>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Mathilde a été une source d’<strong>inspiration et de motivation</strong> tout au long de mon parcours professionnel.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Grâce à son soutien et à son engagement, j’ai pu réussir ma formation MBA CDO, et je ne pourrais être plus ravi des résultats.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Mathilde est une personne très <strong>professionnelle</strong>, qui pousse les autres à aller de l’avant. Elle a une <strong>personnalité fascinante</strong> et apporte une aide précieuse à ceux qui l’entourent.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Toujours attentive au respect des normes de travail, elle donne le meilleur d’elle-même dans tout ce qu’elle entreprend.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Sa <strong>passion et son dévouement sont contagieux</strong>, et j’apprécie énormément son approche dynamique et bienveillante.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Je suis reconnaissant d’avoir croisé son chemin, et je suis sûr que son influence continuera à faire une différence positive dans la vie de nombreux autres.
+                                </p>
+                                <p class="text-testimonial-name font-bold">Sébia PREIRA</p>
+                            </div>
+                             <!-- Nouveau Témoignage - Anne ROHMER -->
+                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md testimonial-block">
+                                <h4 class="font-semibold text-accent-unique mb-2">Un soutien essentiel pour la réussite en formation à distance</h4>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Mathilde a créé et animé un groupe WhatsApp pour le MBA Expert en Stratégie Digitale / CDO que nous suivions.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Ses messages de <strong>soutien</strong>, d’<strong>écoute</strong>, de <strong>mobilisation</strong> et de <strong>motivation</strong> ont été très appréciés par tous les étudiants, face à une formation où nous étions souvent seuls devant notre écran.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Elle a su redonner confiance à certains, et favoriser les échanges et la collaboration entre nous tous.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Ses messages <strong>clairs</strong>, <strong>percutants</strong>, <strong>designés avec des icônes</strong> ont permis d’aller à l’essentiel.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Elle a également partagé des documents qu’elle avait créés afin de travailler en collaboration.
+                                </p>
+                                <p class="text-testimonial-name font-bold">Anne ROHMER</p>
+                                <p class="italic text-texte-principal text-sm"> (Apprenante Studi)</p>
+                            </div>
+                            <!-- Nouveau Témoignage - Abdoulaye CISSE -->
+                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md testimonial-block">
+                                <h4 class="font-semibold text-accent-unique mb-2">Un mentor et guide précieux sur 25 ans</h4>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Chère Mathilde, Je voulais prendre un moment pour vous exprimer ma gratitude et mon admiration pour tout ce que vous avez fait pour moi au fil des ans.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Lorsque j’ai commencé mon premier emploi chez KFC en 2002, vous étiez ma directrice et vous m’avez formé avec rigueur et constance, tout en maintenant une bonne humeur qui m’a toujours marqué.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Votre méthode de travail, votre capacité à motiver les équipes et votre goût du terrain ont été pour moi des exemples à suivre lorsque je suis devenu directeur à mon tour.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Mais ce qui m’a le plus marqué, c’est votre capacité à <strong>écouter</strong>, à <strong>cerner les besoins</strong> de vos employés et à <strong>les diriger avec confiance</strong>.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    20 ans plus tard, lorsque j’ai décidé de me reconvertir, je me suis tourné vers vous pour que vous m’aidiez à m’orienter. Et vous avez été là, encore une fois, pour me <strong>coacher</strong> et me <strong>guider</strong>.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Vous avez tracé pour moi un chemin que j’ai pu suivre avec succès. Aujourd’hui, je suis en formation dans un domaine qui correspond exactement à mes aspirations.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Je voulais vous dire <strong>merci</strong> pour la confiance que vous m’avez accordée depuis maintenant <strong>25 ans</strong>, et pour votre disponibilité à mon égard.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Vous êtes une personne <strong>exceptionnelle</strong>, et je suis chanceux de vous avoir eue comme directrice et comme mentor.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Merci encore pour tout, Mathilde. Je vous souhaite tout le meilleur.
+                                </p>
+                                <p class="text-testimonial-name font-bold">Abdoulaye CISSE</p>
+                            </div>
+                            <!-- Témoignage 3 - Nadège GAMAIN -->
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md testimonial-block">
+                                <h4 class="font-semibold text-accent-unique mb-2">Une organisatrice de confiance, avec tant de cœur</h4>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    J’ai eu la chance de pouvoir compter sur Mathilde PAISLEY à plusieurs reprises pour l’organisation d’anniversaires et de fêtes de famille.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Même en dehors de tout cadre professionnel, elle s’est toujours investie avec <strong>sérieux</strong>, <strong>enthousiasme</strong> et <strong>générosité</strong>.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Sans jamais compter son temps ni son énergie, Mathilde a su tout <strong>coordonner</strong> : idées de thème, décoration, organisation logistique, accueil des invités, gestion du déroulement de la journée…
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Elle <strong>pense à tout</strong>, <strong>anticipe les besoins</strong> et apporte une vraie <strong>touche personnelle</strong> à chaque moment.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Grâce à elle, ces événements ont été non seulement <strong>réussis</strong>, mais aussi profondément <strong>chaleureux et mémorables</strong>.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    C’est une personne de <strong>confiance</strong>, sur qui l’on peut vraiment s’appuyer.
+                                </p>
+                                <p class="italic text-texte-principal testimonial-paragraph text-justify">
+                                    Merci encore Mathilde pour tout ce que tu fais, avec tant de cœur.
+                                </p>
+                                <p class="text-testimonial-name font-bold">Nadège GAMAIN</p>
+                            </div>
+                        </div>
+                        <div class="text-center mt-8">
+                            <p class="text-texte-principal italic">Témoignages Vidéo/Audio (À venir) : Cette section sera bientôt enrichie de témoignages en format vidéo ou audio, pour une expérience encore plus immersive et plus authentique.</p>
+                        </div>
                     </div>
-                    <div>
-                        <label for="firstname" class="block text-sm font-medium text-texte-principal mb-1">Prénom</label>
-                        <input type="text" id="firstname" name="Prénom" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                </div>
+
+                <div id="prise-rendezvous-content" class="tab-content-contact-group hidden">
+                    <div class="max-w-xl mx-auto bg-fond-clair p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-principal-fonce mb-6">Réserver un Rendez-vous de 30 Minutes Gratuit</h3>
+                        <p class="text-lg mb-6 text-justify">
+                            Prenez le temps d'échanger gratuitement avec moi pendant 30 minutes. C'est l'occasion idéale pour discuter de vos besoins spécifiques, d'analyser vos défis RH, paie ou SIRH, et de voir comment je peux vous apporter une solution sur mesure. L'objectif est de mieux se connaître et de comprendre comment mes compétences peuvent s'aligner avec vos attentes, sans aucun engagement.
+                        </p>
+                        <!-- Google Calendar Appointment Scheduling code -->
+                        <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0aBkNrLzZ4Um1SMwtV8NGzIIka-vMLQiuHJBt66yQ0OMmjg7bn4doS8A0c9tjVSS_MNH9pb82x?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
+                        <!-- end Google Calendar Appointment Scheduling -->
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-texte-principal mb-1">Email</label>
-                        <input type="email" id="email" name="Email" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                </div>
+
+                <div id="contact-direct-content" class="tab-content-contact-group hidden">
+                    <div class="max-w-xl mx-auto bg-fond-clair text-texte-principal p-8 rounded-lg shadow-lg">
+                        <p class="text-center text-lg mb-6 text-justify">N'hésitez pas à me contacter pour toute question ou opportunité. Je serais ravie d'échanger avec vous.</p>
+                        <form action="https://formspree.io/f/xkgboarb" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-texte-principal mb-1">Nom</label>
+                                <input type="text" id="name" name="Nom" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                            </div>
+                            <div>
+                                <label for="firstname" class="block text-sm font-medium text-texte-principal mb-1">Prénom</label>
+                                <input type="text" id="firstname" name="Prénom" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-texte-principal mb-1">Email</label>
+                                <input type="email" id="email" name="Email" required class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-texte-principal mb-1">Téléphone</label>
+                                <input type="tel" id="phone" name="Téléphone" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                            </div>
+                            <div>
+                                <label for="function" class="block text-sm font-medium text-texte-principal mb-1">Fonction</label>
+                                <input type="text" id="function" name="Fonction" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-texte-principal mb-1">Nom de la Société</label>
+                                <input type="text" id="company" name="Nom de la Société" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                            </div>
+                            <div>
+                                <label for="siret" class="block text-sm font-medium text-texte-principal mb-1">Numéro SIRET (facultatif)</label>
+                                <input type="text" id="siret" name="Numéro SIRET" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                            </div>
+                            <div>
+                                <label for="interest" class="block text-sm font-medium text-texte-principal mb-1">Offre(s) d'intérêt (Sujet) :</label>
+                                <select id="interest" name="Offre(s) d'intérêt" multiple class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique h-32">
+                                    <option value="">Sélectionnez une ou plusieurs options</option>
+                                    <option value="Conseil & AMOA SIRH">Conseil & AMOA SIRH</option>
+                                    <option value="Optimisation Processus Paie">Optimisation Processus Paie</option>
+                                    <option value="Gestion des Temps & Activités (GTA)">Gestion des Temps & Activités (GTA)</option>
+                                    <option value="Formation & Accompagnement">Formation & Accompagnement</option>
+                                    <option value="Veille Sociale & Juridique">Veille Sociale & Juridique</option>
+                                    <option value="Support Fonctionnel SIRH">Support Fonctionnel SIRH</option>
+                                    <option value="Autre">Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-texte-principal mb-1">Votre Message (facultatif)</label>
+                                <textarea id="message" name="Votre Message" rows="5" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">Envoyer le message</button>
+                        </form>
                     </div>
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-texte-principal mb-1">Téléphone</label>
-                        <input type="tel" id="phone" name="Téléphone" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
+                </div>
+
+                <div id="opportunites-partenariat-content" class="tab-content-contact-group hidden">
+                    <div class="max-w-xl mx-auto bg-fond-clair text-texte-principal p-8 rounded-lg shadow-lg text-center">
+                        <h3 class="text-2xl font-bold text-principal-fonce mb-4">Opportunités de Collaboration</h3>
+                        <p class="text-lg text-justify">
+                            Je suis toujours ouverte à de nouvelles opportunités de collaboration, que ce soit pour des partenariats stratégiques, des missions complémentaires ou le développement de projets innovants. Si votre vision s'aligne avec la mienne, discutons-en !
+                        </p>
+                        <p class="mb-4 text-principal-fonce mt-8">N'hésitez pas à me contacter directement :</p>
+                        <a href="mailto:contact@mmpaisley-paie-sirh.com" class="text-xl text-principal-fonce hover:text-accent-secondaire transition-colors duration-300 block mb-2">
+                            contact@mmpaisley-paie-sirh.com
+                        </a>
+                        <p class="text-xl text-principal-fonce">06 85 90 08 87</p>
                     </div>
-                    <div>
-                        <label for="function" class="block text-sm font-medium text-texte-principal mb-1">Fonction</label>
-                        <input type="text" id="function" name="Fonction" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
-                    </div>
-                    <div>
-                        <label for="company" class="block text-sm font-medium text-texte-principal mb-1">Nom de la Société</label>
-                        <input type="text" id="company" name="Nom de la Société" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
-                    </div>
-                    <div>
-                        <label for="siret" class="block text-sm font-medium text-texte-principal mb-1">Numéro SIRET (facultatif)</label>
-                        <input type="text" id="siret" name="Numéro SIRET" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique">
-                    </div>
-                    <div>
-                        <label for="interest" class="block text-sm font-medium text-texte-principal mb-1">Offre(s) d'intérêt (Sujet) :</label>
-                        <select id="interest" name="Offre(s) d'intérêt" multiple class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique h-32">
-                            <option value="">Sélectionnez une ou plusieurs options</option>
-                            <option value="Conseil & AMOA SIRH">Conseil & AMOA SIRH</option>
-                            <option value="Optimisation Processus Paie">Optimisation Processus Paie</option>
-                            <option value="Gestion des Temps & Activités (GTA)">Gestion des Temps & Activités (GTA)</option>
-                            <option value="Formation & Accompagnement">Formation & Accompagnement</option>
-                            <option value="Veille Sociale & Juridique">Veille Sociale & Juridique</option>
-                            <option value="Support Fonctionnel SIRH">Support Fonctionnel SIRH</option>
-                            <option value="Autre">Autre</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-texte-principal mb-1">Votre Message (facultatif)</label>
-                        <textarea id="message" name="Votre Message" rows="5" class="w-full p-3 border border-gris-subtil rounded-md focus:ring focus:ring-accent-secondaire focus:border-accent-unique"></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary w-full">Envoyer le message</button>
-                </form>
-                <div class="text-center mt-8">
-                    <h3 class="text-2xl font-bold text-fond-clair mb-4">Opportunités de Collaboration</h3>
-                    <p class="text-lg text-fond-clair mb-6 text-justify">
-                        Je suis toujours ouverte à de nouvelles opportunités de collaboration, que ce soit pour des partenariats stratégiques, des missions complémentaires ou le développement de projets innovants. Si votre vision s'aligne avec la mienne, discutons-en !
-                    </p>
-                    <button class="gcal-btn"
-                        data-label="Réserver un rendez-vous"
-                        data-url="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0aBkNrLzZ4Um1SMwtV8NGzIIka-vMLQiuHJBt66yQ0OMmjg7bn4doS8A0c9tjVSS_MNH9pb82x?gv=true"
-                        data-color="#F6BF26"
-                        data-mode="BOOK_APP_BUTTON"
-                        >Réserver un rendez-vous</button>
-                    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-                    <p class="mb-4 text-fond-clair mt-8">Ou contactez-moi directement :</p>
-                    <a href="mailto:contact@mmpaisley-paie-sirh.com" class="text-xl text-principal-fonce hover:text-accent-secondaire transition-colors duration-300 block mb-2">
-                        contact@mmpaisley-paie-sirh.com
-                    </a>
-                    <p class="text-xl text-principal-fonce">06 85 90 08 87</p>
                 </div>
             </div>
         </section>
@@ -120,48 +275,9 @@
 
     <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
         <div class="container mx-auto">
-            <p>&copy; 2024 **Mathilde Mathilde PAISLEY (MMPA)**. Tous droits réservés.</p>
+            <p>&copy; 2024 <strong>Mathilde Mathilde PAISLEY (MMPA)</strong>. Tous droits réservés.</p>
             <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
             <p class="mt-2">Conçu avec expertise et dévouement.</p>
-            
-            <div class="footer-links-section mt-4 pt-4 border-t border-principal-fonce/50">
-                <div class="footer-links-row">
-                    <div class="footer-links-col">
-                        <p class="font-semibold text-accent-unique">Administrations & Organismes Publics :</p>
-                        <span class="links-list">
-                            <a href="https://www.urssaf.fr/" target="_blank">URSSAF</a> • 
-                            <a href="https://www.net-entreprises.fr/" target="_blank">Net-Entreprises</a> • 
-                            <a href="https://www.service-public.fr/" target="_blank">Service-Public.fr</a> • 
-                            <a href="https://www.legifrance.gouv.fr/" target="_blank">Légifrance</a> • 
-                            <a href="https://travail-emploi.gouv.fr/" target="_blank">Ministère du Travail</a> • 
-                            <a href="https://www.ameli.fr/" target="_blank">Ameli</a> • 
-                            <a href="https://www.agirc-arrco.fr/" target="_blank">Agirc-Arrco</a> • 
-                            <a href="https://www.ctip.asso.fr/" target="_blank">CTIP</a> • 
-                            <a href="https://www.gip-mds.fr/" target="_blank">GIP-MDS</a> • 
-                            <a href="https://www.insee.fr/" target="_blank">INSEE</a> • 
-                            <a href="https://www.pole-emploi.fr/" target="_blank">France Travail</a>
-                        </span>
-                    </div>
-                    <div class="footer-links-col">
-                        <p class="font-semibold text-accent-unique">Ressources & Veille :</p>
-                        <span class="links-list">
-                            <a href="https://www.editions-legislatives.fr/" target="_blank">Editions Législatives</a> • 
-                            <a href="https://www.wolterskluwer.com/fr-fr/solutions/rh" target="_blank">Wolters Kluwer RH</a> • 
-                            <a href="https://www.grouperf.com/rfpaye/" target="_blank">RF Paye</a> • 
-                            <a href="https://www.wk-rh.fr/" target="_blank">WK RH</a> • 
-                            <a href="https://www.actu-juridique.fr/" target="_blank">Actu-Juridique</a> • 
-                            <a href="https://www.journal-officiel.gouv.fr/" target="_blank">Journal Officiel</a> • 
-                            <a href="https://www.service-public.fr/professionnels-entreprises/" target="_blank">Service-Public Pro</a> • 
-                            <a href="https://www.ccifrance.fr/" target="_blank">CCI France</a> • 
-                            <a href="https://www.medef.com/" target="_blank">MEDEF</a> • 
-                            <a href="https://www.cpmepme.fr/" target="_blank">CPME</a> • 
-                            <a href="https://www.apec.fr/" target="_blank">APEC</a> • 
-                            <a href="https://www.cadremploi.fr/actualites-emploi" target="_blank">Cadremploi - RH</a> • 
-                            <a href="https://www.lesechos.fr/thema/rh" target="_blank">Les Echos - RH</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
         </div>
     </footer>
 

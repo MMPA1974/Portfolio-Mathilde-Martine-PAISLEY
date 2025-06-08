@@ -17,16 +17,33 @@
     --gradient-gold: linear-gradient(to right, var(--gold-light), var(--gold-medium), var(--gold-dark));
     /* Couleur d'accent unique pour les éléments qui ne peuvent pas être un dégradé (ex: icônes, bordures simples) */
     --color-accent-unique: var(--gold-medium); /* Utilise le ton moyen pour la cohérence */
+
+    /* Custom blue for names in testimonials */
+    --color-testimonial-name: #007BFF;
+
+    /* Couleurs pour les options de quiz */
+    --quiz-option-A: #E0BBE4; /* Pastel Purple */
+    --quiz-option-B: #957DAD; /* Medium Purple */
+    --quiz-option-C: #D291BC; /* Pastel Pink */
+    --quiz-option-D: #FFC72C; /* Gold/Yellow */
 }
 
 /* --- Styles Généraux --- */
+html {
+    height: 100%;
+    overflow-y: auto; /* Always show scrollbar if content exceeds viewport */
+}
+
 body {
     font-family: 'Arial', sans-serif; /* Ou une autre police de votre choix */
     line-height: 1.6;
     color: var(--color-texte-principal);
     background-color: var(--color-fond-clair);
-    /* Padding pour compenser la hauteur du header fixe */
-    padding-top: 64px; /* Hauteur de votre header (p-4 équivaut à 16px de chaque côté, la hauteur réelle dépend du contenu, 64px est une estimation courante pour un header de cette taille) */
+    /* Flexible box pour pousser le footer vers le bas */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* S'assure que le body prend au moins toute la hauteur du viewport */
+    padding-top: 64px; /* Hauteur de votre header fixe */
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -53,11 +70,11 @@ body {
     background-image: url('assets/background-actualites.jpg'); /* À remplacer par le chemin de ton image */
 }
 
-.bg-essentiels-bg { /* Nouvelle classe pour la page essentiels */
+.bg-essentiels-bg {
     background-image: url('assets/background-essentiels.jpg'); /* À remplacer par le chemin de ton image */
 }
 
-.bg-planning-bg { /* Nouvelle classe pour la page planning */
+.bg-planning-bg {
     background-image: url('assets/background-planning.jpg'); /* À remplacer par le chemin de ton image */
 }
 
@@ -75,19 +92,25 @@ main .content-section {
     border-radius: 0.5rem; /* Coins arrondis */
 }
 
+/* Main content area should grow to push footer down */
+main.flex-grow {
+    flex-grow: 1;
+}
+
 /* Ajustements pour les sections qui ont déjà des couleurs de fond claires */
 #accueil.bg-fond-texte-clair,
 #mes-offres.bg-fond-clair,
 #a-propos.bg-fond-texte-clair,
 #realisations.bg-fond-clair,
 #actualites.bg-fond-texte-clair,
-#essentiels.bg-fond-texte-clair, /* Nouvelle section essentiels */
+#essentiels.bg-fond-texte-clair,
 #planning.bg-fond-texte-clair {
     background-color: rgba(255, 255, 255, 0.9); /* Un fond blanc semi-transparent pour ces sections également */
 }
 /* Exception pour contact si tu veux garder le fond principal-fonce */
 #contact.bg-principal-fonce {
     background-color: var(--color-principal-fonce); /* Reste opaque pour le contact */
+    color: var(--color-fond-clair); /* Texte clair pour cette section */
 }
 
 /* Styles pour le bandeau d'accueil plus spécifique pour son fond */
@@ -95,6 +118,20 @@ main .content-section {
     background-color: var(--color-fond-texte-clair); /* Reste opaque par défaut pour le bandeau d'accueil */
 }
 
+/* Pour que le logo d'accueil prenne la largeur du titre */
+.logo-accueil-main {
+    max-width: 100%; /* S'assure que l'image ne dépasse pas son conteneur */
+    width: min(500px, 100%); /* Permet au logo de prendre toute la largeur jusqu'à 500px, pour coller au titre principal */
+    height: auto;
+    object-fit: contain; /* S'assure que l'image est contenue et ne se déforme pas */
+}
+
+
+/* Style pour le paragraphe d'introduction de la page d'accueil (plus compact) */
+.accueil-intro-paragraph {
+    font-size: 1rem; /* Réduction de la taille de police */
+    line-height: 1.4; /* Réduction de l'interligne */
+}
 
 .container {
     max-width: 1200px;
@@ -284,6 +321,12 @@ footer a:hover {
 }
 
 /* Styles pour le quiz */
+.quiz-option-A { color: var(--quiz-option-A); }
+.quiz-option-B { color: var(--quiz-option-B); }
+.quiz-option-C { color: var(--quiz-option-C); }
+.quiz-option-D { color: var(--quiz-option-D); }
+
+
 #quiz-results-actual.success {
     color: #28a745; /* Vert pour le succès */
 }
@@ -292,75 +335,25 @@ footer a:hover {
     color: #dc3545; /* Rouge pour l'échec */
 }
 
-/* Styles pour le footer étendu */
+/* Styles pour le footer simplifié (retiré des liens essentiels) */
 footer {
-    background-color: var(--color-principal-fonce); /* Assure le fond bleu premium */
-    color: var(--color-fond-clair); /* Texte clair dans le footer */
+    background-color: var(--color-principal-fonce); /* Fond bleu premium */
+    color: var(--color-fond-clair); /* Texte clair */
+    padding: 2rem 1rem; /* Espacement interne */
 }
 
+/* Masque les sections de liens dans le footer (footer simplifié) */
 .footer-links-section {
-    color: var(--color-fond-clair); /* Texte des liens en blanc */
+    display: none; 
 }
 
-.footer-links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px minimum par colonne */
-    gap: 1rem;
-    margin-top: 1rem;
-    text-align: left; /* Alignement du texte à gauche par défaut dans les colonnes */
+/* Styles pour les noms en bleu dans les témoignages (si nécessaires, sinon Tailwind) */
+.text-testimonial-name {
+    color: var(--color-testimonial-name); /* Utilise la variable définie pour le bleu des noms */
 }
 
-.footer-links-col {
-    padding: 0.5rem;
-}
-
-.footer-links-col p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem; /* Taille de police pour les titres de catégorie */
-    text-align: center; /* Centre les titres de catégorie */
-}
-
-.links-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centre les liens dans la liste */
-    line-height: 1.8;
-    list-style: none; /* Supprime les puces par défaut */
-    padding: 0;
-    margin: 0;
-}
-
-.links-list a {
-    white-space: nowrap;
-    margin: 0 0.4rem; /* Plus d'espace entre les liens pour le "•" */
-    font-size: 0.8rem;
-    text-decoration: none; /* Enlève le soulignement par défaut */
-    color: var(--color-fond-clair); /* Couleur des liens */
-}
-
-.links-list a:hover {
-    color: var(--color-accent-secondaire); /* Couleur au survol */
-}
-
-/* Séparateur pour les liens */
-.links-list a + a:before {
-    content: "•";
-    color: var(--color-accent-unique); /* Couleur dorée pour les puces */
-    margin-right: 0.4rem;
-}
-
-/* Ajustements pour petits écrans */
-@media (max-width: 768px) {
-    .footer-links-grid {
-        grid-template-columns: 1fr; /* Une seule colonne */
-    }
-    .footer-links-col {
-        text-align: center; /* Centrer le contenu des colonnes sur mobile */
-    }
-    .links-list {
-        justify-content: center; /* Centre les liens sur mobile */
-    }
-    .links-list a {
-        margin: 0 0.5rem; /* Plus d'espace pour la lisibilité sur mobile */
-    }
+/* Styles pour les paragraphes de témoignages (interligne) */
+.testimonial-paragraph {
+    line-height: 1.8; /* Augmente l'interligne pour aérer le texte */
+    margin-bottom: 1rem; /* Assure un bon espacement entre les paragraphes */
 }
