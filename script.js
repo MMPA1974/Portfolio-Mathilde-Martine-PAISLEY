@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeTabs('.tab-button', '.tab-content'); // Mes Offres
     initializeTabs('.tab-button-about', '.tab-content-about'); // À Propos
     initializeTabs('.tab-button-real', '.tab-content-real'); // Mes Réalisations
+    initializeTabs('.tab-button-cv', '.tab-content-cv'); // Curriculum Vitae
     initializeTabs('.tab-button-actual', '.tab-content-actual'); // Actualités
     initializeTabs('.tab-button-essentials', '.tab-content-essentials'); // Essentiels
     initializeTabs('.tab-button-contact-group', '.tab-content-contact-group'); // Nouveau groupe d'onglets sur contact.html

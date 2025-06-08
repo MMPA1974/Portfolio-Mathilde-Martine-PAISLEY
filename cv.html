@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full overflow-y-auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathilde Martine PAISLEY | Curriculum Vitae</title>
+    <meta name="description" content="Découvrez le parcours détaillé, les compétences, expériences, formations et outils de Mathilde Martine PAISLEY, consultante RH & SIRH.">
+    <meta name="keywords" content="CV RH, parcours professionnel, compétences paie, expériences SIRH, formations RH, outils gestion de projet, certifications RH, Mathilde Martine PAISLEY">
+    <meta name="author" content="Mathilde Martine PAISLEY">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50%25' y='80%25' font-size='80' text-anchor='middle'%3E🌹%3C/text%3E%3C/svg%3E" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex flex-col min-h-screen bg-cv-bg">
+
+    <header class="bg-principal-fonce text-fond-clair p-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center header-content-wrapper">
+            <a href="index.html" class="header-logo-link">
+                <img src="assets/logo-header.jpeg" alt="Logo MMPA" class="header-logo">
+                <span class="text-xl font-bold text-gradient-gold">Mathilde Martine PAISLEY</span>
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="a-propos.html" class="nav-link hover:text-accent-secondaire">À Propos</a>
+                <a href="mes-offres.html" class="nav-link hover:text-accent-secondaire">Mes Offres</a>
+                <a href="realisations.html" class="nav-link hover:text-accent-secondaire">Mes Réalisations</a>
+                <a href="cv.html" class="nav-link hover:text-accent-secondaire">Curriculum Vitae</a>
+                <a href="actualites.html" class="nav-link hover:text-accent-secondaire">Actualités</a>
+                <a href="essentiels.html" class="nav-link hover:text-accent-secondaire">Essentiels</a>
+                <a href="planning.html" class="nav-link hover:text-accent-secondaire">Planning</a>
+                <a href="contact.html" class="nav-link hover:text-accent-secondaire">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-fond-clair focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+        </div>
+        <nav id="mobile-menu" class="md:hidden bg-principal-fonce pt-2 hidden">
+            <a href="a-propos.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">À Propos</a>
+            <a href="mes-offres.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Offres</a>
+            <a href="realisations.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Mes Réalisations</a>
+            <a href="cv.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Curriculum Vitae</a>
+            <a href="actualites.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Actualités</a>
+            <a href="essentiels.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Essentiels</a>
+            <a href="planning.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Planning</a>
+            <a href="contact.html" class="mobile-nav-link block px-4 py-2 text-fond-clair hover:bg-principal-fonce/80">Contact</a>
+        </nav>
+    </header>
+
+    <main class="flex-grow">
+        <section id="cv-section" class="content-section bg-fond-texte-clair text-texte-principal py-16 px-4 md:px-8 lg:px-16">
+            <h2 class="text-3xl font-bold text-center mb-12 text-principal-fonce">Curriculum Vitae</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="flex justify-center space-x-4 mb-8 flex-wrap">
+                    <button class="tab-button-cv active btn-tab mb-2 md:mb-0" data-target="cv-synthese-content">Synthèse & Téléchargement</button>
+                    <button class="tab-button-cv btn-tab mb-2 md:mb-0" data-target="cv-competences-content">Compétences Clés</button>
+                    <button class="tab-button-cv btn-tab mb-2 md:mb-0" data-target="cv-experiences-content">Expériences Professionnelles</button>
+                    <button class="tab-button-cv btn-tab mb-2 md:mb-0" data-target="cv-formations-content">Formations & Certifications</button>
+                    <button class="tab-button-cv btn-tab mb-2 md:mb-0" data-target="cv-outils-content">Outils & Méthodes</button>
+                </div>
+
+                <div id="cv-synthese-content" class="tab-content-cv">
+                    <div class="bg-fond-clair p-8 rounded-lg shadow-lg text-center">
+                        <p class="text-lg mb-4 text-justify">
+                            Vingt ans aux avant-postes des RH ont forgé mon expertise, d'abord en paie, puis en systèmes d'information. Ma
+                            signature ? Une maîtrise totale de la gestion des absences et de la maladie, de l'entrée au dossier complexe, en relation
+                            fluide avec tous les organismes (CPAM, prévoyance, etc.). Mon parcours, riche de multiples environnements, m'a dotée
+                            d'une adaptabilité redoutable et d'une soif constante de monter en compétences. Je suis désormais prête à transposer
+                            cette polyvalence et cette énergie en pilotage de projets SIRH (Paie, GTA) ou sur un poste de Responsable/Adjoint Paie,
+                            pour une entreprise qui valorise l'optimisation et une approche digitale des enjeux RH. Ma formation d'Experte en
+                            Stratégie Digitale est le dernier atout de mon approche résolument orientée solutions.
+                        </p>
+                        <h3 class="text-xl font-semibold text-principal-fonce mt-8 mb-4">Informations de Contact Rapides :</h3>
+                        <p class="text-texte-principal">
+                            <span class="font-bold">📧 E-mail :</span> mathilde.martine.paisley@gmail.com<br>
+                            <span class="font-bold">📞 Téléphone :</span> 06 85 90 08 87<br>
+                            <span class="font-bold">📍 Localisation :</span> 92110 CLICHY France
+                        </p>
+                        <a href="assets/MonCV_Mathilde_PAISLEY.pdf" target="_blank" class="btn-primary mt-8 inline-block">Télécharger mon CV (PDF)</a>
+                    </div>
+                </div>
+
+                <div id="cv-competences-content" class="tab-content-cv hidden">
+                    <div class="bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">Compétences Clés</h3>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Pilotage RH & Management</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Coordination d’équipes RH multisites</li>
+                                    <li>Création de référentiels et procédures internes</li>
+                                    <li>Accompagnement des managers sur les sujets RH et absences</li>
+                                    <li>Encadrement d'équipes et transfert de compétences</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">SIRH & AMOA</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Analyse des besoins métiers et rédaction de spécifications</li>
+                                    <li>Animation d’ateliers utilisateurs et accompagnement au changement</li>
+                                    <li>Participation aux projets de déploiement de solutions SIRH</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Coordination & Pilotage de la Paie</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Supervision de la paie pour 250 à 1 200 salariés</li>
+                                    <li>Réalisation des DSN et déclarations sociales (URSSAF, retraite, prévoyance)</li>
+                                    <li>Contrôle de conformité et gestion des anomalies</li>
+                                    <li>Application des évolutions légales et conventions collectives</li>
+                                    <li>Coordination avec les équipes RH, comptabilité et prestataires</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Administration & Gestion des Temps</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Gestion des absences (maladie, maternité, AT/MP, congés payés, RTT)</li>
+                                    <li>Suivi des DPAE, contrats, avenants et soldes de tout compte</li>
+                                    <li>Interface avec les organismes sociaux (URSSAF, CPAM, MSA, Retraite, Prévoyance)</li>
+                                    <li>Coordination des congés et des absences selon les politiques RH</li>
+                                    <li>Suivi des temps de travail (présence, heures supplémentaires, travail de nuit)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Veille Sociale & Juridique</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Suivi des évolutions légales en RH</li>
+                                    <li>Mise en conformité des pratiques RH avec la législation en vigueur</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cv-experiences-content" class="tab-content-cv hidden">
+                    <div class="bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">Expériences Professionnelles</h3>
+                        <div class="space-y-8">
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Référente Fonctionnelle GTA</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Nexpublica - Décembre 2024 à mai 2025</p>
+                                <p class="text-texte-principal text-justify">Appui fonctionnel sur l'outil Chronotime (GTA). Analyse des besoins clients et rédaction de spécifications fonctionnelles. Participation active à des ateliers de relecture avec les utilisateurs, intégrant leurs retours pour optimiser l'outil. Suivi rigoureux des échanges avec les équipes techniques, assurant une communication fluide et efficace.</p>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Consultante Fonctionnelle Paie / AMOA SIRH</h4>
+                                <p class="text-sm text-gris-subtil mb-2">CGI - Janvier 2023 – Juin 2024</p>
+                                <p class="text-texte-principal text-justify">Projet d'AMOA sur HR Access 4YOU V9 - Déploiement de la solution Octave dans 189 établissements pénitentiaires (gestion de la paie des personnes détenues). Réalisation de la recette fonctionnelle DSN de bout en bout (rédaction scripts/cas de tests, exécution, documentation résultats). Détection proactive, qualification et correction des anomalies. Accompagnement efficace des utilisateurs finaux (formation opérationnelle, assistance réactive, support dédié à la montée en compétence). Intervention sur le projet d'actualisation du livre blanc / des procédures réglementaires de paie Air Liquide, document central pour l'ensemble des sites français. Reprise complète et mise à jour du référentiel paie (recensement et actualisation des rubriques de paie, règles spécifiques par site). Interviews approfondies des gestionnaires paie sur environ 30 sites en France. Prise en compte rigoureuse des évolutions d'organisation (ventes de sites, changements de périmètre RH, mutations internes).</p>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Chargée RH – Coordination Paie & Admin. RH</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Talent Solutions - Juillet 2022 – Décembre 2022</p>
+                                <p class="text-texte-principal text-justify">Responsable de la gestion de la paie pour 4 entités et 350 collaborateurs sur Cegid People net GA et VSA. Mise en œuvre de démarches visant à améliorer l'efficacité des processus administratifs. Transfert de compétences et mise en place de pratiques de mentorat. Mise en place de solutions pour faciliter l'intégration des collaborateurs.</p>
+                            </div>
+                             <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Consultante Paie SIRH</h4>
+                                <p class="text-sm text-gris-subtil mb-2">Epi-Use France - Novembre 2018 – Mars 2022</p>
+                                <p class="text-texte-principal text-justify">Participation à un projet de création d'un Centre de Services Partagés (CSP) pour le groupe Tereos, en soutien à la reprise de la connaissance métier paie à la suite du départ progressif des gestionnaires. Reprise approfondie de la connaissance métier sur 20 sites impactés par le déploiement du CSP (Pléiade & SAP). Mise à jour complète des procédures de paie. Rédaction de guides utilisateurs. Animation d'ateliers de relecture et mises en situation. Formation et transfert de compétences aux nouvelles recrues. Conception de 23 procédures réglementaires de paie adaptées à l'environnement SAP. Élaboration d'un livre blanc paie.</p>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Chargée de Paie (Multi-sociétés)</h4>
+                                <p class="text-sm text-gris-subtil mb-2">De Avril 2008 à Octobre 2018 (incluant Nexans, ADP GSI, Sanofi, Alcoa Howmet, Gérard Darel, Beckman Coulter, Publicis, Sanofi-Aventis, Finodim, Caisse d’épargne)</p>
+                                <p class="text-texte-principal text-justify">Gestion Globale de la Paie pour 250 à 2500 collaborateurs (selon les périodes). Optimisation des Processus RH. Conduite d'évolutions légales. Gestion complète des documents administratifs (DPAE, contrats, avenants). Veille Sociale et Juridique.</p>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md md:col-span-2">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Manager/Directrice</h4>
+                                <p class="text-sm text-gris-subtil mb-2">KFC - Avril 2002 – Mars 2004</p>
+                                <p class="text-texte-principal text-justify">Management d'équipe de 70 personnes. Responsabilité du chiffre d'affaires. Conception et mise en œuvre de programmes de formation. Mise en place de procédures opérationnelles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cv-formations-content" class="tab-content-cv hidden">
+                    <div class="bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">Formations & Certifications</h3>
+                        <div class="space-y-6">
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Expert en stratégie digitale</h4>
+                                <p class="text-sm text-gris-subtil mb-1">Digital Campus (en cours) - De 2024 à 2025</p>
+                                <p class="text-texte-principal">En relation avec les projets RH/SIRH.</p>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Manager Stratégique RH</h4>
+                                <p class="text-sm text-gris-subtil mb-1">ESGRH - Bac+5 - De 2021 à 2023</p>
+                                <p class="text-texte-principal">Gestion des RH et Transformation Organisationnelle.</p>
+                                <p class="text-texte-principal mt-2"><strong>Certification Manager Stratégique RH</strong> - Mars 2024 (Diplôme Studi_ESG_RH) - <a href="#" target="_blank" class="text-accent-unique hover:underline">Voir la certification</a></p>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Gestionnaire de Paie M2I</h4>
+                                <p class="text-sm text-gris-subtil mb-1">Paris 12 - Niveau Bac+2 - De 2013 à 2014</p>
+                                <p class="text-texte-principal">Formation spécialisée en Gestion de Paie et Réglementations du Droit Social.</p>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Certification Responsable Stratégie Digitale</h4>
+                                <p class="text-sm text-gris-subtil mb-1">ESG_COMMERCE_def - Mars 2025</p>
+                                <a href="#" target="_blank" class="text-accent-unique hover:underline">Voir la certification</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cv-outils-content" class="tab-content-cv hidden">
+                    <div class="bg-fond-clair p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-semibold text-accent-unique mb-4 text-center">Outils & Méthodes</h3>
+                        <div class="space-y-6">
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Logiciels SIRH</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Squash, HR Access, Cegid, SAP HR, Workday, SuccessFactors, Chronotime.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Outils Bureautiques</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Suite Office 365 et systèmes bureautiques pour la gestion RH.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Gestion de Projet</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Trello, Monday.com, Jira, Diagramme de Gantt.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-fond-texte-clair p-6 rounded-lg shadow-md">
+                                <h4 class="text-xl font-semibold text-principal-fonce mb-2">Méthodologies Agile</h4>
+                                <ul class="list-none space-y-1 text-texte-principal bullet-accent-small">
+                                    <li>Scrum, Kanban.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-principal-fonce text-fond-clair py-8 px-4 text-center text-sm">
+        <div class="container mx-auto">
+            <p>&copy; 2024 <strong>Mathilde Mathilde PAISLEY (MMPA)</strong>. Tous droits réservés.</p>
+            <p class="mt-2">Mathilde Martine PAISLEY - SIRET 94517000900019</p>
+            <p class="mt-2">Conçu avec expertise et dévouement.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/votre_kit_fontawesome.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
